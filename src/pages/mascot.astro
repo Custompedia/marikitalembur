@@ -1,0 +1,233 @@
+---
+import MklMascot from '../components/MklMascot.astro';
+
+const variants = [
+  { state: 'default', color: '#A3E635', label: 'Santai · Lime', seed: 0.11 },
+  { state: 'default', color: '#7C3AED', label: 'Santai · Purple', seed: 0.37 },
+  { state: 'working', color: '#A3E635', label: 'Bekerja · Lime', seed: 0.52 },
+  { state: 'working', color: '#7C3AED', label: 'Bekerja · Purple', seed: 0.68 },
+  { state: 'sleeping', color: '#A3E635', label: 'Tidur · Lime', seed: 0.83 },
+  { state: 'sleeping', color: '#7C3AED', label: 'Tidur · Purple', seed: 0.94 },
+] as const;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maskot MKL</title>
+    <meta name="description" content="Maskot kubus voxel MKL yang digambar di canvas 2D: bisa menoleh, berkedip, melompat, bekerja, dan tidur." />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="head">
+        <p class="eyebrow">MKL · Maskot</p>
+        <h1>Maskot kubus yang hidup</h1>
+        <p class="sub">Digambar di canvas 2D biasa, tanpa WebGL dan tanpa dependensi. Maskot ini bisa menoleh, berkedip, dan sesekali melompat sambil berputar. Saat bekerja ia melompat-lompat, dan saat tidur ia menunduk. Coba gerakkan kursor di dekatnya atau klik.</p>
+      </header>
+
+      <section class="studio" aria-label="Playground maskot">
+        <div class="stage">
+          <MklMascot id="hero-mascot" size={260} seed={0.2} />
+          <button type="button" class="jump" id="jump-btn">Lompat</button>
+        </div>
+
+        <form class="panel" id="controls" onsubmit="return false">
+          <fieldset class="field">
+            <legend>State</legend>
+            <div class="seg">
+              <label><input type="radio" name="state" value="default" checked /><span>Santai</span></label>
+              <label><input type="radio" name="state" value="working" /><span>Bekerja</span></label>
+              <label><input type="radio" name="state" value="sleeping" /><span>Tidur</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Warna</legend>
+            <div class="swatches">
+              <label class="sw"><input type="radio" name="color" value="#A3E635" checked /><span style="--c:#A3E635">Lime</span></label>
+              <label class="sw"><input type="radio" name="color" value="#7C3AED" /><span style="--c:#7C3AED">Purple</span></label>
+              <label class="sw custom"><input type="color" id="color-custom" value="#F97316" aria-label="Warna kustom" /><span>Kustom</span></label>
+            </div>
+          </fieldset>
+
+          <label class="field range">
+            <span class="row"><span>Ukuran</span><output id="size-out">260px</output></span>
+            <input type="range" id="size" min="96" max="320" step="4" value="260" />
+          </label>
+          <label class="field range">
+            <span class="row"><span>Kecepatan</span><output id="speed-out">1.00×</output></span>
+            <input type="range" id="speed" min="0.25" max="2" step="0.05" value="1" />
+          </label>
+          <label class="field range">
+            <span class="row"><span>Tolehan</span><output id="turn-out">1.00</output></span>
+            <input type="range" id="turn" min="0" max="2" step="0.05" value="1" />
+          </label>
+          <label class="field range">
+            <span class="row"><span>Lompat tiap</span><output id="jump-out">8 dtk</output></span>
+            <input type="range" id="jumpEvery" min="0" max="20" step="1" value="8" />
+          </label>
+
+          <div class="toggles">
+            <label class="tg"><input type="checkbox" id="interactive" checked /><span>Interaktif</span></label>
+            <label class="tg"><input type="checkbox" id="paused" /><span>Jeda</span></label>
+          </div>
+        </form>
+      </section>
+
+      <section class="grid" aria-label="Varian maskot">
+        {variants.map((v) => (
+          <figure class="card">
+            <MklMascot state={v.state} color={v.color} size={120} seed={v.seed} />
+            <figcaption>{v.label}</figcaption>
+          </figure>
+        ))}
+      </section>
+
+      <section class="code" aria-label="Cara pakai">
+        <h2>Cara pakai</h2>
+        <pre><code>{`---
+import MklMascot from '../components/MklMascot.astro';
+---
+<MklMascot state="working" color="#7C3AED" size={96} />`}</code></pre>
+        <pre><code>{`import { MklMascot } from '../scripts/mkl-mascot';
+
+const m = new MklMascot(canvas, { state: 'default', size: 160 });
+m.setOptions({ state: 'sleeping' });
+m.poke(); // lompat + putar`}</code></pre>
+      </section>
+    </main>
+
+    <script>
+      import { mountAll, getMascot, type MascotState } from '../scripts/mkl-mascot';
+
+      mountAll();
+      const canvas = document.getElementById('hero-mascot');
+      const form = document.getElementById('controls');
+      const mascot = canvas instanceof HTMLCanvasElement ? getMascot(canvas) : undefined;
+      if (!mascot || !(form instanceof HTMLFormElement)) throw new Error('Mascot playground failed to mount');
+
+      const input = (id: string): HTMLInputElement => {
+        const el = document.getElementById(id);
+        if (!(el instanceof HTMLInputElement)) throw new Error(`Missing control #${id}`);
+        return el;
+      };
+      const setOut = (id: string, text: string): void => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+      };
+      const isState = (v: string): v is MascotState => v === 'default' || v === 'working' || v === 'sleeping';
+
+      const custom = input('color-custom');
+
+      form.addEventListener('change', (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLInputElement)) return;
+        if (t.name === 'state' && isState(t.value)) mascot.setOptions({ state: t.value });
+        if (t.name === 'color') mascot.setOptions({ color: t.value });
+        if (t.id === 'interactive') mascot.setOptions({ interactive: t.checked });
+        if (t.id === 'paused') mascot.setOptions({ paused: t.checked });
+      });
+
+      form.addEventListener('input', (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLInputElement)) return;
+        const v = Number(t.value);
+        if (t.id === 'size') { mascot.setOptions({ size: v }); setOut('size-out', `${v}px`); }
+        if (t.id === 'speed') { mascot.setOptions({ speed: v }); setOut('speed-out', `${v.toFixed(2)}×`); }
+        if (t.id === 'turn') { mascot.setOptions({ turn: v }); setOut('turn-out', v.toFixed(2)); }
+        if (t.id === 'jumpEvery') { mascot.setOptions({ jumpEvery: v }); setOut('jump-out', v === 0 ? 'mati' : `${v} dtk`); }
+        if (t === custom) {
+          form.querySelectorAll<HTMLInputElement>('input[name="color"]').forEach((r) => { r.checked = false; });
+          mascot.setOptions({ color: custom.value });
+        }
+      });
+
+      document.getElementById('jump-btn')?.addEventListener('click', () => mascot.poke(1));
+    </script>
+
+    <style is:global>
+      :root {
+        --bg: #121212;
+        --card: #1a1a1a;
+        --line: #2a2a2a;
+        --text: #f4f4f5;
+        --muted: #a1a1aa;
+        --lime: #a3e635;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 16px 80px; }
+      .eyebrow { margin: 0 0 10px; color: var(--lime); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: clamp(28px, 5vw, 44px); letter-spacing: -.03em; font-weight: 600; }
+      .sub { max-width: 640px; color: var(--muted); line-height: 1.6; margin: 14px 0 32px; }
+
+      .studio { display: grid; grid-template-columns: 1fr 300px; gap: 16px; }
+      .stage {
+        position: relative; min-height: 380px; border: 1px solid var(--line); border-radius: 16px;
+        background: radial-gradient(120% 80% at 50% 100%, #1f1f1f 0%, var(--card) 60%);
+        display: grid; place-items: center; overflow: hidden;
+      }
+      .jump {
+        position: absolute; left: 16px; bottom: 16px; font: inherit; font-size: 14px; color: var(--text);
+        background: #262626; border: 1px solid #333; border-radius: 10px; padding: 8px 14px; cursor: pointer;
+      }
+      .jump:hover { background: #2e2e2e; }
+      .jump:active { transform: translateY(1px); }
+
+      .panel { border: 1px solid var(--line); border-radius: 16px; background: var(--card); padding: 18px; display: grid; gap: 18px; align-content: start; }
+      .field { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .field legend, .row { font-size: 13px; color: var(--muted); padding: 0; margin-bottom: 8px; }
+      .row { display: flex; justify-content: space-between; margin: 0; }
+      .row output { color: var(--text); font-variant-numeric: tabular-nums; }
+
+      .seg { display: grid; grid-template-columns: repeat(3, 1fr); background: #111; border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+      .seg input, .sw input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+      .seg span { display: block; text-align: center; font-size: 13px; padding: 7px 0; border-radius: 7px; cursor: pointer; color: var(--muted); }
+      .seg input:checked + span { background: #2a2a2a; color: var(--text); }
+
+      .swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+      .sw { position: relative; }
+      .sw span { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; padding: 6px 10px 6px 8px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+      .sw span::before { content: ''; width: 14px; height: 14px; border-radius: 4px; background: var(--c); }
+      .sw.custom span::before { display: none; }
+      .sw input:checked + span { border-color: var(--text); }
+      .sw.custom { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 10px; padding: 3px 10px 3px 4px; }
+      .sw.custom span { border: 0; padding: 0; }
+      .sw.custom input { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
+
+      input[type="range"] { width: 100%; accent-color: var(--lime); }
+      .toggles { display: flex; gap: 16px; }
+      .tg { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+      .tg input { accent-color: var(--lime); width: 16px; height: 16px; }
+
+      :where(input, button, canvas):focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 8px; }
+      .seg input:focus-visible + span, .sw input:focus-visible + span { outline: 2px solid var(--lime); outline-offset: 2px; }
+
+      .grid { margin-top: 16px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+      .card { margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); display: grid; justify-items: center; padding: 8px 0 12px; }
+      .card figcaption { font-size: 12px; color: var(--muted); }
+
+      .code { margin-top: 40px; }
+      .code h2 { font-size: 20px; letter-spacing: -.02em; font-weight: 600; margin: 0 0 12px; }
+      pre { margin: 0 0 12px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; overflow-x: auto; font-size: 13px; line-height: 1.6; color: #d4d4d8; }
+
+      @media (max-width: 860px) {
+        .studio { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media (max-width: 480px) {
+        .grid { grid-template-columns: repeat(2, 1fr); }
+        .stage { min-height: 320px; }
+      }
+    </style>
+  </body>
+</html>

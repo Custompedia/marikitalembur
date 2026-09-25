@@ -1,0 +1,39 @@
+---
+interface Props {
+  state?: 'default' | 'working' | 'sleeping';
+  size?: number;
+  color?: string;
+  ink?: string;
+  speed?: number;
+  turn?: number;
+  seed?: number;
+  jumpEvery?: number;
+  interactive?: boolean;
+  id?: string;
+  class?: string;
+}
+const { state = 'default', size = 160, color = '#A3E635', ink = '#FFFFFF', speed = 1, turn = 1, seed = 0, jumpEvery = 8, interactive = true, id, class: className } = Astro.props;
+---
+<canvas
+  data-mkl-mascot
+  id={id}
+  class={className}
+  width={size}
+  height={size}
+  style={`width:${size}px;height:${size}px`}
+  data-state={state}
+  data-size={size}
+  data-color={color}
+  data-ink={ink}
+  data-speed={speed}
+  data-turn={turn}
+  data-seed={seed}
+  data-jump-every={jumpEvery}
+  data-interactive={String(interactive)}
+  role="img"
+  aria-label="Maskot MKL"
+></canvas>
+<script>
+  import { mountAll } from '../scripts/mkl-mascot';
+  mountAll();
+</script>

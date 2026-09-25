@@ -1,0 +1,23 @@
+---
+import Site from '../components/Site.astro';
+
+export function getStaticPaths() {
+  return [
+    'produk-kami',
+    'produk/mari-rekap',
+    'kelas',
+    'untuk-bisnis',
+    'ajukan-kebutuhan',
+    'untuk-partner',
+    'tentang',
+    'kontak',
+    'kerja-sama',
+    'jelajahi',
+    'starter-kit',
+    'website-saas',
+  ].map((slug) => ({ params: { slug }, props: { page: slug } }));
+}
+
+const { page } = Astro.props;
+---
+<Site page={page} />
