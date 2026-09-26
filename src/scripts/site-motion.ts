@@ -187,6 +187,29 @@ function initNavIndicator(): void {
   compute();
 }
 
+// The footer wordmark lights up in a soft circle that follows the pointer.
+function initFooterGlow(mark: HTMLElement): void {
+  const lit = mark.querySelector<SVGSVGElement>('.footer-mark__word--lit');
+  if (!lit) return;
+  let x = 0, y = 0, queued = false;
+  const paint = (): void => {
+    queued = false;
+    const r = lit.getBoundingClientRect();
+    lit.style.setProperty('--mx', `${(x - r.left).toFixed(1)}px`);
+    lit.style.setProperty('--my', `${(y - r.top).toFixed(1)}px`);
+  };
+  mark.addEventListener('pointerenter', () => mark.classList.add('is-lit'));
+  mark.addEventListener('pointerleave', () => mark.classList.remove('is-lit'));
+  mark.addEventListener('pointermove', (e) => {
+    x = e.clientX;
+    y = e.clientY;
+    if (!queued) {
+      queued = true;
+      requestAnimationFrame(paint);
+    }
+  }, { passive: true });
+}
+
 export function initSite(): void {
   // Hidden-until-animated styles apply only once this script runs, so content stays visible if it fails to load.
   document.documentElement.classList.add('js');
@@ -201,4 +224,6 @@ export function initSite(): void {
   const dust = document.querySelector<HTMLCanvasElement>('canvas[data-pixel-dust]');
   if (dust) initPixelDust(dust);
   initNavIndicator();
+  const footerMark = document.querySelector<HTMLElement>('[data-footer-mark]');
+  if (footerMark) initFooterGlow(footerMark);
 }

@@ -217,27 +217,27 @@ Rekomendasi konten footer:
 
 ## 7. Page-by-page content checklist
 
-Legenda checklist: **✓** ada dan berguna; **△** ada tetapi perlu ditulis ulang/dilengkapi; **×** tidak ada; **—** tidak diperlukan sekarang. Urutan kolom requirements: H1; supporting statement; primary CTA; secondary CTA; explanatory sections; trust; inventory dependency; process; fit; limits; next path; empty state.
+Legenda checklist: **✓** ada dan berguna; **△** ada tetapi perlu ditulis ulang/dilengkapi; **×** tidak ada; **-** tidak diperlukan sekarang. Urutan kolom requirements: H1; supporting statement; primary CTA; secondary CTA; explanatory sections; trust; inventory dependency; process; fit; limits; next path; empty state.
 
 | Page | Audience / pertanyaan / hasil yang diinginkan | Requirements menurut urutan di atas | State rekomendasi / action |
 |---|---|---|---|
-| Home | Pekerja, pemimpin tim; “MKL membantu apa?”; pilih jalur relevan | △ △ ✓ △ △ △ ✓ — △ △ △ ✓ | READY TO DRAFT / REWRITE CONTENT |
-| Produk | Pengguna software; “Produk buatan MKL untuk pekerjaan saya?”; pilih Mari Rekap | △ △ △ — × △ ✓ — × △ △ ✓ | READY TO DRAFT / ADD CONTENT |
-| Detail Mari Rekap | Orang yang merekap data; “Bisa apa, bagaimana, tersedia sejauh apa?”; pahami produk dan akses sah | △ × × △ × △ ✓ × × × △ — | READY TO DRAFT untuk isi; CTA correction P0 / ADD CONTENT |
+| Home | Pekerja, pemimpin tim; “MKL membantu apa?”; pilih jalur relevan | △ △ ✓ △ △ △ ✓ - △ △ △ ✓ | READY TO DRAFT / REWRITE CONTENT |
+| Produk | Pengguna software; “Produk buatan MKL untuk pekerjaan saya?”; pilih Mari Rekap | △ △ △ - × △ ✓ - × △ △ ✓ | READY TO DRAFT / ADD CONTENT |
+| Detail Mari Rekap | Orang yang merekap data; “Bisa apa, bagaimana, tersedia sejauh apa?”; pahami produk dan akses sah | △ × × △ × △ ✓ × × × △ - | READY TO DRAFT untuk isi; CTA correction P0 / ADD CONTENT |
 | Detail class pattern | Calon peserta; “Belajar apa, dengan siapa, kapan, bagaimana akses?”; menilai kelas nyata | Template ada; instance tidak ada | BLOCKED BY PRODUCT STATE untuk publikasi instance |
-| Kelas | Pekerja/praktisi; “Ada kelas relevan?”; lihat status atau usulkan topik | △ △ ✓ — △ △ ✓ — × ✓ ✓ ✓ | READY TO DRAFT / REWRITE CONTENT |
-| Untuk Bisnis | Owner/head/manager; “Bisakah MKL membantu proses tim?”; kirim kebutuhan bermutu | × × × × × × — × × × × — | NEEDS OWNER INPUT untuk service readiness; ADD CONTENT |
-| Intake | Tim/pengguna/publisher; “Apa yang harus saya ceritakan?”; kirim konteks yang cukup | ✓ △ ✓ — △ △ ✓ — △ △ ✓ — | READY TO DRAFT / KEEP + REWRITE CONTENT |
-| Partner | Builder/publisher; “Apakah produk saya cocok dan bagaimana mengajukan?”; registrasi dengan ekspektasi tepat | △ △ ✓ ✓ ✓ △ — ✓ × △ ✓ — | READY TO DRAFT; commercial claims gated / REWRITE CONTENT |
-| Tentang | Visitor/customer/partner; “Siapa MKL dan apa perannya?”; memahami ownership dan kontak | ✓ △ × — △ △ — — — △ × — | READY TO DRAFT minimum; extended story NEEDS OWNER INPUT |
+| Kelas | Pekerja/praktisi; “Ada kelas relevan?”; lihat status atau usulkan topik | △ △ ✓ - △ △ ✓ - × ✓ ✓ ✓ | READY TO DRAFT / REWRITE CONTENT |
+| Untuk Bisnis | Owner/head/manager; “Bisakah MKL membantu proses tim?”; kirim kebutuhan bermutu | × × × × × × - × × × × - | NEEDS OWNER INPUT untuk service readiness; ADD CONTENT |
+| Intake | Tim/pengguna/publisher; “Apa yang harus saya ceritakan?”; kirim konteks yang cukup | ✓ △ ✓ - △ △ ✓ - △ △ ✓ - | READY TO DRAFT / KEEP + REWRITE CONTENT |
+| Partner | Builder/publisher; “Apakah produk saya cocok dan bagaimana mengajukan?”; registrasi dengan ekspektasi tepat | △ △ ✓ ✓ ✓ △ - ✓ × △ ✓ - | READY TO DRAFT; commercial claims gated / REWRITE CONTENT |
+| Tentang | Visitor/customer/partner; “Siapa MKL dan apa perannya?”; memahami ownership dan kontak | ✓ △ × - △ △ - - - △ × - | READY TO DRAFT minimum; extended story NEEDS OWNER INPUT |
 | Market handoff | Product discoverer; “Apa beda Market dan Produk?”; masuk surface yang benar | Teks/link ada; ekspektasi inventory △ | READY TO DRAFT / EXTERNAL LINK sesuai resolver |
-| Kerja Sama | Mixed legacy traffic; “Saya harus ke mana?”; pilih B2B/Partner/speaker inquiry | ✓ △ △ × △ — — — △ × △ — | READY TO DRAFT / MERGE WITH ANOTHER PAGE |
-| Kontak | Pengguna butuh bantuan; “Bagaimana menghubungi?”; kanal dan konteks tepat | ✓ ✓ △ △ △ △ — — — △ △ — | READY TO DRAFT; hours need evidence / ADD CONTENT |
-| Syarat | Pengguna layanan; “Aturan penggunaan?”; memahami kontrak yang benar | ✓ △ × — △ △ — — — △ △ — | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
-| Privasi | Pengguna/form submitter; “Data dipakai untuk apa?”; memahami pemrosesan | ✓ △ × — △ △ — — — △ △ — | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
-| Refund | Pembeli; “Apa kebijakan untuk masalah transaksi?”; jalur bantuan yang benar | ✓ △ × — △ × — △ — × △ — | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
-| Starter Kit | Pengunjung URL lama; “Ke mana katalognya?”; buka Market | ✓ ✓ ✓ — ✓ — — — — ✓ ✓ — | READY TO DRAFT / KEEP AS COMPATIBILITY ROUTE |
-| Website & SaaS | Pengunjung URL lama; “Ke mana listing?”; buka Market | ✓ ✓ ✓ — ✓ — — — — ✓ ✓ — | READY TO DRAFT / KEEP AS COMPATIBILITY ROUTE |
+| Kerja Sama | Mixed legacy traffic; “Saya harus ke mana?”; pilih B2B/Partner/speaker inquiry | ✓ △ △ × △ - - - △ × △ - | READY TO DRAFT / MERGE WITH ANOTHER PAGE |
+| Kontak | Pengguna butuh bantuan; “Bagaimana menghubungi?”; kanal dan konteks tepat | ✓ ✓ △ △ △ △ - - - △ △ - | READY TO DRAFT; hours need evidence / ADD CONTENT |
+| Syarat | Pengguna layanan; “Aturan penggunaan?”; memahami kontrak yang benar | ✓ △ × - △ △ - - - △ △ - | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
+| Privasi | Pengguna/form submitter; “Data dipakai untuk apa?”; memahami pemrosesan | ✓ △ × - △ △ - - - △ △ - | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
+| Refund | Pembeli; “Apa kebijakan untuk masalah transaksi?”; jalur bantuan yang benar | ✓ △ × - △ × - △ - × △ - | NEEDS OWNER INPUT / OWNER DECISION NEEDED |
+| Starter Kit | Pengunjung URL lama; “Ke mana katalognya?”; buka Market | ✓ ✓ ✓ - ✓ - - - - ✓ ✓ - | READY TO DRAFT / KEEP AS COMPATIBILITY ROUTE |
+| Website & SaaS | Pengunjung URL lama; “Ke mana listing?”; buka Market | ✓ ✓ ✓ - ✓ - - - - ✓ ✓ - | READY TO DRAFT / KEEP AS COMPATIBILITY ROUTE |
 | Insight | Pembaca; “Apa yang perlu saya pahami?” | Tidak ada hub nyata | FUTURE / HIDE UNTIL READY |
 | TulisAI | Future writing user | Tidak ada instance publik yang ditemukan | FUTURE / HIDE UNTIL READY |
 
@@ -245,75 +245,75 @@ Locked facts seluruh halaman: S1–S5. Positioning M1–M3 dapat dipakai selama 
 
 ## 8. Section-by-section content architecture
 
-Aturan editorial usulan: hero satu ide, lead umumnya satu atau dua kalimat, supporting points hanya yang membantu keputusan. Kedalaman ditempatkan di produk/B2B/Partner, bukan ditumpuk di hero. “—” pada CTA berarti **sengaja tanpa CTA**, bukan belum dikerjakan.
+Aturan editorial usulan: hero satu ide, lead umumnya satu atau dua kalimat, supporting points hanya yang membantu keputusan. Kedalaman ditempatkan di produk/B2B/Partner, bukan ditumpuk di hero. “-” pada CTA berarti **sengaja tanpa CTA**, bukan belum dikerjakan.
 
-### 8.1 Homepage `/` — READY TO DRAFT
+### 8.1 Homepage `/` - READY TO DRAFT
 
 **Page message:** MKL membantu pekerjaan lebih beres melalui produk, pembelajaran praktis, dan bantuan untuk kebutuhan tim. **Locked:** parent MKL, first-party vs Market, ketersediaan aktual. **Positioning:** outcome-first M1 §23–25. **Action:** REWRITE CONTENT.
 
 | Section | Purpose / user question | Suggested headline + supporting copy | Supporting points | Primary / secondary CTA | Evidence / truth boundary / priority |
 |---|---|---|---|---|---|
 | H1. Hero | Pengenalan cepat; “MKL membantu apa?” | **Kerja lebih beres, mulai dari kebutuhanmu.** “Temukan produk dari MKL, informasi kelas praktis, dan bantuan untuk kebutuhan kerja timmu.” | Produk; belajar; solusi tim | `Lihat produk MKL` → `/produk-kami`; `Bahas kebutuhan tim` → B2B setelah tersedia, sementara jangan pasang link 404 | S1, M1 §23–25, C; layanan baru tetap butuh readiness; REQUIRED |
-| H2. Jalur kebutuhan | Memilih; “Saya mulai di mana?” | **Mau membereskan apa?** “Pilih jalur yang paling dekat dengan kebutuhanmu.” | PAKAI: produk MKL; BELAJAR: kelas/status; TEMUKAN: Market; TERAPKAN: kebutuhan tim; PAHAMI ditunda | Link masing-masing tujuan, tidak satu CTA dominan untuk semua; secondary — | M1 §24–25; hanya tujuan nyata; REQUIRED |
-| H3. Produk nyata | Memberi contoh konkret; “Ada produk apa?” | **Kenali Mari Rekap.** “Bantu susun bahan rekap menjadi tabel yang bisa kamu periksa sebelum diekspor.” | `Produk dari MKL`; input/output terverifikasi; status pembayaran satu kali | `Lihat cara kerja Mari Rekap` → detail; secondary — | S3, S15, M1 §32; copy capability final harus dicocokkan current product; REQUIRED |
-| H4. Tim/bisnis | Mengenali kebutuhan custom; “Bagaimana kalau kebutuhan tim lebih khusus?” | **Mulai dari cara kerja timmu.** “Ceritakan proses yang ingin diperbaiki. Kebutuhan itu menjadi dasar pembahasan pelatihan atau solusi yang sesuai.” | Tidak memaksa SaaS; tidak menjanjikan semua solusi tersedia | `Jelajahi bantuan untuk bisnis` → `/untuk-bisnis`; secondary — | M1 §4–5, §30, M3; service readiness sebelum publish; REQUIRED |
-| H5. Kejelasan peran | Trust/context; “Mana buatan MKL, mana dari penerbit?” | **Tahu siapa pembuatnya, jelas langkah berikutnya.** “Produk MKL kami bangun sendiri. Produk di Market tetap memakai brand penerbitnya.” | Kelas mengikuti jadwal nyata; tidak ada daftar partner rekaan | `Tentang MKL` → `/tentang`; secondary — | S1/S5, M1 §7; tidak menjanjikan semua Market produk diuji; OPTIONAL bila sudah jelas di H2/H3 |
+| H2. Jalur kebutuhan | Memilih; “Saya mulai di mana?” | **Mau membereskan apa?** “Pilih jalur yang paling dekat dengan kebutuhanmu.” | PAKAI: produk MKL; BELAJAR: kelas/status; TEMUKAN: Market; TERAPKAN: kebutuhan tim; PAHAMI ditunda | Link masing-masing tujuan, tidak satu CTA dominan untuk semua; secondary - | M1 §24–25; hanya tujuan nyata; REQUIRED |
+| H3. Produk nyata | Memberi contoh konkret; “Ada produk apa?” | **Kenali Mari Rekap.** “Bantu susun bahan rekap menjadi tabel yang bisa kamu periksa sebelum diekspor.” | `Produk dari MKL`; input/output terverifikasi; status pembayaran satu kali | `Lihat cara kerja Mari Rekap` → detail; secondary - | S3, S15, M1 §32; copy capability final harus dicocokkan current product; REQUIRED |
+| H4. Tim/bisnis | Mengenali kebutuhan custom; “Bagaimana kalau kebutuhan tim lebih khusus?” | **Mulai dari cara kerja timmu.** “Ceritakan proses yang ingin diperbaiki. Kebutuhan itu menjadi dasar pembahasan pelatihan atau solusi yang sesuai.” | Tidak memaksa SaaS; tidak menjanjikan semua solusi tersedia | `Jelajahi bantuan untuk bisnis` → `/untuk-bisnis`; secondary - | M1 §4–5, §30, M3; service readiness sebelum publish; REQUIRED |
+| H5. Kejelasan peran | Trust/context; “Mana buatan MKL, mana dari penerbit?” | **Tahu siapa pembuatnya, jelas langkah berikutnya.** “Produk MKL kami bangun sendiri. Produk di Market tetap memakai brand penerbitnya.” | Kelas mengikuti jadwal nyata; tidak ada daftar partner rekaan | `Tentang MKL` → `/tentang`; secondary - | S1/S5, M1 §7; tidak menjanjikan semua Market produk diuji; OPTIONAL bila sudah jelas di H2/H3 |
 
 Kelas empty copy singkat di jalur BELAJAR: **“Belum ada jadwal kelas yang dibuka.”** Link `Lihat informasi kelas`. Market empty context bila dipromosikan: **“Pilihan produk dari penerbit sedang disiapkan.”** Jangan menambahkan showcase kosong berulang. Hilangkan pembahasan “registry”, “rumah aplikasi”, dan “satu akun untuk tiga hal” sebagai argumen utama. Tagline brand yang sudah ada dapat dipertahankan sebagai signature; jangan diubah menjadi jaminan bebas lembur.
 
 **Gap:** missing B2B/value clarity; outdated architecture-led hero; duplicate Produk/Kelas/Market explanations; potentially misleading “bisa dibuka hari ini” tanpa access path yang benar; premature Insight/Expert jika playbook ditransfer mentah; unsupported social proof tidak boleh ditambahkan.
 
-### 8.2 Produk `/produk-kami` — READY TO DRAFT
+### 8.2 Produk `/produk-kami` - READY TO DRAFT
 
 **Page message:** software buatan MKL untuk pekerjaan konkret. **Locked:** hanya Mari Rekap pada current V1, list tetap extensible. **Positioning:** M1 §26. **Action:** ADD CONTENT + REWRITE CONTENT.
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
-| P1. Portfolio intro | “Apa bedanya dengan Market?” | **Produk MKL untuk pekerjaan nyata.** “Aplikasi yang kami bangun untuk membantu pekerjaan yang masih banyak dikerjakan manual.” | Endorsement `Produk dari MKL`; tidak semua disebut AI tools | — / — | S5/S14, M1 §26, C; bukan klaim manfaat terukur; REQUIRED |
-| P2. Mari Rekap | “Produk ini untuk saya?” | **Mari Rekap — dari bahan rekap ke tabel.** “Susun data, periksa hasilnya, lalu ekspor untuk pekerjaan berikutnya.” | Job/audience; input-output approved; link detail; status publik yang akurat | `Kenali Mari Rekap` → `/produk/mari-rekap`; — | S3/S15, M1 §32; tidak menambah vNext; REQUIRED |
-| P3. Kebutuhan berbeda | “Bagaimana kalau tidak cocok?” | **Kebutuhan timmu lebih khusus?** “Mulai dengan menceritakan proses yang ingin kamu perbaiki.” | Custom services terpisah dari SaaS | `Bahas kebutuhan tim` → `/untuk-bisnis` ketika ada; — | M1 §4, C; tidak menjanjikan produk baru akan dibuat; OPTIONAL |
+| P1. Portfolio intro | “Apa bedanya dengan Market?” | **Produk MKL untuk pekerjaan nyata.** “Aplikasi yang kami bangun untuk membantu pekerjaan yang masih banyak dikerjakan manual.” | Endorsement `Produk dari MKL`; tidak semua disebut AI tools | - / - | S5/S14, M1 §26, C; bukan klaim manfaat terukur; REQUIRED |
+| P2. Mari Rekap | “Produk ini untuk saya?” | **Mari Rekap - dari bahan rekap ke tabel.** “Susun data, periksa hasilnya, lalu ekspor untuk pekerjaan berikutnya.” | Job/audience; input-output approved; link detail; status publik yang akurat | `Kenali Mari Rekap` → `/produk/mari-rekap`; - | S3/S15, M1 §32; tidak menambah vNext; REQUIRED |
+| P3. Kebutuhan berbeda | “Bagaimana kalau tidak cocok?” | **Kebutuhan timmu lebih khusus?** “Mulai dengan menceritakan proses yang ingin kamu perbaiki.” | Custom services terpisah dari SaaS | `Bahas kebutuhan tim` → `/untuk-bisnis` ketika ada; - | M1 §4, C; tidak menjanjikan produk baru akan dibuat; OPTIONAL |
 
 Empty state saat tidak ada produk terbit: **“Belum ada produk yang dibuka di halaman ini.”** Supporting: “Ceritakan pekerjaan yang ingin kamu bereskan.” CTA intake, bukan produk placeholder. Jangan tampilkan TulisAI sebagai available atau teaser wajib.
 
 **Gap:** summary Mari Rekap kosong; lead terlalu internal (“kami tidak mewarnai ulang…”); “Oleh Mari Rekap” tidak menjelaskan first-party; footer registry statement tidak membantu keputusan. Data dependency: `summary`, approved product message, `application_url`/access contract, offer state. Copy first-party tidak perlu mengubah publisher database.
 
-### 8.3 Product detail pattern dan Mari Rekap — READY TO DRAFT, access correction P0
+### 8.3 Product detail pattern dan Mari Rekap - READY TO DRAFT, access correction P0
 
 **Page job:** menjawab apa, untuk siapa, bagaimana, batas, harga, dan langkah aman berikutnya. **Playbook-supported:** manfaat rekap, review manusia, input→draft→review→XLSX, parent endorsement (M1 §32). **Current repo need:** mengisi `summary`, `body_json.outcome/features/how_it_works/for_who/faq`, metadata, dan membetulkan state-dependent access (S8/S14).
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
-| D1. Identity/value | “Produk apa, dari siapa?” | **Mari Rekap — bantu susun rekap, tetap kamu yang periksa.** “Produk dari MKL untuk membantu mengolah bahan rekap menjadi tabel yang dapat diperiksa dan diedit.” | Nama produk; MKL endorsement; status current | `Lihat cara kerjanya` → section alur; `Tanya tentang Mari Rekap` → `/kontak` sampai entry pengguna baru dibuktikan | S1/S3/S15, M1 §32; bukan janji accuracy; REQUIRED |
-| D2. Fit | “Apakah sesuai pekerjaan saya?” | **Untuk pekerjaan yang masih banyak rekap manual.** “Mulai dari kebutuhan mencatat data dari struk, invoice, foto, PDF, atau teks.” | Contoh finance/admin sebagai konteks, bukan seluruh vNext lintas fungsi; hasil perlu pemeriksaan | — / — | S15 baseline, M1 §32; input formats perlu final match product; REQUIRED |
-| D3. Workflow | “Bagaimana dari bahan ke hasil?” | **Masukkan bahan. Periksa hasil. Ekspor rekap.** “AI membantu menyusun draft; kamu memeriksa dan mengoreksi sebelum hasil dipakai.” | Input; draft; review/edit; XLSX | — / — | S15, M1 §32; tidak sama dengan Excel import/template output atau Sheets sync; REQUIRED |
-| D4. Capabilities | “Apa yang saya dapat?” | **Yang bisa dikerjakan sekarang.** “Gunakan daftar kemampuan yang sudah didukung versi produk saat ini.” | Copy final: input foto/PDF/teks, review/koreksi, ekspor Excel sesuai approval; tunjukkan contoh milik sendiri bila ada | — / — | S15 baseline; kalimat pendukung ini instruction drafting, bukan copy publish; REQUIRED |
-| D5. Limits/control | “Apa yang tetap perlu saya cek?” | **Hasil tetap perlu diperiksa.** “Kelengkapan dan keterbacaan bahan memengaruhi hasil. Periksa kembali data sebelum digunakan.” | Batas input/kuota harus exact; tidak mengklaim zero error; jangan menjanjikan auto-sync | — / — | M1 §32/53, S2/S15, C; batas angka tidak ditebak; REQUIRED |
+| D1. Identity/value | “Produk apa, dari siapa?” | **Mari Rekap - bantu susun rekap, tetap kamu yang periksa.** “Produk dari MKL untuk membantu mengolah bahan rekap menjadi tabel yang dapat diperiksa dan diedit.” | Nama produk; MKL endorsement; status current | `Lihat cara kerjanya` → section alur; `Tanya tentang Mari Rekap` → `/kontak` sampai entry pengguna baru dibuktikan | S1/S3/S15, M1 §32; bukan janji accuracy; REQUIRED |
+| D2. Fit | “Apakah sesuai pekerjaan saya?” | **Untuk pekerjaan yang masih banyak rekap manual.** “Mulai dari kebutuhan mencatat data dari struk, invoice, foto, PDF, atau teks.” | Contoh finance/admin sebagai konteks, bukan seluruh vNext lintas fungsi; hasil perlu pemeriksaan | - / - | S15 baseline, M1 §32; input formats perlu final match product; REQUIRED |
+| D3. Workflow | “Bagaimana dari bahan ke hasil?” | **Masukkan bahan. Periksa hasil. Ekspor rekap.** “AI membantu menyusun draft; kamu memeriksa dan mengoreksi sebelum hasil dipakai.” | Input; draft; review/edit; XLSX | - / - | S15, M1 §32; tidak sama dengan Excel import/template output atau Sheets sync; REQUIRED |
+| D4. Capabilities | “Apa yang saya dapat?” | **Yang bisa dikerjakan sekarang.** “Gunakan daftar kemampuan yang sudah didukung versi produk saat ini.” | Copy final: input foto/PDF/teks, review/koreksi, ekspor Excel sesuai approval; tunjukkan contoh milik sendiri bila ada | - / - | S15 baseline; kalimat pendukung ini instruction drafting, bukan copy publish; REQUIRED |
+| D5. Limits/control | “Apa yang tetap perlu saya cek?” | **Hasil tetap perlu diperiksa.** “Kelengkapan dan keterbacaan bahan memengaruhi hasil. Periksa kembali data sebelum digunakan.” | Batas input/kuota harus exact; tidak mengklaim zero error; jangan menjanjikan auto-sync | - / - | M1 §32/53, S2/S15, C; batas angka tidak ditebak; REQUIRED |
 | D6. Offer/access | “Berapa, dan bisa dipakai sejauh apa?” | **Paket dan akses Mari Rekap.** “Harga mengikuti penawaran yang ditampilkan. Pembayaran publik belum tersedia.” | Pisahkan paket bulanan dari top-up; term/credit/unit; entitlement state; MKL payment authority dalam bahasa sederhana | Existing access: `Buka Mari Rekap` → approved access route setelah defect diperbaiki; anonymous: `Tanya tentang akses` → kontak; secondary kebijakan terkait | S3/S8/S14; no buy/trial CTA tanpa destination dan capability; REQUIRED |
-| D7. Focused questions | “Masih ada hal penting sebelum mulai?” | **Sebelum menggunakan Mari Rekap.** Jawab input supported, pemeriksaan hasil, ekspor, status pembayaran, support | FAQ hanya pertanyaan nyata, tidak menambahkan SEO filler | `Hubungi tim MKL` → `/kontak`; — | S15, M2 §10; jawaban privacy/retention perlu owner evidence; OPTIONAL |
+| D7. Focused questions | “Masih ada hal penting sebelum mulai?” | **Sebelum menggunakan Mari Rekap.** Jawab input supported, pemeriksaan hasil, ekspor, status pembayaran, support | FAQ hanya pertanyaan nyata, tidak menambahkan SEO filler | `Hubungi tim MKL` → `/kontak`; - | S15, M2 §10; jawaban privacy/retention perlu owner evidence; OPTIONAL |
 
 **Implementation finding:** interface `ProductBody` mempunyai `not_for`, tetapi JSX yang diperiksa tidak merendernya. Mengisi data `not_for` saja tidak menjamin batasan terlihat. Detail juga tidak memakai `summary` sebagai lead fallback; summary portfolio dan body outcome detail perlu diisi konsisten. Class detail memakai template produk generik tetapi tidak memuat `getPublicClassInfo`; sebelum class pertama dipromosikan, detail harus benar-benar menjelaskan jadwal, format, penyelenggara/pengajar terverifikasi, outcome, akses dan batasnya.
 
 **Gap:** missing value/workflow/fit/limits/proof; duplicate canonical; misleading generic “Didistribusikan melalui MKL” untuk first-party; wrong breadcrumb; premature buy implication jika harga tanpa status; unsupported advanced claims dilarang. Tidak membuat `/produk/mari-rekap` duplikat pada domain aplikasi: Main berperan sebagai endorsement/overview, aplikasi memiliki pengalaman produk sendiri.
 
-### 8.4 Kelas `/kelas` — READY TO DRAFT
+### 8.4 Kelas `/kelas` - READY TO DRAFT
 
 **Page message:** pembelajaran praktis; inventaris dan jadwal apa adanya. **Locked:** tidak ada LMS atau Expert booking marketplace dalam V1. **Action:** REWRITE CONTENT.
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
-| K1. Learning premise | “Belajar apa dan untuk apa?” | **Belajar untuk pekerjaan yang kamu hadapi.** “Informasi kelas dan workshop tentang AI, tools, dan cara kerja yang bisa dipraktikkan.” | Practical direction; hindari jaminan hasil instan | — / — | M1 §29, S9; topik final harus nyata; REQUIRED |
-| K2. Inventory/empty | “Apa yang tersedia?” | Saat kosong: **Belum ada jadwal kelas yang dibuka.** “Punya topik yang ingin kamu pelajari? Ceritakan kebutuhanmu.” | Tidak ada kartu contoh, jadwal rekaan, instructor palsu | `Usulkan topik kelas` → `/ajukan-kebutuhan`; — | L/S9; tidak menjanjikan usulan pasti jadi kelas; REQUIRED |
-| K3. Class facts, saat ada | “Apa yang akan saya pelajari?” | **[Judul kelas nyata dan outcome spesifik].** Lead dari materi approved | Outcome, fit/prasyarat, format, jadwal/zona waktu, pengajar terverifikasi, materi/rekaman sesuai data, price/access | `Lihat isi dan jadwal kelas` → actual `/produk/:slug`; — | S9/S4, M1 §29; organizer ≠ instructor; FUTURE sampai instance ada |
+| K1. Learning premise | “Belajar apa dan untuk apa?” | **Belajar untuk pekerjaan yang kamu hadapi.** “Informasi kelas dan workshop tentang AI, tools, dan cara kerja yang bisa dipraktikkan.” | Practical direction; hindari jaminan hasil instan | - / - | M1 §29, S9; topik final harus nyata; REQUIRED |
+| K2. Inventory/empty | “Apa yang tersedia?” | Saat kosong: **Belum ada jadwal kelas yang dibuka.** “Punya topik yang ingin kamu pelajari? Ceritakan kebutuhanmu.” | Tidak ada kartu contoh, jadwal rekaan, instructor palsu | `Usulkan topik kelas` → `/ajukan-kebutuhan`; - | L/S9; tidak menjanjikan usulan pasti jadi kelas; REQUIRED |
+| K3. Class facts, saat ada | “Apa yang akan saya pelajari?” | **[Judul kelas nyata dan outcome spesifik].** Lead dari materi approved | Outcome, fit/prasyarat, format, jadwal/zona waktu, pengajar terverifikasi, materi/rekaman sesuai data, price/access | `Lihat isi dan jadwal kelas` → actual `/produk/:slug`; - | S9/S4, M1 §29; organizer ≠ instructor; FUTURE sampai instance ada |
 
 Hapus kalimat “tidak ada kelas contoh … untuk mengisi halaman ini”; itu aturan internal, bukan informasi yang dibutuhkan peserta. Hindari “itu yang menentukan kelas mana yang kami buka” sebagai janji bahwa usulan otomatis menentukan produksi. Jangan menambahkan “Booking expert”, sertifikat, lifetime access, atau cohort size.
 
-### 8.5 Ajukan Kebutuhan `/ajukan-kebutuhan` — READY TO DRAFT
+### 8.5 Ajukan Kebutuhan `/ajukan-kebutuhan` - READY TO DRAFT
 
 **Page message:** satu tempat untuk menjelaskan kebutuhan agar tim MKL dapat menilai langkah berikutnya. **Locked:** gunakan `product_requests`; tidak membuat lead database baru. **Action:** KEEP + REWRITE CONTENT.
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
-| A1. Context | “Apa yang perlu saya ceritakan?” | **Ceritakan pekerjaan yang ingin kamu bereskan.** “Jelaskan proses saat ini, bagian yang menyulitkan, dan hasil yang kamu harapkan.” | Untuk B2B sebut nama tim/perusahaan di deskripsi; topic/partner tetap bisa memakai seam yang sama | — / — | S10, M1 §31, C; tidak menjanjikan konsultasi gratis; REQUIRED |
+| A1. Context | “Apa yang perlu saya ceritakan?” | **Ceritakan pekerjaan yang ingin kamu bereskan.** “Jelaskan proses saat ini, bagian yang menyulitkan, dan hasil yang kamu harapkan.” | Untuk B2B sebut nama tim/perusahaan di deskripsi; topic/partner tetap bisa memakai seam yang sama | - / - | S10, M1 §31, C; tidak menjanjikan konsultasi gratis; REQUIRED |
 | A2. Form | “Bagaimana mengirim kebutuhan?” | Label kebutuhan: **Proses apa yang ingin kamu perbaiki?** Hint: “Misalnya: laporan masih disalin dari beberapa file dan kamu ingin rekap yang lebih mudah diperiksa.” | Keep nama/email; WhatsApp/budget opsional; jangan kirim data rahasia di initial brief | `Kirim kebutuhan` → existing POST; `Lihat penggunaan data` → privacy | S10, C; tidak menambah field tanpa storage/review; REQUIRED |
 | A3. Confirmation | “Sudah terkirim, lalu apa?” | **Kebutuhanmu sudah kami terima.** “Tim MKL akan meninjau informasi yang kamu kirim dan menghubungimu melalui kontak yang kamu cantumkan.” | Tidak menjanjikan respons X jam atau kalender otomatis; kontak jika perlu koreksi | `Kembali ke Untuk Bisnis` bila asal B2B kelak tersimpan; atau `Kembali ke beranda`; secondary kontak | S10 source success, O operational owner; success belum diuji submit; REQUIRED |
 
@@ -340,30 +340,30 @@ Hapus kalimat “tidak ada kelas contoh … untuk mengisi halaman ini”; itu at
 
 Jangan menerbitkan link seperti `?intent=b2b` dengan klaim “sudah otomatis terpilih”: source saat ini tidak membaca parameter intent. Jika nanti dipakai, tetap satu storage seam.
 
-### 8.6 Builder / Partner `/untuk-partner` — READY TO DRAFT
+### 8.6 Builder / Partner `/untuk-partner` - READY TO DRAFT
 
 **Page message:** ajukan produk berguna untuk dipertimbangkan masuk Market, brand tetap milik penerbit. **Locked:** bukan B2B; no guaranteed sales; commercial rates tidak ditebak. **Action:** REWRITE CONTENT.
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
 | B1. Proposition | “Untuk siapa halaman ini?” | **Punya produk yang membantu pekerjaan orang lain?** “Ajukan produkmu untuk dipertimbangkan di MKL Market, tetap dengan brand milikmu.” | Builder, studio, publisher; submission bukan approval | `Mulai pengajuan partner` → `/partner`; `Tanya soal kemitraan` → intake | S5/S11, M1 §28, C; registration path, bukan instant publish; REQUIRED |
-| B2. Product fit | “Produk apa yang cocok?” | **Produk dengan manfaat kerja yang jelas.** “Jelaskan pekerjaan yang dibantu, siapa penggunanya, dan cara mengakses produknya.” | SaaS/tools/automation/templates dengan fit produktivitas; siapa pemilik/support | — / — | M1 §3.3/28; taxonomy bukan daftar inventory; REQUIRED |
-| B3. Relationship | “Apa peran MKL?” | **Brand tetap milikmu. Peran distribusinya jelas.** “Halaman produk perlu menjelaskan penerbit, cara akses, dan tempat transaksi.” | Listing/discovery; dua mode hanya conditional; no automatic editorial placement | — / — | S5/S11; commerce/analytics tidak diklaim live tanpa evidence; REQUIRED |
-| B4. Process | “Bagaimana mulai?” | **Daftar, siapkan informasi, lalu ajukan review.** “Organisasi ditinjau sebelum pengajuan produk. Produk yang diajukan tetap melalui pemeriksaan sebelum terbit.” | Register organization; approval; brand/product draft; submit; feedback; publish decision | — / — | S11 actual source; tidak menjanjikan review turnaround; REQUIRED |
+| B2. Product fit | “Produk apa yang cocok?” | **Produk dengan manfaat kerja yang jelas.** “Jelaskan pekerjaan yang dibantu, siapa penggunanya, dan cara mengakses produknya.” | SaaS/tools/automation/templates dengan fit produktivitas; siapa pemilik/support | - / - | M1 §3.3/28; taxonomy bukan daftar inventory; REQUIRED |
+| B3. Relationship | “Apa peran MKL?” | **Brand tetap milikmu. Peran distribusinya jelas.** “Halaman produk perlu menjelaskan penerbit, cara akses, dan tempat transaksi.” | Listing/discovery; dua mode hanya conditional; no automatic editorial placement | - / - | S5/S11; commerce/analytics tidak diklaim live tanpa evidence; REQUIRED |
+| B4. Process | “Bagaimana mulai?” | **Daftar, siapkan informasi, lalu ajukan review.** “Organisasi ditinjau sebelum pengajuan produk. Produk yang diajukan tetap melalui pemeriksaan sebelum terbit.” | Register organization; approval; brand/product draft; submit; feedback; publish decision | - / - | S11 actual source; tidak menjanjikan review turnaround; REQUIRED |
 | B5. Terms/next step | “Apa yang perlu saya ketahui sebelum lanjut?” | **Sepakati cara kerja sebelum produk diterbitkan.** “Syarat komersial dibahas sesuai hubungan kerja sama yang disetujui.” | Harga/komisi/fee terkonfigurasi; tanpa angka default; tanpa jaminan traffic/sales | `Mulai pengajuan partner` → `/partner`; `Tanya soal kemitraan` → intake | S5, M1 §28, O rates/readiness; REQUIRED |
 
 Copy yang sebaiknya ditahan: “Kami bantu jualnya” sebagai janji payung saat commerce belum dibuka; “analytics lengkap”; “langsung tayang”; “pasti ditemukan”; “featured”; revenue-share numerik. Existing self-service path boleh dijelaskan sebagai registration/review, tanpa menyatakan semua kemampuan distribusi sudah commissioned.
 
-### 8.7 Tentang `/tentang` — READY TO DRAFT minimum
+### 8.7 Tentang `/tentang` - READY TO DRAFT minimum
 
 **Page message:** MKL adalah brand induk yang membangun produk dan mengembangkan jalur pembelajaran, Market, dan solusi kerja. **Action:** REWRITE CONTENT. Founder/team/history bukan syarat meluncurkan halaman Tentang yang faktual.
 
 | Section | Purpose / question | Headline + supporting copy | Points | Primary / secondary CTA | Evidence / boundary / priority |
 |---|---|---|---|---|---|
-| T1. Identity | “Apa itu MKL?” | **Mengenal MKL.** “MKL — Mari Kita Lembur — membantu orang dan tim menemukan cara kerja yang lebih beres melalui produk, pembelajaran, dan pembahasan kebutuhan bisnis.” | Parent brand; everyday Indonesian | — / — | S1/S5, M1 §1–7, C; bukan klaim hasil terukur; REQUIRED |
+| T1. Identity | “Apa itu MKL?” | **Mengenal MKL.** “MKL - Mari Kita Lembur - membantu orang dan tim menemukan cara kerja yang lebih beres melalui produk, pembelajaran, dan pembahasan kebutuhan bisnis.” | Parent brand; everyday Indonesian | - / - | S1/S5, M1 §1–7, C; bukan klaim hasil terukur; REQUIRED |
 | T2. What belongs where | “Apa peran setiap jalur?” | **Produk kami, karya penerbit, kebutuhan tim.** “Produk MKL kami bangun sendiri. Market menjadi jalur untuk produk dari penerbit. Untuk Bisnis berangkat dari proses kerja tim.” | Kelas status aktual; Market ownership; SaaS optional dalam B2B | `Lihat produk MKL`; `Bahas kebutuhan tim` setelah B2B ada | S1/S5, M1 §4/7; tidak menyatakan semua jalur fully active; REQUIRED |
-| T3. Working principles/contact | “Mengapa saya bisa memahami dan menghubungi MKL?” | **Manfaatnya jelas. Batasnya juga.** “Kami ingin informasi produk menjelaskan kegunaan, keterbatasan, dan langkah berikutnya dengan jelas.” | Aspirasi editorial yang dapat ditegakkan; contact actual; bukti hanya jika ada | `Hubungi MKL` → `/kontak`; — | M1 §8/53, C; jangan klaim semua produk diuji tanpa proses evidence; REQUIRED |
-| T4. People/history | “Siapa tim di baliknya?” | Belum ditulis | Identitas, consent, kronologi, milestones harus supplied | — / — | O; tidak mengarang; OPTIONAL |
+| T3. Working principles/contact | “Mengapa saya bisa memahami dan menghubungi MKL?” | **Manfaatnya jelas. Batasnya juga.** “Kami ingin informasi produk menjelaskan kegunaan, keterbatasan, dan langkah berikutnya dengan jelas.” | Aspirasi editorial yang dapat ditegakkan; contact actual; bukti hanya jika ada | `Hubungi MKL` → `/kontak`; - | M1 §8/53, C; jangan klaim semua produk diuji tanpa proses evidence; REQUIRED |
+| T4. People/history | “Siapa tim di baliknya?” | Belum ditulis | Identitas, consent, kronologi, milestones harus supplied | - / - | O; tidak mengarang; OPTIONAL |
 
 ### 8.8 Supporting/compatibility pages
 
@@ -373,12 +373,12 @@ Setiap row berikut memuat minimum content architecture; tidak perlu meniru landi
 |---|---|---|---|---|---|
 | Kontak: contact/triage | “Ke mana mengirim pertanyaan?” | **Hubungi tim MKL.** “Untuk pertanyaan produk atau pesanan, hubungi kami melalui email. Untuk kebutuhan kerja tim, ceritakan konteksnya melalui formulir.” | Email `marikitalembur@gmail.com`; order reference bila relevan; jam kerja hanya setelah confirm | `Kirim email` → mailto existing email; `Ceritakan kebutuhan` → intake | L, S3, C; tidak menjanjikan SLA; REQUIRED |
 | Kerja Sama: orientation | “Saya publisher, tim, atau pembicara?” | **Pilih jalur kerja sama yang sesuai.** “Ajukan produk untuk Market, bahas kebutuhan kerja tim, atau hubungi kami untuk usulan topik kelas.” | Tiga intent, tidak Etalase/Growth; expert inquiry bukan booking | `Untuk builder` → Partner; `Untuk bisnis` → B2B; speaker inquiry → kontak | S1/S5, M1 §57, C; compatibility, bukan layanan baru; REQUIRED |
-| Starter Kit: moved notice | “Di mana starter kit sekarang?” | **Cari starter kit di Market.** “Starter kit termasuk produk digital di MKL Market. Ketersediaan mengikuti katalog yang sudah terbit.” | Jangan janji stok; hapus penjelasan teknis link lama | `Buka Market` → resolved entry; — | S16/L, C; no fake category; REQUIRED |
-| Website & SaaS: moved notice | “Di mana produk penerbit?” | **Temukan produk dari penerbit di Market.** “Informasi tiap produk menjelaskan cara akses dan tempat transaksinya.” | Provider identity; no first-party conflation | `Buka Market` → resolved entry; — | S16/S5, C; tidak mengklaim inventory ada; REQUIRED |
+| Starter Kit: moved notice | “Di mana starter kit sekarang?” | **Cari starter kit di Market.** “Starter kit termasuk produk digital di MKL Market. Ketersediaan mengikuti katalog yang sudah terbit.” | Jangan janji stok; hapus penjelasan teknis link lama | `Buka Market` → resolved entry; - | S16/L, C; no fake category; REQUIRED |
+| Website & SaaS: moved notice | “Di mana produk penerbit?” | **Temukan produk dari penerbit di Market.** “Informasi tiap produk menjelaskan cara akses dan tempat transaksinya.” | Provider identity; no first-party conflation | `Buka Market` → resolved entry; - | S16/S5, C; tidak mengklaim inventory ada; REQUIRED |
 | Syarat: scope/rights/contact | “Apa ketentuannya?” | H1 tetap **Syarat & Ketentuan**; badan final memerlukan policy owner | Current operator; scope; payment status; account/access; external provider; contact/version | `Hubungi MKL` → kontak; privacy/refund cross-links | S5/L/O; bukan legal rewrite otomatis; REQUIRED |
-| Privasi: data/use/contact | “Apa yang terjadi pada data saya?” | H1 tetap **Kebijakan Privasi**; jelaskan intake dan akun berdasarkan proses aktual | Purpose, recipients, retention/deletion process, contact; no unsupported privacy guarantees | `Ajukan pertanyaan privasi` → kontak; — | S10/L/O; storage saja tidak membuktikan seluruh data processing; REQUIRED |
-| Refund: policy/help | “Bagaimana jika ada masalah?” | H1 tetap **Kebijakan Refund**; opening sementara tidak boleh menjanjikan trial mayoritas | Approved eligibility, exclusions, correction/failed fulfilment, provider handling, how to contact | `Hubungi dukungan` → kontak; — | S5/L/O; jangan ganti dengan absolute no-refund; REQUIRED |
-| Market handoff on Main | “Apakah ini produk MKL?” | **Jelajahi produk dari para penerbit.** “Produk di Market tetap memakai brand pembuatnya. Pilihan produk sedang disiapkan.” | Saat inventory berubah, update status berdasarkan data; mode transaksi pada detail | `Buka Market` → resolved entry; — | S5/S7/L, M1 §27, C; no subdomain readiness assumption; REQUIRED |
+| Privasi: data/use/contact | “Apa yang terjadi pada data saya?” | H1 tetap **Kebijakan Privasi**; jelaskan intake dan akun berdasarkan proses aktual | Purpose, recipients, retention/deletion process, contact; no unsupported privacy guarantees | `Ajukan pertanyaan privasi` → kontak; - | S10/L/O; storage saja tidak membuktikan seluruh data processing; REQUIRED |
+| Refund: policy/help | “Bagaimana jika ada masalah?” | H1 tetap **Kebijakan Refund**; opening sementara tidak boleh menjanjikan trial mayoritas | Approved eligibility, exclusions, correction/failed fulfilment, provider handling, how to contact | `Hubungi dukungan` → kontak; - | S5/L/O; jangan ganti dengan absolute no-refund; REQUIRED |
+| Market handoff on Main | “Apakah ini produk MKL?” | **Jelajahi produk dari para penerbit.** “Produk di Market tetap memakai brand pembuatnya. Pilihan produk sedang disiapkan.” | Saat inventory berubah, update status berdasarkan data; mode transaksi pada detail | `Buka Market` → resolved entry; - | S5/S7/L, M1 §27, C; no subdomain readiness assumption; REQUIRED |
 
 Insight, TulisAI, dan Hitungin tidak mendapat launch marketing sections. Untuk Bisnis memiliki architecture lengkap di §15.
 
@@ -397,7 +397,7 @@ Copy berikut adalah alternatif yang bermakna, bukan variasi kosmetik. Recommende
 | B2B H1 | Bantu tim bekerja lebih beres. | Proses tim masih banyak kerja ulang? | Solusi kerja yang berangkat dari kebutuhan tim. | **C**: custom boundary paling jelas; A perlu lead konkret |
 | B2B primary CTA | Bahas kebutuhan tim | Ceritakan proses yang ingin diperbaiki | Kirim kebutuhan bisnis | **A**; label pada tombol submit tetap “Kirim kebutuhan” |
 | Partner H1 | Bantu produkmu lebih mudah dipahami. | Punya produk yang membantu pekerjaan orang lain? | Ajukan produkmu ke MKL Market. | **B**: qualification-led; C tepat untuk CTA, bukan janji publish |
-| Tentang opening | Kami ingin membantu pekerjaan jadi lebih beres. | Teknologi berguna ketika menjawab kebutuhan kerja. | MKL — Mari Kita Lembur — membangun produk dan mengembangkan jalur pembelajaran serta bantuan untuk kebutuhan bisnis. | **C** dengan lead lebih ringkas di §8.7; A/B terlalu generik sendiri |
+| Tentang opening | Kami ingin membantu pekerjaan jadi lebih beres. | Teknologi berguna ketika menjawab kebutuhan kerja. | MKL - Mari Kita Lembur - membangun produk dan mengembangkan jalur pembelajaran serta bantuan untuk kebutuhan bisnis. | **C** dengan lead lebih ringkas di §8.7; A/B terlalu generik sendiri |
 | Intake H1 | Mulai dari pekerjaan yang ingin kamu bereskan. | Bagian pekerjaan mana yang paling menyulitkan? | Ceritakan kebutuhanmu. | **A**; B sebagai hint; C cukup jelas tetapi kurang konteks |
 
 Section headline alternatives yang berdampak:
@@ -456,7 +456,7 @@ Destination `Market-resolved` berarti `/jelajahi` pada observasi sekarang dan or
 | Class pattern | Listing | Lihat detail | `/produk/:slug` | Evaluate class | No instance | Lihat isi dan jadwal kelas when real | Needs class facts on detail |
 | B2B | Hero/final | Bahas kebutuhan tim | Intake | Explain business need | Page absent | ADD | Same existing storage |
 | B2B | Hero secondary | Lihat bentuk bantuan | On-page services anchor | Compare fit | Proposed | ADD if content exists | No new service pages needed |
-| B2B | Service rows | No CTA per row | — | Compare | Proposed | KEEP informational | Avoid repeated conversion pressure |
+| B2B | Service rows | No CTA per row | - | Compare | Proposed | KEEP informational | Avoid repeated conversion pressure |
 | Intake | Form | Kirim Kebutuhan | Same route POST | Submit | Source implemented | KEEP | Not submitted in audit |
 | Intake | Confirmation | Return link proposed | Home or actual origin page | Closure | Text success only | ADD concise next step | No fake booked call |
 | Partner | Final | Buka Workspace Partner | `/partner` | Register/manage | Anonymous auth redirect | Mulai pengajuan partner | Label should explain first step |
@@ -466,7 +466,7 @@ Destination `Market-resolved` berarti `/jelajahi` pada observasi sekarang dan or
 | Kontak | Body | Email/Intake text | Email / intake | Contact | Plain text in CMS observed | Add working links | Missing actionable handoff |
 | Legal | Body | Kontak mentioned | `/kontak` | Policy help | Plain text, no body links observed | Explicit link | Support dead end |
 | Compatibility | Notice | Buka MKL Market | Market-resolved | Old-link recovery | Valid | KEEP | No need to duplicate content |
-| Insight/TulisAI | Any launch CTA | None | — | Future | Not available | Remain absent | Premature exposure |
+| Insight/TulisAI | Any launch CTA | None | - | Future | Not available | Remain absent | Premature exposure |
 
 ## 11. Global content consistency findings
 
@@ -516,45 +516,45 @@ Destination `Market-resolved` berarti `/jelajahi` pada observasi sekarang dan or
 
 | Page | Current title | Current meta description | Canonical / index | Source sitemap & links |
 |---|---|---|---|---|
-| `/` | MKL — Produk digital. Cara kerja baru. | Aplikasi dari MKL, kelas praktis, dan pilihan produk digital dari para penerbit — di atas satu akun. | self / N | Included; header, pathways, product, footer |
-| `/produk-kami` | Produk Kami — MKL | Aplikasi SaaS yang dibangun dan dioperasikan sendiri oleh MKL. | self / N | **Omitted**; nav/footer/home |
-| `/produk/mari-rekap` | Mari Rekap — MKL | **Kosong** | **self ×2** / N | Published catalog eligible; incoming home/Produk; wrong Market breadcrumb |
-| `/kelas` | Kelas Praktis — MKL | Kelas praktis untuk pekerjaan nyata: live atau rekaman, tiket lewat akun MKL. | self / N | Included; nav/home/footer |
-| `/untuk-partner` | Untuk Partner — MKL | Terbitkan produk digitalmu lewat MKL Market: daftarkan organisasi, ajukan produk, lalu terbit setelah review. | self / N | Included; footer/home/Market |
-| `/ajukan-kebutuhan` | Ajukan Kebutuhan — MKL | Ceritakan kebutuhanmu secara privat. Tim MKL akan bantu carikan solusinya. | self / N | Omitted; linked from several intents |
-| `/tentang` | Tentang MKL — MKL | **Kosong** | self / N | Omitted CMS; primary nav/footer |
-| `/kerja-sama` | Kerja Sama — MKL | **Kosong** | self / N | Omitted CMS; footer |
-| `/kontak` | Kontak — MKL | **Kosong** | self / N | Omitted CMS; footer/body mentions |
-| `/syarat-ketentuan` | Syarat & Ketentuan — MKL | **Kosong** | self / N | Omitted CMS; footer |
-| `/kebijakan-privasi` | Kebijakan Privasi — MKL | **Kosong** | self / N | Omitted CMS; footer |
-| `/kebijakan-refund` | Kebijakan Refund — MKL | **Kosong** | self / N | Omitted CMS; footer |
-| `/starter-kit` | Starter Kit — MKL | Starter kit sekarang berada di MKL Market. | self / N | Included despite compatibility status |
-| `/website-saas` | Website & SaaS Pilihan — MKL | Listing website dan SaaS pihak ketiga sekarang berada di MKL Market. | self / N | Included despite compatibility status |
-| `/jelajahi` | Jelajahi Produk — MKL | Temukan tools, aplikasi, kelas, dan starter kit di MKL. | self on current origin / N | Market path included on single-origin; handoff issue: class scope ambiguous |
-| `/cari` | Redirect, no independent title | — | 302 to `/jelajahi` (+q) | Not an independent sitemap landing |
-| Eight `/kategori/:slug` | Redirect, no independent title | — | 302 to filtered `/jelajahi` | Destination shares generic title and base canonical |
-| `/apps/hitungin` | Hitungin — Kalkulator Harga Jual — MKL | Hitung harga jual minimum, margin, dan biaya marketplace dalam hitungan detik. | self / N now | Omitted sitemap; no `/apps` prefix exclusion |
-| `/untuk-bisnis` | No page title in observed 404 | — | self on 404 / N | Absent |
-| `/insight` | No page title in observed 404 | — | self on 404 / N | Absent |
-| `/produk/tulisai` | No page title in observed 404 | — | self on 404 / N | Absent instance |
-| `/apps/marirekap` | No page title in observed 404 | — | No canonical observed / N | Unrouted |
+| `/` | MKL - Produk digital. Cara kerja baru. | Aplikasi dari MKL, kelas praktis, dan pilihan produk digital dari para penerbit - di atas satu akun. | self / N | Included; header, pathways, product, footer |
+| `/produk-kami` | Produk Kami - MKL | Aplikasi SaaS yang dibangun dan dioperasikan sendiri oleh MKL. | self / N | **Omitted**; nav/footer/home |
+| `/produk/mari-rekap` | Mari Rekap - MKL | **Kosong** | **self ×2** / N | Published catalog eligible; incoming home/Produk; wrong Market breadcrumb |
+| `/kelas` | Kelas Praktis - MKL | Kelas praktis untuk pekerjaan nyata: live atau rekaman, tiket lewat akun MKL. | self / N | Included; nav/home/footer |
+| `/untuk-partner` | Untuk Partner - MKL | Terbitkan produk digitalmu lewat MKL Market: daftarkan organisasi, ajukan produk, lalu terbit setelah review. | self / N | Included; footer/home/Market |
+| `/ajukan-kebutuhan` | Ajukan Kebutuhan - MKL | Ceritakan kebutuhanmu secara privat. Tim MKL akan bantu carikan solusinya. | self / N | Omitted; linked from several intents |
+| `/tentang` | Tentang MKL - MKL | **Kosong** | self / N | Omitted CMS; primary nav/footer |
+| `/kerja-sama` | Kerja Sama - MKL | **Kosong** | self / N | Omitted CMS; footer |
+| `/kontak` | Kontak - MKL | **Kosong** | self / N | Omitted CMS; footer/body mentions |
+| `/syarat-ketentuan` | Syarat & Ketentuan - MKL | **Kosong** | self / N | Omitted CMS; footer |
+| `/kebijakan-privasi` | Kebijakan Privasi - MKL | **Kosong** | self / N | Omitted CMS; footer |
+| `/kebijakan-refund` | Kebijakan Refund - MKL | **Kosong** | self / N | Omitted CMS; footer |
+| `/starter-kit` | Starter Kit - MKL | Starter kit sekarang berada di MKL Market. | self / N | Included despite compatibility status |
+| `/website-saas` | Website & SaaS Pilihan - MKL | Listing website dan SaaS pihak ketiga sekarang berada di MKL Market. | self / N | Included despite compatibility status |
+| `/jelajahi` | Jelajahi Produk - MKL | Temukan tools, aplikasi, kelas, dan starter kit di MKL. | self on current origin / N | Market path included on single-origin; handoff issue: class scope ambiguous |
+| `/cari` | Redirect, no independent title | - | 302 to `/jelajahi` (+q) | Not an independent sitemap landing |
+| Eight `/kategori/:slug` | Redirect, no independent title | - | 302 to filtered `/jelajahi` | Destination shares generic title and base canonical |
+| `/apps/hitungin` | Hitungin - Kalkulator Harga Jual - MKL | Hitung harga jual minimum, margin, dan biaya marketplace dalam hitungan detik. | self / N now | Omitted sitemap; no `/apps` prefix exclusion |
+| `/untuk-bisnis` | No page title in observed 404 | - | self on 404 / N | Absent |
+| `/insight` | No page title in observed 404 | - | self on 404 / N | Absent |
+| `/produk/tulisai` | No page title in observed 404 | - | self on 404 / N | Absent instance |
+| `/apps/marirekap` | No page title in observed 404 | - | No canonical observed / N | Unrouted |
 
 ### 12.3 Target metadata and discovery requirements
 
-Titles below are **final browser title suggestions**, not necessarily literal `seo_title` field values: CMS/product renderer appends `— MKL`, so avoid adding a second suffix in stored fields. OG title/description can follow the approved title/description, with absolute canonical URL; do not fill OG with future claims.
+Titles below are **final browser title suggestions**, not necessarily literal `seo_title` field values: CMS/product renderer appends `- MKL`, so avoid adding a second suffix in stored fields. OG title/description can follow the approved title/description, with absolute canonical URL; do not fill OG with future claims.
 
 | Page | Suggested title / description | Search intent / links | Canonical, structured data, sitemap/index target |
 |---|---|---|---|
-| Home | **MKL — Produk dan Bantuan untuk Kerja Lebih Beres** / “Kenali produk MKL, lihat informasi kelas praktis, dan bahas kebutuhan kerja tim. Mulai dari pekerjaan yang ingin kamu bereskan.” | Brand, practical work; link Products/Kelas/B2B/About/Market | One self canonical; Organization with verified identity; include when launch indexing approved |
-| Produk | **Produk MKL untuk Pekerjaan Nyata — MKL** / “Kenali aplikasi yang dibangun MKL, kegunaannya, dan status aksesnya. Temukan produk yang sesuai dengan pekerjaanmu.” | First-party software; detail link | self; optional ItemList only actual visible products; include |
-| Mari Rekap | **Mari Rekap — Rekap Struk dan Invoice ke Excel — MKL** / “Kenali cara Mari Rekap membantu menyusun bahan rekap menjadi tabel yang bisa diperiksa, diedit, dan diekspor. Lihat kemampuan dan status aksesnya.” | Rekap struk/invoice ke Excel; products/contact/policies | one placement canonical; SoftwareApplication only approved fields; no rating/Offer availability invented; include published instance |
-| Kelas | **Kelas dan Workshop Praktis — MKL** / “Informasi kelas dan workshop untuk kebutuhan kerja. Belum ada jadwal yang dibuka? Usulkan topik yang ingin kamu pelajari.” | Practical learning, not fake class keywords | self; no Course/Event while empty; include informational page when launch approved |
+| Home | **MKL - Produk dan Bantuan untuk Kerja Lebih Beres** / “Kenali produk MKL, lihat informasi kelas praktis, dan bahas kebutuhan kerja tim. Mulai dari pekerjaan yang ingin kamu bereskan.” | Brand, practical work; link Products/Kelas/B2B/About/Market | One self canonical; Organization with verified identity; include when launch indexing approved |
+| Produk | **Produk MKL untuk Pekerjaan Nyata - MKL** / “Kenali aplikasi yang dibangun MKL, kegunaannya, dan status aksesnya. Temukan produk yang sesuai dengan pekerjaanmu.” | First-party software; detail link | self; optional ItemList only actual visible products; include |
+| Mari Rekap | **Mari Rekap - Rekap Struk dan Invoice ke Excel - MKL** / “Kenali cara Mari Rekap membantu menyusun bahan rekap menjadi tabel yang bisa diperiksa, diedit, dan diekspor. Lihat kemampuan dan status aksesnya.” | Rekap struk/invoice ke Excel; products/contact/policies | one placement canonical; SoftwareApplication only approved fields; no rating/Offer availability invented; include published instance |
+| Kelas | **Kelas dan Workshop Praktis - MKL** / “Informasi kelas dan workshop untuk kebutuhan kerja. Belum ada jadwal yang dibuka? Usulkan topik yang ingin kamu pelajari.” | Practical learning, not fake class keywords | self; no Course/Event while empty; include informational page when launch approved |
 | Class detail future | Actual title/outcome/schedule only | Topic/prerequisite intent | Main placement; Course/Event only matching visible verified fields; real instance only |
-| B2B | **Solusi Kerja dan AI untuk Bisnis — MKL** / “Bahas proses kerja yang ingin diperbaiki, kebutuhan pelatihan, atau penerapan AI di tim. Mulai dari kebutuhan bisnis, lalu sepakati langkah yang sesuai.” | AI untuk bisnis; custom workflow/training; intake and supporting contact | self when 200; truthful Organization/Service optional; include only once real page/services ready |
-| Partner | **Ajukan Produk ke MKL Market — MKL** / “Pelajari kecocokan produk, kepemilikan brand, dan proses pengajuan partner untuk MKL Market.” | Builder publishing/distribution | self; no guarantee/sales markup; include marketing page, exclude workspace |
-| Intake | **Ceritakan Kebutuhan Kerja Tim — MKL** / “Kirim proses yang ingin diperbaiki dan hasil yang diharapkan agar tim MKL dapat meninjau kebutuhanmu.” | Conversion support; link privacy/contact | Prefer explicit noindex for operational form; omit sitemap; this is recommendation, not current permanent policy |
-| Tentang | **Tentang MKL — Mari Kita Lembur** / “Kenali MKL, peran produk yang kami bangun, hubungan dengan penerbit di Market, dan cara menghubungi tim.” | Entity/brand trust | self; Organization reuse same identity, not multiple companies; include |
-| Kontak | **Kontak MKL — Produk dan Kebutuhan Bisnis** / “Hubungi tim MKL untuk pertanyaan produk, pesanan, dan kebutuhan kerja tim melalui kanal yang tersedia.” | Navigational contact | self; verified contact facts only; include if approved public support index |
+| B2B | **Solusi Kerja dan AI untuk Bisnis - MKL** / “Bahas proses kerja yang ingin diperbaiki, kebutuhan pelatihan, atau penerapan AI di tim. Mulai dari kebutuhan bisnis, lalu sepakati langkah yang sesuai.” | AI untuk bisnis; custom workflow/training; intake and supporting contact | self when 200; truthful Organization/Service optional; include only once real page/services ready |
+| Partner | **Ajukan Produk ke MKL Market - MKL** / “Pelajari kecocokan produk, kepemilikan brand, dan proses pengajuan partner untuk MKL Market.” | Builder publishing/distribution | self; no guarantee/sales markup; include marketing page, exclude workspace |
+| Intake | **Ceritakan Kebutuhan Kerja Tim - MKL** / “Kirim proses yang ingin diperbaiki dan hasil yang diharapkan agar tim MKL dapat meninjau kebutuhanmu.” | Conversion support; link privacy/contact | Prefer explicit noindex for operational form; omit sitemap; this is recommendation, not current permanent policy |
+| Tentang | **Tentang MKL - Mari Kita Lembur** / “Kenali MKL, peran produk yang kami bangun, hubungan dengan penerbit di Market, dan cara menghubungi tim.” | Entity/brand trust | self; Organization reuse same identity, not multiple companies; include |
+| Kontak | **Kontak MKL - Produk dan Kebutuhan Bisnis** / “Hubungi tim MKL untuk pertanyaan produk, pesanan, dan kebutuhan kerja tim melalui kanal yang tersedia.” | Navigational contact | self; verified contact facts only; include if approved public support index |
 | Three legal pages | Keep descriptive title; add factual one-sentence scope | Policy lookup, not acquisition | self; approved policy content/version; no promotional schema; public index policy deliberate |
 | Kerja Sama + legacy notices | Clear compatibility titles, concise directions | Old-link recovery | Prefer noindex/omit sitemap while thin notices remain; no route deletion mandated |
 | Market transition | Label/copy truthful about publisher and empty inventory | Separate Market-owned search intent | Do not put Market inventory in Main sitemap after split; actual origin resolver governs |
@@ -612,20 +612,20 @@ Current “produk dikurasi dan diuji sebelum tampil” needs evidence of the tes
 
 **Primary audience:** business owners, heads/managers, operations/marketing/creative teams with a specific workflow need. **Question:** “Dapatkah MKL membantu tim saya, bentuk bantuannya apa, dan bagaimana memulai?” **Desired outcome:** informed inquiry into existing Ajukan Kebutuhan.
 
-**Locked:** custom work; SaaS optional if relevant; no separate billing/product funnel; no second lead database. **Recommended message:** kebutuhan tim menentukan bentuk bantuan—understanding process, learning, scoped implementation, or ongoing advice. **H1:** “Solusi kerja yang berangkat dari kebutuhan tim.” **Lead:** “Mulai dari proses yang ingin diperbaiki. Kita bahas kebutuhan, hambatan, dan bentuk bantuan yang paling sesuai—pelatihan, perbaikan alur kerja, atau penerapan solusi.” Draft “kita” assumes an actual staffed inquiry process; operational owner must confirm.
+**Locked:** custom work; SaaS optional if relevant; no separate billing/product funnel; no second lead database. **Recommended message:** kebutuhan tim menentukan bentuk bantuan-understanding process, learning, scoped implementation, or ongoing advice. **H1:** “Solusi kerja yang berangkat dari kebutuhan tim.” **Lead:** “Mulai dari proses yang ingin diperbaiki. Kita bahas kebutuhan, hambatan, dan bentuk bantuan yang paling sesuai-pelatihan, perbaikan alur kerja, atau penerapan solusi.” Draft “kita” assumes an actual staffed inquiry process; operational owner must confirm.
 
 ### 15.1 Nine focused sections
 
 | Section | Purpose / main question | Suggested headline | Suggested supporting copy | Key points | Primary / secondary CTA | Evidence | Truth boundary | Priority |
 |---|---|---|---|---|---|---|---|---|
 | U1 Hero | Orient decision-maker; “Apa bantuan MKL?” | **Solusi kerja yang berangkat dari kebutuhan tim.** | “Mulai dari proses yang ingin diperbaiki. Kita bahas kebutuhan, hambatan, dan bentuk bantuan yang sesuai.” | Custom context; practical work | `Bahas kebutuhan tim` → intake; `Lihat bentuk bantuan` → U4 | M1 §4/30, M3, C | No guaranteed transformation/result | REQUIRED |
-| U2 Problems | Recognition; “Masalah saya termasuk?” | **Saat pekerjaan berulang mulai menghambat tim.** | “Data disalin dari banyak tempat, hasil kerja diperiksa berulang, atau tools baru belum menyatu dengan proses yang ada.” | Manual transfer; repeated review; unclear tool use | — / — | M1 §4–6, C | Examples, not client case studies | REQUIRED |
-| U3 Audience/fit | Qualification; “Cocok untuk tim saya?” | **Untuk tim yang ingin memperbaiki cara kerjanya.** | “Cocok untuk pemilik bisnis dan pemimpin tim yang punya proses nyata untuk dipelajari bersama.” | Marketing/creative, operations/admin, management; process owner participation | — / — | M1 §6, C | No minimum headcount or industry expertise invented | REQUIRED |
-| U4 Forms of help | Compare; “Mulai dari audit, training, atau implementasi?” | **Pilih bantuan sesuai tahap timmu.** | “Belum tahu harus mulai dari mana? Jelaskan kebutuhannya dulu. Bentuk bantuan ditentukan dari tujuan dan kondisi tim.” | Five service families below; only publish ready ones | — / — | M1 §5/30 | Portfolio direction ≠ all commercially available | REQUIRED |
-| U5 Process | Reduce uncertainty; “Bagaimana cara kerjanya?” | **Pahami prosesnya, sepakati langkahnya.** | “Mulai dari kebutuhan bisnis, pelajari alur kerja, lalu sepakati ruang lingkup sebelum pelatihan atau penerapan.” | Discovery → workflow review → scoped design → training/implementation → adoption review where agreed | — / — | M1 §4/5 | Proposed method; no automatic proposal, fixed duration, or SLA | REQUIRED |
-| U6 Deliverables | Tangibility; “Apa yang saya terima?” | **Hasil kerja yang bisa dipakai tim.** | “Keluaran mengikuti ruang lingkup: bisa berupa peta proses, materi praktik, dokumentasi, atau solusi yang diuji pada pekerjaan nyata.” | Tie output to agreed service; distinguish deliverables from performance results | — / — | M1 §4.3/5 | “Bisa berupa”, not every output included in every engagement | REQUIRED |
-| U7 Readiness/limits | Self-qualification; “Apa yang harus siap?” | **Ada proses yang jelas, ada orang yang bisa diajak bekerja.** | “Pembahasan lebih berguna ketika tim dapat menjelaskan proses saat ini, kendala, dan hasil yang diharapkan.” | Process owner; appropriate sample/context; constraints; scoped decision authority | — / — | M1 §4/31, C | Do not request sensitive production data in initial public form; no assessment guarantee | REQUIRED |
-| U8 Working principles | Trust; “Bagaimana MKL membuat keputusan?” | **Mulai dari kebutuhan, tetap periksa hasilnya.** | “AI dipertimbangkan ketika sesuai dengan pekerjaan. Batas, pemeriksaan manusia, dan tanggung jawab operasional perlu disepakati.” | Best-fit tools incl third-party/MKL only when relevant; review; documented scope | — / — | M1 §4/53, M2 | No compliance certification, security guarantee, or quantified results invented | REQUIRED |
+| U2 Problems | Recognition; “Masalah saya termasuk?” | **Saat pekerjaan berulang mulai menghambat tim.** | “Data disalin dari banyak tempat, hasil kerja diperiksa berulang, atau tools baru belum menyatu dengan proses yang ada.” | Manual transfer; repeated review; unclear tool use | - / - | M1 §4–6, C | Examples, not client case studies | REQUIRED |
+| U3 Audience/fit | Qualification; “Cocok untuk tim saya?” | **Untuk tim yang ingin memperbaiki cara kerjanya.** | “Cocok untuk pemilik bisnis dan pemimpin tim yang punya proses nyata untuk dipelajari bersama.” | Marketing/creative, operations/admin, management; process owner participation | - / - | M1 §6, C | No minimum headcount or industry expertise invented | REQUIRED |
+| U4 Forms of help | Compare; “Mulai dari audit, training, atau implementasi?” | **Pilih bantuan sesuai tahap timmu.** | “Belum tahu harus mulai dari mana? Jelaskan kebutuhannya dulu. Bentuk bantuan ditentukan dari tujuan dan kondisi tim.” | Five service families below; only publish ready ones | - / - | M1 §5/30 | Portfolio direction ≠ all commercially available | REQUIRED |
+| U5 Process | Reduce uncertainty; “Bagaimana cara kerjanya?” | **Pahami prosesnya, sepakati langkahnya.** | “Mulai dari kebutuhan bisnis, pelajari alur kerja, lalu sepakati ruang lingkup sebelum pelatihan atau penerapan.” | Discovery → workflow review → scoped design → training/implementation → adoption review where agreed | - / - | M1 §4/5 | Proposed method; no automatic proposal, fixed duration, or SLA | REQUIRED |
+| U6 Deliverables | Tangibility; “Apa yang saya terima?” | **Hasil kerja yang bisa dipakai tim.** | “Keluaran mengikuti ruang lingkup: bisa berupa peta proses, materi praktik, dokumentasi, atau solusi yang diuji pada pekerjaan nyata.” | Tie output to agreed service; distinguish deliverables from performance results | - / - | M1 §4.3/5 | “Bisa berupa”, not every output included in every engagement | REQUIRED |
+| U7 Readiness/limits | Self-qualification; “Apa yang harus siap?” | **Ada proses yang jelas, ada orang yang bisa diajak bekerja.** | “Pembahasan lebih berguna ketika tim dapat menjelaskan proses saat ini, kendala, dan hasil yang diharapkan.” | Process owner; appropriate sample/context; constraints; scoped decision authority | - / - | M1 §4/31, C | Do not request sensitive production data in initial public form; no assessment guarantee | REQUIRED |
+| U8 Working principles | Trust; “Bagaimana MKL membuat keputusan?” | **Mulai dari kebutuhan, tetap periksa hasilnya.** | “AI dipertimbangkan ketika sesuai dengan pekerjaan. Batas, pemeriksaan manusia, dan tanggung jawab operasional perlu disepakati.” | Best-fit tools incl third-party/MKL only when relevant; review; documented scope | - / - | M1 §4/53, M2 | No compliance certification, security guarantee, or quantified results invented | REQUIRED |
 | U9 Intake handoff | Conversion; “Apa langkah pertama?” | **Ceritakan proses yang ingin kamu perbaiki.** | “Kirim gambaran kebutuhan dan hasil yang diharapkan. Tim MKL akan meninjau informasi itu untuk pembahasan berikutnya.” | Existing form; describe what happens; no booked meeting claim | `Bahas kebutuhan tim` → `/ajukan-kebutuhan`; `Punya pertanyaan dulu?` → `/kontak` | S10, M1 §31, C/O | Operational follow-up owner needed; no promised turnaround | REQUIRED |
 
 Nine sections are nine distinct decisions, not nine essays. U3 and U7 can be adjacent concise blocks if they repeat. U6 can be incorporated into service rows if a separate deliverables section adds no information. Keep core coherent; do not mechanically preserve section count.
@@ -709,15 +709,15 @@ No need to ask the owner to choose every CTA. Recommended truthful copy directio
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Home | `/` | Workers/teams | Choose path | Hero; need paths; real product; team needs; role clarity optional | Kerja lebih beres, mulai dari kebutuhanmu. | Concrete products/learning/team needs | Lihat produk MKL | Bahas kebutuhan tim after page ready | No fake scale | Published inventory/status | New title/description/OG, self canonical | P0 truth; P1 rewrite | No routine decision |
 | Produk | `/produk-kami` | Software users | Select first-party | Intro; actual product; special needs optional | Produk MKL untuk pekerjaan nyata. | Manual-work benefit | Kenali Mari Rekap | B2B optional | Produk dari MKL | Portfolio summary | Include sitemap; truthful metadata | P0 | Capability approval |
-| Product detail | `/produk/mari-rekap` | Recap users | Understand/use | Value; fit; workflow; current capabilities; limits; offer/access; FAQ optional | Mari Rekap — bantu susun rekap, tetap kamu yang periksa. | Reviewable table output | State-specific approved access / explanatory anchor | Contact | Human review and limits | Body, offer, application contract | One canonical, description, OG, truthful SoftwareApplication | P0 | Public capability list |
-| Kelas | `/kelas` | Learners | See real availability | Premise; empty or inventory; class facts | Belajar untuk pekerjaan yang kamu hadapi. | Practical topics | Usulkan topik kelas while empty | — | No invented instructor/schedule | Real class/session | Self; no Course/Event while empty | P0 truth; P1 copy | Real class commissioning later |
+| Product detail | `/produk/mari-rekap` | Recap users | Understand/use | Value; fit; workflow; current capabilities; limits; offer/access; FAQ optional | Mari Rekap - bantu susun rekap, tetap kamu yang periksa. | Reviewable table output | State-specific approved access / explanatory anchor | Contact | Human review and limits | Body, offer, application contract | One canonical, description, OG, truthful SoftwareApplication | P0 | Public capability list |
+| Kelas | `/kelas` | Learners | See real availability | Premise; empty or inventory; class facts | Belajar untuk pekerjaan yang kamu hadapi. | Practical topics | Usulkan topik kelas while empty | - | No invented instructor/schedule | Real class/session | Self; no Course/Event while empty | P0 truth; P1 copy | Real class commissioning later |
 | B2B | `/untuk-bisnis` | Owners/managers | Evaluate custom help | Nine focused sections in §15; merge repetition | Solusi kerja yang berangkat dari kebutuhan tim. | Workflow first, scoped help | Bahas kebutuhan tim | Lihat bentuk bantuan | Method, boundaries; no fake cases | Service readiness and follow-up | New real route, intent metadata, sitemap after ready | P0 | Services ready now |
 | Intake | `/ajukan-kebutuhan` | Qualified inquiries | Explain need | Context; short form; confirmation | Ceritakan pekerjaan yang ingin kamu bereskan. | Process + obstacle + outcome | Kirim kebutuhan | Privacy/contact | Accurate data/follow-up commitments | Existing product_requests | Prefer operational noindex | P1; preserve P0 handoff | Follow-up owner |
 | Partner | `/untuk-partner` | Builders | Qualify/register | Proposition; fit; relationship; approval path; terms | Punya produk yang membantu pekerjaan orang lain? | Publisher brand preserved | Mulai pengajuan partner | Tanya soal kemitraan | No sales promise | Approval/commissioning state | Marketing indexed only at release; workspace noindex | P0 truth; P1 copy | Ready distribution terms |
 | Tentang | `/tentang` | Visitors | Understand MKL | Identity; roles; principles/contact; people optional | Mengenal MKL. | Facts, not founder mythology | Lihat produk MKL | Hubungi MKL | Verified ownership/claims | Published CMS | Fill metadata; same Organization identity | P0 | Optional story/claims |
-| Market handoff | Resolved entry | Discoverers | Reach separate surface | Label + role + current availability | Jelajahi produk dari para penerbit. | Publisher ownership | Buka Market | — | No inventory guarantee | Resolver, actual supply | Surface-specific canonical/map | P0 | Activation separate, not content task |
+| Market handoff | Resolved entry | Discoverers | Reach separate surface | Label + role + current availability | Jelajahi produk dari para penerbit. | Publisher ownership | Buka Market | - | No inventory guarantee | Resolver, actual supply | Surface-specific canonical/map | P0 | Activation separate, not content task |
 | Kontak | `/kontak` | Support/inquiry | Reach correct channel | Contact; issue triage | Hubungi tim MKL. | Product/order vs team need | Kirim email | Ceritakan kebutuhan | Hours/SLA only approved | Actual channel | Fill description/links | P1 | Hours/ownership |
-| Compatibility | Three legacy pages + redirects | Old traffic | Recover destination | Brief orientation/notice | Specific destination | No architecture lecture | Correct real destination | — | No obsolete businesses | Resolver/CMS | Omit thin pages from launch sitemap | P0 stale cleanup | None for obvious redirects/links |
+| Compatibility | Three legacy pages + redirects | Old traffic | Recover destination | Brief orientation/notice | Specific destination | No architecture lecture | Correct real destination | - | No obsolete businesses | Resolver/CMS | Omit thin pages from launch sitemap | P0 stale cleanup | None for obvious redirects/links |
 | Legal | Three policy URLs | Users/buyers | Understand policies | Scope; terms; limits; contact/version | Descriptive existing titles | Factual commitments | Policy help/contact | Cross-policy links | Approved policy | Policy owner facts | Unique descriptions/self; deliberate index policy | P0 | Approved wording |
 | Insight/TulisAI | Future only | Future audiences | Not launch content | None published now | None required now | Future research | None | None | Capability before claim | Missing/deferred | No premature URLs/schema | FUTURE | Later release decisions |
 
@@ -776,86 +776,86 @@ Source: `apps/web/app/routes.ts` at the inspected SHA. This is a source inventor
 
 | Registered pattern | Route module | Content IA classification |
 |---|---|---|
-| `/api/health` | `routes/api.health.ts` | RESOURCE / ACTION — not a content page |
-| `/api/hitungin/calculate` | `routes/api.hitungin.calculate.ts` | RESOURCE / ACTION — not a content page |
-| `/api/orders/:orderId/status` | `routes/api.orders.$orderId.status.ts` | RESOURCE / ACTION — not a content page |
-| `/media/*` | `routes/media.$.ts` | RESOURCE / ACTION — not a content page |
+| `/api/health` | `routes/api.health.ts` | RESOURCE / ACTION - not a content page |
+| `/api/hitungin/calculate` | `routes/api.hitungin.calculate.ts` | RESOURCE / ACTION - not a content page |
+| `/api/orders/:orderId/status` | `routes/api.orders.$orderId.status.ts` | RESOURCE / ACTION - not a content page |
+| `/media/*` | `routes/media.$.ts` | RESOURCE / ACTION - not a content page |
 | `/robots.txt` | `routes/robots.ts` | CRAWLER RESOURCE |
 | `/sitemap.xml` | `routes/sitemap.ts` | CRAWLER RESOURCE |
-| `/preferensi/tema` | `routes/preferensi.tema.ts` | RESOURCE / ACTION — not a content page |
-| `/auth/google/callback` | `routes/auth.google.callback.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/auth/magic` | `routes/auth.magic.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/auth/magic/konfirmasi` | `routes/auth.magic.konfirmasi.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/.well-known/openid-configuration` | `routes/wellknown.openid-configuration.ts` | RESOURCE / ACTION — not a content page |
-| `/.well-known/jwks.json` | `routes/wellknown.jwks.ts` | RESOURCE / ACTION — not a content page |
-| `/sso/authorize` | `routes/sso.authorize.tsx` | RESOURCE / ACTION — not a content page |
-| `/sso/token` | `routes/sso.token.ts` | RESOURCE / ACTION — not a content page |
-| `/sso/userinfo` | `routes/sso.userinfo.ts` | RESOURCE / ACTION — not a content page |
-| `/sso/introspect` | `routes/sso.introspect.ts` | RESOURCE / ACTION — not a content page |
-| `/sso/logout` | `routes/sso.logout.ts` | RESOURCE / ACTION — not a content page |
-| `/app/v1/:resource` | `routes/app.v1.$resource.ts` | RESOURCE / ACTION — not a content page |
-| `/connect/authorize` | `routes/connect.authorize.tsx` | RESOURCE / ACTION — not a content page |
-| `/connect/token` | `routes/connect.token.tsx` | RESOURCE / ACTION — not a content page |
-| `/partner/v1/activations/:operation` | `routes/partner.activations.ts` | RESOURCE / ACTION — not a content page |
-| `/file/:token` | `routes/file.$token.tsx` | RESOURCE / ACTION — not a content page |
-| `/go/:itemId` | `routes/go.$itemId.tsx` | RESOURCE / ACTION — not a content page |
-| `/__test/seed-hitungin` | `routes/test.seed-hitungin.ts` | HIDDEN — development seam; never public content |
-| `/__test/seed-product` | `routes/test.seed-product.ts` | HIDDEN — development seam; never public content |
-| `/__test/seed-order` | `routes/test.seed-order.ts` | HIDDEN — development seam; never public content |
-| `/__test/seed-sso-app` | `routes/test.seed-sso-app.ts` | HIDDEN — development seam; never public content |
-| `/__test/midtrans-notify` | `routes/test.midtrans-notify.ts` | HIDDEN — development seam; never public content |
-| `/__test/seed-entitlement` | `routes/test.seed-entitlement.ts` | HIDDEN — development seam; never public content |
-| `/__test/seed-class-ticket` | `routes/test.seed-class-ticket.ts` | HIDDEN — development seam; never public content |
-| `/__test/foundation` | `routes/test.foundation.tsx` | HIDDEN — development seam; never public content |
-| `/__test/stage` | `routes/test.stage.tsx` | HIDDEN — development seam; never public content |
-| `/__test/explore-tools` | `routes/test.explore-tools.tsx` | HIDDEN — development seam; never public content |
+| `/preferensi/tema` | `routes/preferensi.tema.ts` | RESOURCE / ACTION - not a content page |
+| `/auth/google/callback` | `routes/auth.google.callback.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/auth/magic` | `routes/auth.magic.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/auth/magic/konfirmasi` | `routes/auth.magic.konfirmasi.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/.well-known/openid-configuration` | `routes/wellknown.openid-configuration.ts` | RESOURCE / ACTION - not a content page |
+| `/.well-known/jwks.json` | `routes/wellknown.jwks.ts` | RESOURCE / ACTION - not a content page |
+| `/sso/authorize` | `routes/sso.authorize.tsx` | RESOURCE / ACTION - not a content page |
+| `/sso/token` | `routes/sso.token.ts` | RESOURCE / ACTION - not a content page |
+| `/sso/userinfo` | `routes/sso.userinfo.ts` | RESOURCE / ACTION - not a content page |
+| `/sso/introspect` | `routes/sso.introspect.ts` | RESOURCE / ACTION - not a content page |
+| `/sso/logout` | `routes/sso.logout.ts` | RESOURCE / ACTION - not a content page |
+| `/app/v1/:resource` | `routes/app.v1.$resource.ts` | RESOURCE / ACTION - not a content page |
+| `/connect/authorize` | `routes/connect.authorize.tsx` | RESOURCE / ACTION - not a content page |
+| `/connect/token` | `routes/connect.token.tsx` | RESOURCE / ACTION - not a content page |
+| `/partner/v1/activations/:operation` | `routes/partner.activations.ts` | RESOURCE / ACTION - not a content page |
+| `/file/:token` | `routes/file.$token.tsx` | RESOURCE / ACTION - not a content page |
+| `/go/:itemId` | `routes/go.$itemId.tsx` | RESOURCE / ACTION - not a content page |
+| `/__test/seed-hitungin` | `routes/test.seed-hitungin.ts` | HIDDEN - development seam; never public content |
+| `/__test/seed-product` | `routes/test.seed-product.ts` | HIDDEN - development seam; never public content |
+| `/__test/seed-order` | `routes/test.seed-order.ts` | HIDDEN - development seam; never public content |
+| `/__test/seed-sso-app` | `routes/test.seed-sso-app.ts` | HIDDEN - development seam; never public content |
+| `/__test/midtrans-notify` | `routes/test.midtrans-notify.ts` | HIDDEN - development seam; never public content |
+| `/__test/seed-entitlement` | `routes/test.seed-entitlement.ts` | HIDDEN - development seam; never public content |
+| `/__test/seed-class-ticket` | `routes/test.seed-class-ticket.ts` | HIDDEN - development seam; never public content |
+| `/__test/foundation` | `routes/test.foundation.tsx` | HIDDEN - development seam; never public content |
+| `/__test/stage` | `routes/test.stage.tsx` | HIDDEN - development seam; never public content |
+| `/__test/explore-tools` | `routes/test.explore-tools.tsx` | HIDDEN - development seam; never public content |
 | `/` | `routes/home.tsx` | PUBLIC MAIN |
-| `/jelajahi` | `routes/jelajahi.tsx` | MARKET — separate semantic surface, same-origin fallback observed |
+| `/jelajahi` | `routes/jelajahi.tsx` | MARKET - separate semantic surface, same-origin fallback observed |
 | `/cari` | `routes/cari.tsx` | COMPATIBILITY / REDIRECT |
 | `/kategori/:slug` | `routes/kategori.$slug.tsx` | COMPATIBILITY / REDIRECT |
-| `/produk/:slug` | `routes/produk.$slug.tsx` | DYNAMIC DETAIL — published row + placement decide owner |
+| `/produk/:slug` | `routes/produk.$slug.tsx` | DYNAMIC DETAIL - published row + placement decide owner |
 | `/apps/hitungin` | `routes/apps.hitungin.tsx` | HIDDEN / COMPATIBILITY |
-| `/produk-kami` | `routes/produk-kami.tsx` | PUBLIC MAIN — see per-page audit |
-| `/kelas` | `routes/kelas.tsx` | PUBLIC MAIN — see per-page audit |
+| `/produk-kami` | `routes/produk-kami.tsx` | PUBLIC MAIN - see per-page audit |
+| `/kelas` | `routes/kelas.tsx` | PUBLIC MAIN - see per-page audit |
 | `/starter-kit` | `routes/starter-kit.tsx` | COMPATIBILITY / REDIRECT |
 | `/website-saas` | `routes/website-saas.tsx` | COMPATIBILITY / REDIRECT |
-| `/untuk-partner` | `routes/untuk-partner.tsx` | PUBLIC MAIN — see per-page audit |
-| `/ajukan-kebutuhan` | `routes/ajukan-kebutuhan.tsx` | PUBLIC MAIN — see per-page audit |
-| `/checkout/:offerId` | `routes/checkout.$offerId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/review-checkout/:token` | `routes/review-checkout.$token.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/pembayaran/:orderId` | `routes/pembayaran.$orderId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/masuk` | `routes/masuk.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/keluar` | `routes/keluar.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/produk-saya` | `routes/produk-saya.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/pesanan` | `routes/pesanan.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/pesanan/:orderId` | `routes/pesanan.$orderId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/unduh/:artifactId` | `routes/unduh.$artifactId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/akun` | `routes/akun.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/partner` | `routes/partner.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/partner/:orgId` | `routes/partner.$orgId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/partner/:orgId/produk/:itemId` | `routes/partner.$orgId.produk.$itemId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL — no acquisition IA |
-| `/:slug` | `routes/page.$slug.tsx` | DYNAMIC CMS — published row required; unlinked rows not enumerated |
-| `/control` | `routes/control/layout.tsx` | INTERNAL — operator |
-| `/control` (index) | `routes/control/dashboard.tsx` | INTERNAL — operator |
-| `/control/products` | `routes/control/products.tsx` | INTERNAL — operator |
-| `/control/products/new` | `routes/control/product-new.tsx` | INTERNAL — operator |
-| `/control/products/:id` | `routes/control/product-edit.tsx` | INTERNAL — operator |
-| `/control/brands` | `routes/control/brands.tsx` | INTERNAL — operator |
-| `/control/categories` | `routes/control/categories.tsx` | INTERNAL — operator |
-| `/control/classes` | `routes/control/classes.tsx` | INTERNAL — operator |
-| `/control/pages` | `routes/control/pages.tsx` | INTERNAL — operator |
-| `/control/pages/:id` | `routes/control/page-edit.tsx` | INTERNAL — operator |
-| `/control/commerce` | `routes/control/commerce.tsx` | INTERNAL — operator |
-| `/control/applications` | `routes/control/applications.tsx` | INTERNAL — operator |
-| `/control/settings` | `routes/control/settings.tsx` | INTERNAL — operator |
-| `/control/reviewers` | `routes/control/reviewers.tsx` | INTERNAL — operator |
-| `/control/payments` | `routes/control/payments.tsx` | INTERNAL — operator |
-| `/control/smoke` | `routes/control/smoke.tsx` | INTERNAL — operator |
-| `/control/refunds` | `routes/control/refunds.tsx` | INTERNAL — operator |
-| `/control/listings` | `routes/control/listings.tsx` | INTERNAL — operator |
-| `/control/team` | `routes/control/team.tsx` | INTERNAL — operator |
-| `/control/audit` | `routes/control/audit.tsx` | INTERNAL — operator |
-| `/control/kebutuhan` | `routes/control/kebutuhan.tsx` | INTERNAL — operator |
-| `/control/publishers` | `routes/control/publishers.tsx` | INTERNAL — operator |
-| `/control/partners` | `routes/control/partners.tsx` | INTERNAL — operator |
-| `/control/submissions` | `routes/control/submissions.tsx` | INTERNAL — operator |
+| `/untuk-partner` | `routes/untuk-partner.tsx` | PUBLIC MAIN - see per-page audit |
+| `/ajukan-kebutuhan` | `routes/ajukan-kebutuhan.tsx` | PUBLIC MAIN - see per-page audit |
+| `/checkout/:offerId` | `routes/checkout.$offerId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/review-checkout/:token` | `routes/review-checkout.$token.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/pembayaran/:orderId` | `routes/pembayaran.$orderId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/masuk` | `routes/masuk.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/keluar` | `routes/keluar.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/produk-saya` | `routes/produk-saya.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/pesanan` | `routes/pesanan.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/pesanan/:orderId` | `routes/pesanan.$orderId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/unduh/:artifactId` | `routes/unduh.$artifactId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/akun` | `routes/akun.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/partner` | `routes/partner.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/partner/:orgId` | `routes/partner.$orgId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/partner/:orgId/produk/:itemId` | `routes/partner.$orgId.produk.$itemId.tsx` | UTILITY / PRIVATE / TRANSACTIONAL - no acquisition IA |
+| `/:slug` | `routes/page.$slug.tsx` | DYNAMIC CMS - published row required; unlinked rows not enumerated |
+| `/control` | `routes/control/layout.tsx` | INTERNAL - operator |
+| `/control` (index) | `routes/control/dashboard.tsx` | INTERNAL - operator |
+| `/control/products` | `routes/control/products.tsx` | INTERNAL - operator |
+| `/control/products/new` | `routes/control/product-new.tsx` | INTERNAL - operator |
+| `/control/products/:id` | `routes/control/product-edit.tsx` | INTERNAL - operator |
+| `/control/brands` | `routes/control/brands.tsx` | INTERNAL - operator |
+| `/control/categories` | `routes/control/categories.tsx` | INTERNAL - operator |
+| `/control/classes` | `routes/control/classes.tsx` | INTERNAL - operator |
+| `/control/pages` | `routes/control/pages.tsx` | INTERNAL - operator |
+| `/control/pages/:id` | `routes/control/page-edit.tsx` | INTERNAL - operator |
+| `/control/commerce` | `routes/control/commerce.tsx` | INTERNAL - operator |
+| `/control/applications` | `routes/control/applications.tsx` | INTERNAL - operator |
+| `/control/settings` | `routes/control/settings.tsx` | INTERNAL - operator |
+| `/control/reviewers` | `routes/control/reviewers.tsx` | INTERNAL - operator |
+| `/control/payments` | `routes/control/payments.tsx` | INTERNAL - operator |
+| `/control/smoke` | `routes/control/smoke.tsx` | INTERNAL - operator |
+| `/control/refunds` | `routes/control/refunds.tsx` | INTERNAL - operator |
+| `/control/listings` | `routes/control/listings.tsx` | INTERNAL - operator |
+| `/control/team` | `routes/control/team.tsx` | INTERNAL - operator |
+| `/control/audit` | `routes/control/audit.tsx` | INTERNAL - operator |
+| `/control/kebutuhan` | `routes/control/kebutuhan.tsx` | INTERNAL - operator |
+| `/control/publishers` | `routes/control/publishers.tsx` | INTERNAL - operator |
+| `/control/partners` | `routes/control/partners.tsx` | INTERNAL - operator |
+| `/control/submissions` | `routes/control/submissions.tsx` | INTERNAL - operator |

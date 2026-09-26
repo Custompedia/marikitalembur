@@ -1,0 +1,25 @@
+---
+// Product card: the image fades into a dark body with a serif title, short copy, an outline pill, and a footer of tags.
+// `tint` lays a purple silhouette behind the image so its black backdrop turns purple; `glass` makes the card frosted.
+import Banner from './Banner.astro';
+interface Props { href: string; image: string; label: string; title: string; desc: string; action: string; foot: string; tags: string[]; wide?: boolean; glass?: boolean; tint?: number; level?: 2 | 3 }
+const { href, image, label, title, desc, action, foot, tags, wide = false, glass = false, tint, level = 3 } = Astro.props;
+const Heading = level === 2 ? 'h2' : 'h3';
+---
+<a class:list={['pcard', { 'pcard--wide': wide, 'pcard--glass': glass, 'pcard--tint': tint !== undefined }]} href={href}>
+  <div class="pcard__media">
+    {tint !== undefined && <Banner size="fill" variant={tint} />}
+    <img src={image} alt="" loading="lazy" decoding="async" />
+    <span class="pcard__label">{label}</span>
+  </div>
+  <div class="pcard__body">
+    <Heading class="pcard__title">{title}</Heading>
+    <p class="pcard__desc">{desc}</p>
+    <slot />
+    <span class="pcard__btn">{action}</span>
+  </div>
+  <div class="pcard__foot">
+    <span>{foot}</span>
+    <span class="pcard__tags">{tags.map((t, i) => <>{i > 0 && <span class="pcard__sep" aria-hidden="true">✦</span>}{t}</>)}</span>
+  </div>
+</a>

@@ -1,15 +1,17 @@
 ---
-// Card after hazel.ai: a textured panel with a centred badge icon, then kicker, title, and the slotted copy.
-import FeatureIcon from './FeatureIcon.astro';
+// Card after hazel.ai: a static purple banner with a Lucide icon, then kicker, title, and the slotted copy.
+import Banner from './Banner.astro';
 import type { IconName } from './icons';
-interface Props { icon: IconName; title: string; kicker?: string; href?: string; external?: boolean; level?: 2 | 3 }
+interface Props { icon: IconName; title: string; kicker?: string; href?: string; external?: boolean; level?: 2 | 3; variant?: number }
 const { icon, title, kicker, href, external = false, level = 3 } = Astro.props;
+// Without an explicit variant, pick one from the title so neighbouring cards tend to differ.
+const variant = Astro.props.variant ?? [...title].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
 const Tag = href ? 'a' : 'article';
 const Heading = level === 2 ? 'h2' : 'h3';
 const linkAttrs = href ? { href, ...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {}) } : {};
 ---
 <Tag class:list={['fcard', { 'fcard--link': href }]} {...linkAttrs}>
-  <div class="fcard__media media-well"><FeatureIcon name={icon} /></div>
+  <Banner icon={icon} variant={variant} class="fcard__media" />
   <div class="fcard__body">
     {kicker && <span class="kicker">{kicker}</span>}
     <Heading class="fcard__title">{title}</Heading>

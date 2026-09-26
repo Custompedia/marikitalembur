@@ -1,0 +1,40 @@
+---
+// Static banner: blurred purple ribbon silhouettes (the home hero's look, frozen), optionally under a clean white Lucide icon.
+// `fill` stretches it behind a whole container as a background.
+import { icons, type IconName } from './icons';
+interface Props { icon?: IconName; variant?: number; size?: 'card' | 'tile' | 'tall' | 'fill'; class?: string }
+const { icon, variant = 0, size = 'card', class: className } = Astro.props;
+const Icon = icon ? icons[icon] : null;
+const v = ((variant % 3) + 3) % 3;
+// A unique filter id per banner, since several banners share a page.
+const blurId = `banner-blur-${Math.random().toString(36).slice(2, 9)}`;
+// Each variant: thick soft ribbons, then one thin bright line that gives the silhouette an edge.
+const ribbons = [
+  [
+    { d: 'M-40 230 C 70 150, 170 260, 270 170 S 420 90, 460 130', w: 46, c: '#7c3aed', o: 0.75 },
+    { d: 'M-40 140 C 80 80, 190 190, 300 110 S 420 50, 460 80', w: 22, c: '#c4b5fd', o: 0.5 },
+    { d: 'M20 320 C 140 230, 260 300, 460 210', w: 70, c: '#5b21b6', o: 0.7 },
+  ],
+  [
+    { d: 'M-40 90 C 60 170, 180 60, 290 150 S 420 230, 460 190', w: 44, c: '#7c3aed', o: 0.75 },
+    { d: 'M-40 200 C 90 250, 200 150, 320 220 S 430 280, 460 250', w: 20, c: '#c4b5fd', o: 0.45 },
+    { d: 'M-20 -40 C 120 60, 250 -20, 460 70', w: 70, c: '#5b21b6', o: 0.65 },
+  ],
+  [
+    { d: 'M-40 300 C 80 200, 160 130, 260 90 S 400 0, 460 -30', w: 50, c: '#7c3aed', o: 0.7 },
+    { d: 'M-40 230 C 100 170, 200 200, 320 140 S 430 90, 460 100', w: 20, c: '#c4b5fd', o: 0.5 },
+    { d: 'M100 340 C 200 270, 330 250, 470 210', w: 70, c: '#5b21b6', o: 0.7 },
+  ],
+][v];
+const edge = ['M-40 140 C 80 80, 190 190, 300 110 S 420 50, 460 80', 'M-40 200 C 90 250, 200 150, 320 220 S 430 280, 460 250', 'M-40 230 C 100 170, 200 200, 320 140 S 430 90, 460 100'][v];
+---
+<div class:list={['banner', `banner--${size}`, className]} aria-hidden="true">
+  <svg class="banner__shape" viewBox="0 0 420 260" preserveAspectRatio="xMidYMid slice">
+    <defs><filter id={blurId} x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="16" /></filter></defs>
+    <g filter={`url(#${blurId})`} fill="none" stroke-linecap="round">
+      {ribbons.map((r) => <path d={r.d} stroke={r.c} stroke-width={r.w} stroke-opacity={r.o} />)}
+    </g>
+    <path d={edge} fill="none" stroke="#ede4ff" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="round" />
+  </svg>
+  {Icon && <span class="banner__icon"><Icon size={size === 'tile' ? 24 : 30} stroke-width={1.5} /></span>}
+</div>
