@@ -12,7 +12,7 @@ export interface RibbonOptions {
   layers: number; // glow layers per pixel (max 84)
 }
 
-const DEFAULTS: RibbonOptions = { background: '#010101', color1: '#A3E635', color2: '#E4FF9A', speed: 50, size: 100, angle: -24, hover: 100, reach: 260, layers: 84 };
+const DEFAULTS: RibbonOptions = { background: '#010101', color1: '#8B5CF6', color2: '#D8B4FE', speed: 50, size: 100, angle: -24, hover: 100, reach: 260, layers: 84 };
 const MAX_LAYERS = 84;
 
 const VERT = `#version 300 es

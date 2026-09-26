@@ -1,4 +1,4 @@
-// Twinkling lime pixels on a grid behind the mascot.
+// Twinkling purple pixels on a grid behind the mascot.
 
 const reducedMotion = (): boolean => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -8,7 +8,7 @@ function hash(x: number, y: number, s: number): number {
   return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
 }
 
-/** Lime pixels twinkling on a grid around a centre, behind the mascot. */
+/** Purple pixels twinkling on a grid around a centre, behind the mascot. */
 export function initPixelDust(canvas: HTMLCanvasElement): void {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
@@ -37,7 +37,7 @@ export function initPixelDust(canvas: HTMLCanvasElement): void {
         const life = hash(i, j, 91);
         const phase = (step + Math.floor(life * 97)) % 40;
         if (phase > 3 || hash(i, j, 17) > 0.34) continue;
-        ctx.fillStyle = `rgba(163, 230, 53, ${((1 - d) * 0.9 * (phase === 1 || phase === 2 ? 1 : 0.45)).toFixed(3)})`;
+        ctx.fillStyle = `rgba(167, 139, 250, ${((1 - d) * 0.9 * (phase === 1 || phase === 2 ? 1 : 0.45)).toFixed(3)})`;
         ctx.fillRect(i * CELL + 3, j * CELL + 3, CELL - 6, CELL - 6);
       }
     }

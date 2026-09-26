@@ -1,6 +1,10 @@
 ---
 import '../styles/site.css';
 import MklMascot from './MklMascot.astro';
+import PageHero from './PageHero.astro';
+import FeatureCard from './FeatureCard.astro';
+import FeatureIcon from './FeatureIcon.astro';
+import type { IconName } from './icons';
 interface Props { page: string }
 const { page } = Astro.props;
 const titles: Record<string, string> = {
@@ -10,13 +14,9 @@ const titles: Record<string, string> = {
   kelas: 'Kelas dan workshop praktis — MKL',
   'untuk-bisnis': 'Solusi kerja untuk kebutuhan tim — MKL',
   'ajukan-kebutuhan': 'Ceritakan kebutuhanmu — MKL',
-  'untuk-partner': 'Untuk builder dan penerbit — MKL',
   tentang: 'Mengenal MKL',
   kontak: 'Hubungi tim MKL',
   'kerja-sama': 'Pilih jalur kerja sama — MKL',
-  jelajahi: 'MKL Market — produk dari para penerbit',
-  'starter-kit': 'Starter kit di MKL Market',
-  'website-saas': 'Produk penerbit di MKL Market',
 };
 const descriptions: Record<string, string> = {
   home: 'Kenali produk MKL, lihat informasi kelas, atau bahas kebutuhan kerja timmu.',
@@ -25,7 +25,7 @@ const descriptions: Record<string, string> = {
   kelas: 'Informasi kelas dan workshop praktis dari MKL. Lihat status jadwal dan usulkan topik yang kamu butuhkan.',
   'untuk-bisnis': 'Bahas proses kerja tim, hambatan, dan bentuk bantuan yang sesuai bersama MKL.',
 };
-// `key` ties a nav item to the home sections that talk about it, so the glass pill can follow the scroll.
+// `key` ties a nav item to the home sections that talk about it, so the nav pill can follow the scroll.
 const nav = [
   { href: '/produk-kami', label: 'Produk', key: 'produk' },
   { href: '/kelas', label: 'Kelas', key: 'kelas' },
@@ -34,16 +34,20 @@ const nav = [
 ];
 const active = page === 'produk/mari-rekap' ? '/produk-kami' : `/${page}`;
 const intake = 'https://marikitalembur.com/ajukan-kebutuhan';
-const market = 'https://marikitalembur.com/jelajahi';
-// The four starting points on the home page; `pose` is the mascot state while that point is in focus.
+// The three starting points on the home page; `pose` is the mascot state while that point is in focus.
 const paths = [
-  { name: 'Produk MKL', navKey: 'produk', href: '/produk-kami', title: 'Gunakan produk yang kami bangun.', desc: 'Jelajahi katalog produk MKL untuk pekerjaan nyata.', action: 'Lihat katalog', img: '/images/mkl-path-produk.webp', external: false, pose: 'working' },
-  { name: 'Kelas', navKey: 'kelas', href: '/kelas', title: 'Pelajari cara kerja baru.', desc: 'Informasi kelas dan workshop praktis sesuai jadwal yang tersedia.', action: 'Lihat informasi kelas', img: '/images/mkl-path-kelas.webp', external: false, pose: 'default' },
-  { name: 'Untuk Bisnis', navKey: 'bisnis', href: '/untuk-bisnis', title: 'Bahas kebutuhan timmu.', desc: 'Mulai dari proses kerja, lalu tentukan bentuk bantuan yang sesuai.', action: 'Untuk bisnis', img: '/images/mkl-path-bisnis.webp', external: false, pose: 'working' },
-  { name: 'Market', navKey: 'market', href: market, title: 'Temukan karya para penerbit.', desc: 'Produk dari penerbit tetap memakai brand mereka. Pilihannya sedang disiapkan.', action: 'Buka Market', img: '/images/mkl-path-market.webp', external: true, pose: 'default' },
+  { name: 'Produk MKL', navKey: 'produk', href: '/produk-kami', title: 'Gunakan produk yang kami bangun.', desc: 'Jelajahi katalog produk MKL untuk pekerjaan nyata.', action: 'Lihat katalog', img: '/images/mkl-path-produk.webp', pose: 'working' },
+  { name: 'Kelas', navKey: 'kelas', href: '/kelas', title: 'Pelajari cara kerja baru.', desc: 'Informasi kelas dan workshop praktis sesuai jadwal yang tersedia.', action: 'Lihat informasi kelas', img: '/images/mkl-path-kelas.webp', pose: 'default' },
+  { name: 'Untuk Bisnis', navKey: 'bisnis', href: '/untuk-bisnis', title: 'Bahas kebutuhan timmu.', desc: 'Mulai dari proses kerja, lalu tentukan bentuk bantuan yang sesuai.', action: 'Untuk bisnis', img: '/images/mkl-path-bisnis.webp', pose: 'working' },
 ];
-const ext = (external: boolean) => (external ? { target: '_blank', rel: 'noopener noreferrer' } : {});
 const pad = (i: number) => String(i + 1).padStart(2, '0');
+const services: { icon: IconName; kicker: string; title: string; text: string }[] = [
+  { icon: 'map', kicker: '01 / Pahami', title: 'Petakan pekerjaan yang perlu diperbaiki.', text: 'Tinjau alur, hambatan, dan peluang sebelum memilih penggunaan AI atau otomatisasi.' },
+  { icon: 'learn', kicker: '02 / Pelajari', title: 'Belajar dari pekerjaan tim sendiri.', text: 'Materi dan latihan dapat disusun berdasarkan peran, tools, dan kebutuhan yang disepakati.' },
+  { icon: 'test', kicker: '03 / Uji', title: 'Coba satu alur kerja yang jelas.', text: 'Fokus pada satu kebutuhan agar solusi dapat dicoba, ditinjau, dan diperbaiki.' },
+  { icon: 'apply', kicker: '04 / Terapkan', title: 'Bawa solusi ke proses tim.', text: 'Penerapan mengikuti ruang lingkup, pengujian, dan penanggung jawab yang disepakati.' },
+  { icon: 'repeat', kicker: '05 / Tinjau', title: 'Perbaiki langkah berikutnya.', text: 'Pendampingan berkala dapat dibahas ketika tim membutuhkan evaluasi lanjutan.' },
+];
 ---
 <!doctype html>
 <html lang="id">
@@ -57,37 +61,76 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
     <meta property="og:description" content={descriptions[page] ?? 'Produk, pembelajaran, dan bantuan untuk kebutuhan kerja dari MKL.'} />
     <meta property="og:type" content="website" />
     {page === 'ajukan-kebutuhan' && <meta name="robots" content="noindex,follow" />}
+    <script is:inline>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Geist+Mono:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..700&family=Geist:wght@300..700&family=Fragment+Mono:ital@0;1&family=Manrope:wght@800&display=swap" rel="stylesheet" />
   </head>
   <body data-page={page}>
     <a class="skip-link" href="#konten">Lewati ke konten</a>
+    <svg class="icon-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="mkl-icon-rim" gradientUnits="userSpaceOnUse" x1="18" y1="8" x2="78" y2="92"><stop offset="0" stop-color="#ece8f6" /><stop offset="0.55" stop-color="#8e89a3" /><stop offset="1" stop-color="#34303f" /></linearGradient>
+        <linearGradient id="mkl-icon-glow" gradientUnits="userSpaceOnUse" x1="30" y1="28" x2="66" y2="68"><stop offset="0" stop-color="#ede4ff" /><stop offset="0.5" stop-color="#b69cfb" /><stop offset="1" stop-color="#8b5cf6" /></linearGradient>
+      </defs>
+    </svg>
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="/" aria-label="MKL, ke beranda"><span class="brand-name">MKL</span></a>
         <nav class="desktop-nav" aria-label="Navigasi utama" data-nav-root>
           <span class="nav-indicator" aria-hidden="true"></span>
           {nav.map((item) => <a href={item.href} data-nav-key={item.key} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>)}
-          <a href={market} target="_blank" rel="noopener noreferrer" data-nav-key="market">Market <span aria-hidden="true">↗</span></a>
         </nav>
         <a class="header-contact" href="/kontak">Hubungi kami <span aria-hidden="true">↗</span></a>
-        <details class="mobile-menu"><summary aria-label="Buka navigasi"><span></span><span></span></summary><nav aria-label="Navigasi seluler">{nav.map((item) => <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>)}<a href={market} target="_blank" rel="noopener noreferrer">Market ↗</a><a href="/kontak" aria-current={page === 'kontak' ? 'page' : undefined}>Hubungi kami</a></nav></details>
+        <details class="mobile-menu"><summary aria-label="Buka navigasi"><span></span><span></span></summary><nav aria-label="Navigasi seluler">{nav.map((item) => <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>)}<a href="/kontak" aria-current={page === 'kontak' ? 'page' : undefined}>Hubungi kami</a></nav></details>
       </div>
     </header>
     <main id="konten">
       {page === 'home' && <>
-        <section class="hero" aria-label="MKL — Mari Kita Lembur">
-          <canvas class="hero__ribbon" data-ribbon aria-hidden="true"></canvas>
-          <div class="hero__content container">
-            <p class="hero__wordmark t-display">Mari Kita Lembur</p>
-            <ul class="hero__labels">
-              {paths.map((p, i) => <li><a href={p.href} {...ext(p.external)}><span class="label label--faint">[{pad(i)}]</span><span class="label label--solid">{p.name}</span></a></li>)}
-            </ul>
+        <section class="hero" data-hero aria-label="MKL — Mari Kita Lembur">
+          <div class="hero__pin">
+            <canvas class="hero__sphere" data-hero-sphere aria-hidden="true"></canvas>
+            <div class="hero__stage container">
+              <svg class="hero__orbit" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="hero__orbit-ring" cx="50" cy="50" r="49.5" pathLength="100" />
+                <circle class="hero__orbit-dot" cx="81.4" cy="11.8" r="0.55" /><circle class="hero__orbit-dot" cx="10.6" cy="80.2" r="0.55" />
+              </svg>
+
+              <div class="hero__brand hero__fade" aria-hidden="true">
+                <span class="hero__sub" data-scramble>MKL</span>
+                <span class="hero__plus hero__plus--a"></span><span class="hero__plus hero__plus--b"></span>
+              </div>
+
+              <div class="hero__top hero__fade">
+                <p class="hero__sub"><span data-scramble>Produk, kelas &amp; solusi kerja</span><br /><span data-scramble>untuk kebutuhan timmu</span></p>
+                <p class="hero__word" aria-hidden="true" data-hero-word data-words="bereskan,susun,pelajari">bereskan</p>
+                <a class="hero__btn" href="/produk-kami" aria-label="Lihat produk MKL"><span data-scramble>Lihat produk MKL</span></a>
+              </div>
+
+              <div class="hero__axis" aria-hidden="true">
+                <span class="hero__axis-dot hero__axis-dot--l"></span><span class="hero__axis-dot hero__axis-dot--r"></span>
+                <span class="hero__readout hero__readout--l" data-hero-readout="pitch">-12.0000°</span>
+                <span class="hero__readout hero__readout--r" data-hero-readout="yaw">124.0000°</span>
+              </div>
+
+              <div class="hero__reel" data-hero-reel aria-hidden="true">
+                <canvas class="hero__ribbon" data-ribbon></canvas>
+              </div>
+              {['tl', 'tr', 'bl', 'br'].map((c) => <span class="hero__corner" data-hero-corner={c} aria-hidden="true"></span>)}
+              <span class="hero__reel-label hero__reel-label--l" data-hero-label="l" aria-hidden="true"><span data-scramble>Lihat jalur</span></span>
+              <a class="hero__play" href="#jelajahi" aria-label="Lihat tiga jalur MKL">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </a>
+              <span class="hero__reel-label hero__reel-label--r" data-hero-label="r" aria-hidden="true"><span data-scramble>03 jalur</span></span>
+
+              <p class="hero__title hero__fade"><span class="hero__title-sm">Mari kita</span><span class="hero__title-lg">lembur.</span></p>
+              <a class="hero__next hero__fade" href="#pernyataan" aria-label="Gulir ke bagian berikutnya"><span></span><span></span><span></span></a>
+            </div>
           </div>
         </section>
 
-        <section class="statement container" data-statement>
+        <section class="statement container" id="pernyataan" data-statement>
+          <div class="dot-rule" aria-hidden="true"></div>
           <h1 class="statement__heading t-statement">
             <span class="statement__row"><span class="w" data-from="left">Kerja</span>{' '}<span class="w" data-from="right">lebih</span></span>{' '}
             <span class="statement__line"><span class="w" data-from="top">beres,</span>{' '}<span class="w" data-from="bottom">mulai</span></span>{' '}
@@ -104,18 +147,18 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
             <h2 id="jelajahi-title" class="sr-only">Pilih titik awal: mau membereskan apa?</h2>
             <div class="about-pin__top">
               <ol class="about-pin__index">
-                {paths.map((p, i) => <li class="about-pin__item" data-about-item><a href={p.href} {...ext(p.external)}><span class="label label--lg label--faint">[{pad(i)}]</span><span class="label label--lg">{p.name}</span></a></li>)}
+                {paths.map((p, i) => <li class="about-pin__item" data-about-item><a href={p.href}><span class="label label--lg label--faint">[{pad(i)}]</span><span class="label label--lg">{p.name}</span></a></li>)}
               </ol>
               <div class="about-pin__panes">
                 <div class="about-pin__pane is-active" data-about-pane data-pose="default" data-nav-key="">
-                  <p class="label">Empat jalur untuk kebutuhan yang berbeda. Pilih yang paling dekat dengan pekerjaanmu sekarang.</p>
-                  <span class="label">/04</span>
+                  <p class="label">Tiga jalur untuk kebutuhan yang berbeda. Pilih yang paling dekat dengan pekerjaanmu sekarang.</p>
+                  <span class="label">/{String(paths.length).padStart(2, '0')}</span>
                   <span class="label">Pilih titik awal</span>
                 </div>
                 {paths.map((p, i) => <div class="about-pin__pane about-pin__pane--path" data-about-pane data-pose={p.pose} data-nav-key={p.navKey}>
                   <p class="label">{p.desc}</p>
                   <span class="label">/{pad(i)}</span>
-                  <a class="label" href={p.href} {...ext(p.external)}>{p.action} ↗</a>
+                  <a class="label" href={p.href}>{p.action} ↗</a>
                 </div>)}
               </div>
             </div>
@@ -136,12 +179,12 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
         </section>
 
         <section class="services container" aria-labelledby="jalur-title">
-          <h2 id="jalur-title" class="sr-only">Empat jalur MKL</h2>
+          <h2 id="jalur-title" class="sr-only">Tiga jalur MKL</h2>
           {paths.map((p, i) => <article class="svc-row" style={`--i:${i}`} data-nav={p.navKey}>
             <div class="svc-row__index"><span class="label label--lg label--faint">[{pad(i)}]</span></div>
             <div class="svc-row__body">
               <div class="svc-row__text"><h3 class="t-title">{p.title}</h3><p class="label">{p.desc}</p></div>
-              <a class="cta" href={p.href} {...ext(p.external)}>{p.action}</a>
+              <a class="cta" href={p.href}>{p.action}</a>
             </div>
             <div class="svc-row__media"><img src={p.img} width="1536" height="1024" alt="" loading="lazy" /></div>
           </article>)}
@@ -150,20 +193,260 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
         <section class="contact container" data-nav="tentang" aria-labelledby="penutup-title">
           <p class="label">Jelas sejak awal</p>
           <h2 id="penutup-title" class="contact__heading" data-reveal>Tahu siapa pembuatnya. <em>Jelas langkah berikutnya.</em></h2>
-          <p class="contact__body">Produk MKL kami bangun sendiri. Produk di Market tetap memakai brand penerbitnya. Informasi kelas mengikuti jadwal yang benar-benar dibuka.</p>
-          <div class="actions"><a class="cta" href="/tentang">Tentang MKL</a><a class="cta cta--muted" href="/untuk-partner">Untuk builder dan penerbit</a></div>
+          <p class="contact__body">Produk MKL kami bangun sendiri. Informasi kelas mengikuti jadwal yang benar-benar dibuka.</p>
+          <div class="actions"><a class="cta" href="/tentang">Tentang MKL</a><a class="cta cta--muted" href="/kontak">Hubungi kami</a></div>
         </section>
       </>}
-      {page === 'produk-kami' && <><section class="page-hero container"><p class="eyebrow">PRODUK / DIBUAT OLEH MKL</p><h1>Produk MKL untuk <em>pekerjaan nyata.</em></h1><p class="lead">Aplikasi yang kami bangun untuk membantu pekerjaan yang masih banyak dikerjakan manual.</p></section><section class="section container"><div class="catalog-product"><a class="product-card" href="/produk/mari-rekap"><img src="/images/mkl-produk-rekap-workspace.webp" width="1536" height="1024" alt="" loading="lazy" /><span class="product-card-kicker">01 / PRODUK DARI MKL</span><div class="product-card-content"><h2>Mari Rekap</h2><p>Dari bahan rekap ke tabel yang bisa diperiksa.</p><span class="product-card-action">Kenali Mari Rekap <span aria-hidden="true">↗</span></span></div></a><div class="product-card-meta"><p>Susun data, periksa hasilnya, lalu ekspor untuk pekerjaan berikutnya.</p><dl><div><dt>INPUT</dt><dd>Foto · PDF · Teks</dd></div><div><dt>PROSES</dt><dd>Susun · Periksa · Koreksi</dd></div><div><dt>HASIL</dt><dd>Ekspor Excel</dd></div></dl></div></div></section><section class="section container split-note"><h2>Kebutuhan timmu <em>lebih khusus?</em></h2><div><p>Mulai dengan menceritakan proses yang ingin kamu perbaiki. Bantuan untuk tim dibahas sesuai kebutuhan, terpisah dari penggunaan produk.</p><a class="text-link" href="/untuk-bisnis">Bahas kebutuhan tim <span>↗</span></a></div></section></>}
-      {page === 'produk/mari-rekap' && <><section class="page-hero container"><a class="breadcrumb" href="/produk-kami">← Produk MKL</a><p class="eyebrow">MARI REKAP / PRODUK DARI MKL</p><h1>Mari Rekap — bantu susun rekap, <em>tetap kamu yang periksa.</em></h1><p class="lead">Membantu mengolah bahan rekap menjadi tabel yang dapat diperiksa dan diedit sebelum digunakan.</p><div class="actions"><a class="button button-light" href="#cara-kerja">Lihat cara kerjanya <span>↓</span></a><a class="text-link" href="/kontak">Tanya tentang Mari Rekap <span>↗</span></a></div></section><section class="section container split-note"><div><p class="eyebrow">01 / UNTUK SIAPA</p><h2>Untuk pekerjaan yang masih banyak <em>rekap manual.</em></h2></div><p>Mulai dari bahan seperti struk, invoice, foto, PDF, atau teks. Cocok saat kamu perlu menyusun catatan menjadi tabel yang mudah ditinjau. Hasil tetap perlu pemeriksaan manusia.</p></section><section class="section container" id="cara-kerja"><div class="section-heading"><p class="eyebrow">02 / ALUR KERJA</p><h2>Masukkan bahan. Periksa hasil. <em>Ekspor rekap.</em></h2></div><div class="step-grid"><article><span>01</span><h3>Masukkan bahan</h3><p>Siapkan foto, PDF, atau teks yang memuat data untuk direkap.</p></article><article><span>02</span><h3>Tinjau draf</h3><p>Mari Rekap membantu menyusun draf tabel. Periksa dan koreksi isinya.</p></article><article><span>03</span><h3>Ekspor hasil</h3><p>Setelah siap, ekspor rekap untuk pekerjaan berikutnya dalam format Excel.</p></article></div></section><section class="section container two-column"><div><p class="eyebrow">03 / KEMAMPUAN SAAT INI</p><h2>Yang bisa dikerjakan <em>sekarang.</em></h2></div><div class="line-list"><div><span>01</span><p>Gunakan bahan dari foto, PDF, atau teks.</p></div><div><span>02</span><p>Tinjau dan koreksi draf rekap.</p></div><div><span>03</span><p>Ekspor hasil ke file Excel.</p></div></div></section><section class="section container split-note"><div><p class="eyebrow">04 / KENDALI TETAP PADAMU</p><h2>Hasil tetap perlu <em>diperiksa.</em></h2></div><p>Kelengkapan dan keterbacaan bahan memengaruhi hasil. Periksa kembali angka, keterangan, dan susunan data sebelum digunakan untuk keputusan atau pelaporan.</p></section><section class="section container access-panel"><div><p class="eyebrow">05 / PAKET & AKSES</p><h2>Paket dan akses <em>Mari Rekap.</em></h2><p>Informasi penawaran tersedia pada halaman produk MKL yang aktif. Pembayaran publik belum tersedia; harga yang tampil tidak berarti checkout sudah dibuka.</p></div><div class="access-action"><span>INGIN TAHU AKSES YANG TERSEDIA?</span><a class="button button-light" href="/kontak">Tanya tentang akses <span>↗</span></a><a class="text-link" href="https://rekap.marikitalembur.com" target="_blank" rel="noopener noreferrer">Sudah punya akses? Buka aplikasi <span>↗</span></a></div></section><section class="section container faq"><p class="eyebrow">06 / PERTANYAAN PENTING</p><h2>Sebelum menggunakan <em>Mari Rekap.</em></h2><details><summary>Bahan apa yang bisa digunakan?<span>+</span></summary><p>Baseline produk mencakup foto, PDF, dan teks. Hasil tiap bahan bergantung pada keterbacaan dan kelengkapan informasinya.</p></details><details><summary>Apakah hasilnya bisa langsung dipakai?<span>+</span></summary><p>Periksa dan koreksi draf terlebih dahulu, terutama angka dan keterangan penting.</p></details><details><summary>Bisakah hasilnya diekspor?<span>+</span></summary><p>Rekap yang sudah diperiksa dapat diekspor ke format Excel.</p></details><details><summary>Apakah pembayaran sudah dibuka?<span>+</span></summary><p>Pembayaran publik belum tersedia. Hubungi MKL untuk menanyakan status akses yang sesuai.</p></details><a class="text-link" href="/kontak">Hubungi tim MKL <span>↗</span></a></section></>}
-      {page === 'kelas' && <><section class="page-hero container class-hero"><p class="eyebrow">KELAS / BELAJAR PRAKTIS</p><h1>Belajar untuk pekerjaan <em>yang kamu hadapi.</em></h1><p class="lead">Informasi kelas dan workshop tentang AI, tools, dan cara kerja yang bisa dipraktikkan.</p></section><section class="section container class-availability" aria-labelledby="class-status-title"><div class="class-availability-head"><p class="eyebrow">STATUS KELAS</p><span>INFORMASI TERKINI / 01</span></div><div class="class-availability-body"><h2 id="class-status-title">Belum ada jadwal kelas yang dibuka.</h2><div><p>Punya topik yang ingin kamu pelajari? Ceritakan kebutuhanmu melalui formulir MKL.</p><a class="button button-light" href="/ajukan-kebutuhan">Usulkan topik kelas <span aria-hidden="true">↗</span></a></div></div></section></>}
-      {page === 'untuk-bisnis' && <><section class="page-hero container"><p class="eyebrow">UNTUK BISNIS / MULAI DARI PROSES</p><h1>Solusi kerja yang berangkat dari <em>kebutuhan tim.</em></h1><p class="lead">Mulai dari proses yang ingin diperbaiki. Kita bahas kebutuhan, hambatan, dan bentuk bantuan yang sesuai.</p><div class="actions"><a class="button button-light" href="/ajukan-kebutuhan">Bahas kebutuhan tim <span>↗</span></a><a class="text-link" href="#bentuk-bantuan">Lihat bentuk bantuan <span>↓</span></a></div></section><section class="section container split-note"><div><p class="eyebrow">01 / MASALAHNYA</p><h2>Saat pekerjaan berulang mulai <em>menghambat tim.</em></h2></div><div><p>Data disalin dari banyak tempat, hasil kerja diperiksa berulang, atau tools baru belum menyatu dengan proses yang ada.</p><div class="mini-tags"><span>Pemindahan data manual</span><span>Pemeriksaan berulang</span><span>Alur tools belum jelas</span></div></div></section><section class="section container split-note"><div><p class="eyebrow">02 / SIAPA YANG COCOK</p><h2>Untuk tim yang ingin memperbaiki <em>cara kerjanya.</em></h2></div><p>Cocok untuk pemilik bisnis dan pemimpin tim yang punya proses nyata untuk dipelajari bersama, baik pada pekerjaan operasional, administrasi, kreatif, maupun manajemen.</p></section><section class="section container" id="bentuk-bantuan"><div class="section-heading"><p class="eyebrow">03 / BENTUK BANTUAN</p><h2>Pilih bantuan sesuai <em>tahap timmu.</em></h2><p>Belum tahu harus mulai dari mana? Jelaskan kebutuhannya dulu. Bentuk bantuan ditentukan dari tujuan dan kondisi tim.</p></div><div class="service-list"><article><span>01 / PAHAMI</span><h3>Petakan pekerjaan yang perlu diperbaiki.</h3><p>Tinjau alur, hambatan, dan peluang sebelum memilih penggunaan AI atau otomatisasi.</p></article><article><span>02 / PELAJARI</span><h3>Belajar dari pekerjaan tim sendiri.</h3><p>Materi dan latihan dapat disusun berdasarkan peran, tools, dan kebutuhan yang disepakati.</p></article><article><span>03 / UJI</span><h3>Coba satu alur kerja yang jelas.</h3><p>Fokus pada satu kebutuhan agar solusi dapat dicoba, ditinjau, dan diperbaiki.</p></article><article><span>04 / TERAPKAN</span><h3>Bawa solusi ke proses tim.</h3><p>Penerapan mengikuti ruang lingkup, pengujian, dan penanggung jawab yang disepakati.</p></article><article><span>05 / TINJAU</span><h3>Perbaiki langkah berikutnya.</h3><p>Pendampingan berkala dapat dibahas ketika tim membutuhkan evaluasi lanjutan.</p></article></div><p class="service-caveat">Bentuk dan ketersediaan bantuan dibahas berdasarkan kebutuhan serta kesiapan ruang lingkup.</p></section><section class="section container"><div class="section-heading"><p class="eyebrow">04 / CARA KERJA</p><h2>Pahami prosesnya, <em>sepakati langkahnya.</em></h2></div><div class="step-grid"><article><span>01</span><h3>Ceritakan kebutuhan</h3><p>Jelaskan proses, kendala, dan hasil yang ingin dicapai.</p></article><article><span>02</span><h3>Tinjau alur kerja</h3><p>Bahas konteks dan batas pekerjaan sebelum menentukan pendekatan.</p></article><article><span>03</span><h3>Sepakati ruang lingkup</h3><p>Pelatihan atau penerapan dilakukan sesuai kesepakatan yang jelas.</p></article></div></section><section class="section container split-note"><div><p class="eyebrow">05 / KELUARAN</p><h2>Hasil kerja yang bisa <em>dipakai tim.</em></h2></div><p>Keluaran mengikuti ruang lingkup. Bisa berupa peta proses, materi praktik, dokumentasi, atau solusi yang diuji pada pekerjaan nyata.</p></section><section class="section container split-note"><div><p class="eyebrow">06 / KESIAPAN</p><h2>Ada proses yang jelas, ada orang yang bisa <em>diajak bekerja.</em></h2></div><p>Pembahasan lebih berguna ketika tim dapat menjelaskan proses saat ini, kendala, dan hasil yang diharapkan. Jangan kirim data rahasia melalui formulir awal.</p></section><section class="section container split-note"><div><p class="eyebrow">07 / PRINSIP KERJA</p><h2>Mulai dari kebutuhan, tetap <em>periksa hasilnya.</em></h2></div><p>AI dipertimbangkan ketika sesuai dengan pekerjaan. Batas, pemeriksaan manusia, dan tanggung jawab operasional perlu disepakati.</p></section><section class="section container cta-panel"><p class="eyebrow">08 / LANGKAH PERTAMA</p><h2>Ceritakan proses yang ingin <em>kamu perbaiki.</em></h2><p>Kirim gambaran kebutuhan dan hasil yang diharapkan agar tim MKL dapat meninjau langkah berikutnya.</p><div class="actions"><a class="button button-light" href="/ajukan-kebutuhan">Bahas kebutuhan tim <span>↗</span></a><a class="text-link" href="/kontak">Punya pertanyaan dulu? <span>↗</span></a></div></section></>}
-      {page === 'ajukan-kebutuhan' && <><section class="page-hero container"><p class="eyebrow">AJUKAN KEBUTUHAN</p><h1>Ceritakan pekerjaan yang ingin <em>kamu bereskan.</em></h1><p class="lead">Jelaskan proses saat ini, bagian yang menyulitkan, dan hasil yang kamu harapkan.</p></section><section class="section container intake-grid"><div><p class="eyebrow">SEBELUM MENGIRIM</p><h2>Mulai dengan <em>konteks yang cukup.</em></h2><div class="line-list"><div><span>01</span><p>Proses apa yang dikerjakan timmu saat ini?</p></div><div><span>02</span><p>Bagian mana yang menyulitkan atau berulang?</p></div><div><span>03</span><p>Hasil seperti apa yang kamu harapkan?</p></div></div><p>Nama tim atau perusahaan dapat ditulis dalam deskripsi. Hindari mengirim data rahasia pada tahap awal.</p></div><div class="intake-card"><span class="eyebrow">FORMULIR MKL</span><h3>Kirim melalui formulir yang sudah tersedia.</h3><p>Formulir MKL meminta nama, email, kebutuhan, serta WhatsApp dan kisaran budget bila ingin dicantumkan.</p><a class="button button-light" href={intake}>Buka formulir kebutuhan <span>↗</span></a><small>Setelah dikirim, tim MKL meninjau informasi melalui alur yang berlaku. <a href="https://marikitalembur.com/kebijakan-privasi">Lihat penggunaan data</a>.</small></div></section></>}
-      {page === 'untuk-partner' && <><section class="page-hero container"><p class="eyebrow">UNTUK BUILDER / PENERBIT</p><h1>Punya produk yang membantu <em>pekerjaan orang lain?</em></h1><p class="lead">Ajukan produkmu untuk dipertimbangkan di MKL Market, tetap dengan brand milikmu.</p><div class="actions"><a class="button button-light" href="https://marikitalembur.com/partner">Mulai pengajuan partner <span>↗</span></a><a class="text-link" href="/kontak">Tanya soal kemitraan <span>↗</span></a></div></section><section class="section container split-note"><div><p class="eyebrow">01 / KECOCOKAN PRODUK</p><h2>Manfaat kerja yang <em>jelas.</em></h2></div><p>Jelaskan pekerjaan yang dibantu, siapa penggunanya, cara mengakses produk, serta pihak yang bertanggung jawab atas dukungannya.</p></section><section class="section container split-note"><div><p class="eyebrow">02 / PERAN MASING-MASING</p><h2>Brand tetap milikmu. <em>Perannya jelas.</em></h2></div><p>Informasi produk perlu menjelaskan penerbit, cara akses, dan tempat transaksi. Bentuk distribusi dibahas sesuai kesiapan dan hubungan kerja sama yang disetujui.</p></section><section class="section container"><div class="section-heading"><p class="eyebrow">03 / PENGAJUAN</p><h2>Daftar, siapkan informasi, <em>lalu ajukan review.</em></h2></div><div class="step-grid"><article><span>01</span><h3>Daftarkan organisasi</h3><p>Mulai dari workspace partner. Organisasi ditinjau terlebih dahulu.</p></article><article><span>02</span><h3>Siapkan produk</h3><p>Lengkapi informasi brand, manfaat, akses, dan dukungan produk.</p></article><article><span>03</span><h3>Ajukan peninjauan</h3><p>Pengajuan produk diperiksa sebelum keputusan penerbitan.</p></article></div></section><section class="section container cta-panel"><p class="eyebrow">04 / LANGKAH BERIKUTNYA</p><h2>Sepakati cara kerja <em>sebelum terbit.</em></h2><p>Syarat komersial mengikuti hubungan kerja sama yang disetujui. Pengajuan tidak berarti produk otomatis diterbitkan.</p><div class="actions"><a class="button button-light" href="https://marikitalembur.com/partner">Mulai pengajuan partner <span>↗</span></a><a class="text-link" href="/kontak">Tanya soal kemitraan <span>↗</span></a></div></section></>}
-      {page === 'tentang' && <><section class="page-hero container"><p class="eyebrow">TENTANG / MARI KITA LEMBUR</p><h1>Mengenal <em>MKL.</em></h1><p class="lead">MKL — Mari Kita Lembur — membantu orang dan tim menemukan cara kerja yang lebih beres melalui produk, pembelajaran, dan pembahasan kebutuhan bisnis.</p></section><section class="section container"><div class="section-heading"><p class="eyebrow">01 / PERAN KAMI</p><h2>Produk kami, karya penerbit, <em>kebutuhan tim.</em></h2></div><div class="step-grid"><article><span>01</span><h3>Produk MKL</h3><p>Kami membangun produk sendiri untuk pekerjaan yang nyata.</p></article><article><span>02</span><h3>MKL Market</h3><p>Produk dari penerbit tetap memakai brand pembuatnya.</p></article><article><span>03</span><h3>Untuk Bisnis</h3><p>Pembahasan dimulai dari proses kerja tim, bukan dari kewajiban memakai satu aplikasi.</p></article></div><div class="actions"><a class="text-link" href="/produk-kami">Lihat produk MKL <span>↗</span></a><a class="text-link" href="/untuk-bisnis">Bahas kebutuhan tim <span>↗</span></a></div></section><section class="section container split-note"><div><p class="eyebrow">02 / PRINSIP</p><h2>Manfaatnya jelas. <em>Batasnya juga.</em></h2></div><div><p>Kami ingin informasi produk menjelaskan kegunaan, keterbatasan, dan langkah berikutnya dengan jelas.</p><a class="text-link" href="/kontak">Hubungi MKL <span>↗</span></a></div></section></>}
-      {page === 'kontak' && <><section class="page-hero container"><p class="eyebrow">KONTAK / PILIH KANAL</p><h1>Hubungi <em>tim MKL.</em></h1><p class="lead">Untuk pertanyaan produk atau pesanan, hubungi kami melalui email. Untuk kebutuhan kerja tim, ceritakan konteksnya melalui formulir.</p></section><section class="section container contact-grid"><div class="contact-card"><span>01 / PRODUK & PESANAN</span><h2>Kirim pertanyaan lewat email.</h2><p>Sertakan nama produk atau referensi pesanan bila relevan.</p><a class="text-link" href="mailto:marikitalembur@gmail.com">marikitalembur@gmail.com ↗</a></div><div class="contact-card"><span>02 / KEBUTUHAN TIM</span><h2>Ceritakan pekerjaan timmu.</h2><p>Jelaskan proses, hambatan, dan hasil yang kamu harapkan.</p><a class="text-link" href="/ajukan-kebutuhan">Ceritakan kebutuhan <span>↗</span></a></div></section></>}
-      {page === 'kerja-sama' && <><section class="page-hero container"><p class="eyebrow">KERJA SAMA / PILIH JALUR</p><h1>Pilih jalur kerja sama <em>yang sesuai.</em></h1><p class="lead">Ajukan produk untuk Market, bahas kebutuhan kerja tim, atau hubungi kami untuk usulan topik kelas.</p></section><section class="section container path-grid three"><a class="path-card" href="/untuk-partner"><span class="path-number">01 / BUILDER</span><h3>Punya produk?</h3><p>Pelajari jalur pengajuan partner dan peninjauan produk.</p><span class="path-action">Untuk builder ↗</span></a><a class="path-card" href="/untuk-bisnis"><span class="path-number">02 / BISNIS</span><h3>Punya proses yang ingin diperbaiki?</h3><p>Bahas kebutuhan kerja tim dan bentuk bantuan yang sesuai.</p><span class="path-action">Untuk bisnis ↗</span></a><a class="path-card" href="/kontak"><span class="path-number">03 / KELAS</span><h3>Punya usulan topik?</h3><p>Hubungi MKL untuk membahas ide kelas atau workshop.</p><span class="path-action">Hubungi MKL ↗</span></a></section></>}
-      {(page === 'jelajahi' || page === 'starter-kit' || page === 'website-saas') && <><section class="page-hero container"><p class="eyebrow">MKL MARKET / JALUR PRODUK PENERBIT</p><h1>{page === 'starter-kit' ? 'Cari starter kit di ' : page === 'website-saas' ? 'Temukan produk penerbit di ' : 'Jelajahi produk dari para '}<em>{page === 'jelajahi' ? 'penerbit.' : 'Market.'}</em></h1><p class="lead">{page === 'starter-kit' ? 'Starter kit termasuk produk digital di MKL Market. Ketersediaan mengikuti katalog yang sudah terbit.' : 'Produk di Market tetap memakai brand pembuatnya. Pilihan produk sedang disiapkan.'}</p><a class="button button-light" href={market} target="_blank" rel="noopener noreferrer">Buka Market <span>↗</span></a></section></>}
+      {page === 'produk-kami' && <>
+        <PageHero eyebrow="Produk / Dibuat oleh MKL" image="/images/mkl-path-produk.webp">
+          <Fragment slot="title">Produk MKL untuk <em>pekerjaan nyata.</em></Fragment>
+          <Fragment slot="lead">Aplikasi yang kami bangun untuk membantu pekerjaan yang masih banyak dikerjakan manual.</Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="product-feature">
+            <a class="product-feature__main" href="/produk/mari-rekap">
+              <div class="product-feature__media"><img src="/images/mkl-produk-rekap-workspace.webp" width="1536" height="1024" alt="" loading="lazy" /></div>
+              <div class="product-feature__body">
+                <span class="kicker">01 / Produk dari MKL</span>
+                <h2>Mari Rekap</h2>
+                <p>Dari bahan rekap ke tabel yang bisa diperiksa.</p>
+                <span class="text-link">Kenali Mari Rekap <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+            <div class="product-feature__meta">
+              <p>Susun data, periksa hasilnya, lalu ekspor untuk pekerjaan berikutnya.</p>
+              <dl>
+                <div><dt>Input</dt><dd>Foto · PDF · Teks</dd></div>
+                <div><dt>Proses</dt><dd>Susun · Periksa · Koreksi</dd></div>
+                <div><dt>Hasil</dt><dd>Ekspor Excel</dd></div>
+              </dl>
+            </div>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="cta-panel cta-panel--split">
+            <h2>Kebutuhan timmu <em>lebih khusus?</em></h2>
+            <div>
+              <p>Mulai dengan menceritakan proses yang ingin kamu perbaiki. Bantuan untuk tim dibahas sesuai kebutuhan, terpisah dari penggunaan produk.</p>
+              <div class="actions"><a class="button" href="/untuk-bisnis">Bahas kebutuhan tim <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </div>
+        </section>
+      </>}
+      {page === 'produk/mari-rekap' && <>
+        <PageHero eyebrow="Mari Rekap / Produk dari MKL" image="/images/mkl-produk-rekap-workspace.webp" crumb={{ href: '/produk-kami', label: '← Produk MKL' }}>
+          <Fragment slot="title">Mari Rekap — bantu susun rekap, <em>tetap kamu yang periksa.</em></Fragment>
+          <Fragment slot="lead">Membantu mengolah bahan rekap menjadi tabel yang dapat diperiksa dan diedit sebelum digunakan.</Fragment>
+          <Fragment slot="actions"><a class="button" href="#cara-kerja">Lihat cara kerjanya <span aria-hidden="true">↓</span></a><a class="text-link" href="/kontak">Tanya tentang Mari Rekap <span aria-hidden="true">↗</span></a></Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">01 / Untuk siapa</p><h2>Untuk pekerjaan yang masih banyak <em>rekap manual.</em></h2></div>
+            <p>Mulai dari bahan seperti struk, invoice, foto, PDF, atau teks. Cocok saat kamu perlu menyusun catatan menjadi tabel yang mudah ditinjau. Hasil tetap perlu pemeriksaan manusia.</p>
+          </div>
+        </section>
+        <section class="section container" id="cara-kerja">
+          <div class="section-heading"><p class="eyebrow">02 / Alur kerja</p><h2>Masukkan bahan. Periksa hasil. <em>Ekspor rekap.</em></h2></div>
+          <div class="card-grid">
+            <FeatureCard icon="input" kicker="01" title="Masukkan bahan"><p>Siapkan foto, PDF, atau teks yang memuat data untuk direkap.</p></FeatureCard>
+            <FeatureCard icon="review" kicker="02" title="Tinjau draf"><p>Mari Rekap membantu menyusun draf tabel. Periksa dan koreksi isinya.</p></FeatureCard>
+            <FeatureCard icon="export" kicker="03" title="Ekspor hasil"><p>Setelah siap, ekspor rekap untuk pekerjaan berikutnya dalam format Excel.</p></FeatureCard>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">03 / Kemampuan saat ini</p><h2>Yang bisa dikerjakan <em>sekarang.</em></h2></div>
+            <ol class="num-list"><li>Gunakan bahan dari foto, PDF, atau teks.</li><li>Tinjau dan koreksi draf rekap.</li><li>Ekspor hasil ke file Excel.</li></ol>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">04 / Kendali tetap padamu</p><h2>Hasil tetap perlu <em>diperiksa.</em></h2></div>
+            <p>Kelengkapan dan keterbacaan bahan memengaruhi hasil. Periksa kembali angka, keterangan, dan susunan data sebelum digunakan untuk keputusan atau pelaporan.</p>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">05 / Paket &amp; akses</p><h2>Paket dan akses <em>Mari Rekap.</em></h2><p>Informasi penawaran tersedia pada halaman produk MKL yang aktif. Pembayaran publik belum tersedia; harga yang tampil tidak berarti checkout sudah dibuka.</p></div>
+            <div class="access-action">
+              <span class="kicker">Ingin tahu akses yang tersedia?</span>
+              <a class="button" href="/kontak">Tanya tentang akses <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://rekap.marikitalembur.com" target="_blank" rel="noopener noreferrer">Sudah punya akses? Buka aplikasi <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+        <section class="section container faq">
+          <div class="section-heading"><p class="eyebrow">06 / Pertanyaan penting</p><h2>Sebelum menggunakan <em>Mari Rekap.</em></h2></div>
+          <div class="faq__list">
+            <details><summary>Bahan apa yang bisa digunakan?<span aria-hidden="true">+</span></summary><p>Baseline produk mencakup foto, PDF, dan teks. Hasil tiap bahan bergantung pada keterbacaan dan kelengkapan informasinya.</p></details>
+            <details><summary>Apakah hasilnya bisa langsung dipakai?<span aria-hidden="true">+</span></summary><p>Periksa dan koreksi draf terlebih dahulu, terutama angka dan keterangan penting.</p></details>
+            <details><summary>Bisakah hasilnya diekspor?<span aria-hidden="true">+</span></summary><p>Rekap yang sudah diperiksa dapat diekspor ke format Excel.</p></details>
+            <details><summary>Apakah pembayaran sudah dibuka?<span aria-hidden="true">+</span></summary><p>Pembayaran publik belum tersedia. Hubungi MKL untuk menanyakan status akses yang sesuai.</p></details>
+          </div>
+          <p class="section-more"><a class="text-link" href="/kontak">Hubungi tim MKL <span aria-hidden="true">↗</span></a></p>
+        </section>
+      </>}
+      {page === 'kelas' && <>
+        <PageHero eyebrow="Kelas / Belajar praktis" image="/images/mkl-path-kelas.webp">
+          <Fragment slot="title">Belajar untuk pekerjaan <em>yang kamu hadapi.</em></Fragment>
+          <Fragment slot="lead">Informasi kelas dan workshop tentang AI, tools, dan cara kerja yang bisa dipraktikkan.</Fragment>
+        </PageHero>
+        <section class="section container" aria-labelledby="class-status-title">
+          <div class="status-card">
+            <div class="status-card__media media-well"><FeatureIcon name="calendar" size={128} /></div>
+            <div class="status-card__body">
+              <div class="status-card__head"><span class="status-pill"><span></span>Status kelas</span><span class="kicker">Informasi terkini / 01</span></div>
+              <h2 id="class-status-title">Belum ada jadwal kelas yang dibuka.</h2>
+              <p>Punya topik yang ingin kamu pelajari? Ceritakan kebutuhanmu melalui formulir MKL.</p>
+              <a class="button" href="/ajukan-kebutuhan">Usulkan topik kelas <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+      </>}
+      {page === 'untuk-bisnis' && <>
+        <PageHero eyebrow="Untuk bisnis / Mulai dari proses" image="/images/mkl-path-bisnis.webp">
+          <Fragment slot="title">Solusi kerja yang berangkat dari <em>kebutuhan tim.</em></Fragment>
+          <Fragment slot="lead">Mulai dari proses yang ingin diperbaiki. Kita bahas kebutuhan, hambatan, dan bentuk bantuan yang sesuai.</Fragment>
+          <Fragment slot="actions"><a class="button" href="/ajukan-kebutuhan">Bahas kebutuhan tim <span aria-hidden="true">↗</span></a><a class="text-link" href="#bentuk-bantuan">Lihat bentuk bantuan <span aria-hidden="true">↓</span></a></Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">01 / Masalahnya</p><h2>Saat pekerjaan berulang mulai <em>menghambat tim.</em></h2></div>
+            <div>
+              <p>Data disalin dari banyak tempat, hasil kerja diperiksa berulang, atau tools baru belum menyatu dengan proses yang ada.</p>
+              <div class="mini-tags"><span>Pemindahan data manual</span><span>Pemeriksaan berulang</span><span>Alur tools belum jelas</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">02 / Siapa yang cocok</p><h2>Untuk tim yang ingin memperbaiki <em>cara kerjanya.</em></h2></div>
+            <p>Cocok untuk pemilik bisnis dan pemimpin tim yang punya proses nyata untuk dipelajari bersama, baik pada pekerjaan operasional, administrasi, kreatif, maupun manajemen.</p>
+          </div>
+        </section>
+        <section class="section container" id="bentuk-bantuan">
+          <div class="section-heading"><p class="eyebrow">03 / Bentuk bantuan</p><h2>Pilih bantuan sesuai <em>tahap timmu.</em></h2><p>Belum tahu harus mulai dari mana? Jelaskan kebutuhannya dulu. Bentuk bantuan ditentukan dari tujuan dan kondisi tim.</p></div>
+          <div class="service-list">
+            {services.map((s) => <article class="service-row">
+              <FeatureIcon name={s.icon} size={72} />
+              <div><span class="kicker">{s.kicker}</span><h3>{s.title}</h3></div>
+              <p>{s.text}</p>
+            </article>)}
+          </div>
+          <p class="service-caveat">Bentuk dan ketersediaan bantuan dibahas berdasarkan kebutuhan serta kesiapan ruang lingkup.</p>
+        </section>
+        <section class="section container">
+          <div class="section-heading"><p class="eyebrow">04 / Cara kerja</p><h2>Pahami prosesnya, <em>sepakati langkahnya.</em></h2></div>
+          <div class="card-grid">
+            <FeatureCard icon="chat" kicker="01" title="Ceritakan kebutuhan"><p>Jelaskan proses, kendala, dan hasil yang ingin dicapai.</p></FeatureCard>
+            <FeatureCard icon="review" kicker="02" title="Tinjau alur kerja"><p>Bahas konteks dan batas pekerjaan sebelum menentukan pendekatan.</p></FeatureCard>
+            <FeatureCard icon="agree" kicker="03" title="Sepakati ruang lingkup"><p>Pelatihan atau penerapan dilakukan sesuai kesepakatan yang jelas.</p></FeatureCard>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">05 / Keluaran</p><h2>Hasil kerja yang bisa <em>dipakai tim.</em></h2></div>
+            <p>Keluaran mengikuti ruang lingkup. Bisa berupa peta proses, materi praktik, dokumentasi, atau solusi yang diuji pada pekerjaan nyata.</p>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">06 / Kesiapan</p><h2>Ada proses yang jelas, ada orang yang bisa <em>diajak bekerja.</em></h2></div>
+            <p>Pembahasan lebih berguna ketika tim dapat menjelaskan proses saat ini, kendala, dan hasil yang diharapkan. Jangan kirim data rahasia melalui formulir awal.</p>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">07 / Prinsip kerja</p><h2>Mulai dari kebutuhan, tetap <em>periksa hasilnya.</em></h2></div>
+            <p>AI dipertimbangkan ketika sesuai dengan pekerjaan. Batas, pemeriksaan manusia, dan tanggung jawab operasional perlu disepakati.</p>
+          </div>
+        </section>
+        <section class="section container">
+          <div class="cta-panel">
+            <p class="eyebrow">08 / Langkah pertama</p>
+            <h2>Ceritakan proses yang ingin <em>kamu perbaiki.</em></h2>
+            <p>Kirim gambaran kebutuhan dan hasil yang diharapkan agar tim MKL dapat meninjau langkah berikutnya.</p>
+            <div class="actions"><a class="button" href="/ajukan-kebutuhan">Bahas kebutuhan tim <span aria-hidden="true">↗</span></a><a class="text-link" href="/kontak">Punya pertanyaan dulu? <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </section>
+      </>}
+      {page === 'ajukan-kebutuhan' && <>
+        <PageHero eyebrow="Ajukan kebutuhan" image="/images/mkl-path-bisnis.webp">
+          <Fragment slot="title">Ceritakan pekerjaan yang ingin <em>kamu bereskan.</em></Fragment>
+          <Fragment slot="lead">Jelaskan proses saat ini, bagian yang menyulitkan, dan hasil yang kamu harapkan.</Fragment>
+        </PageHero>
+        <section class="section container intake-grid">
+          <div class="panel">
+            <p class="eyebrow">Sebelum mengirim</p>
+            <h2>Mulai dengan <em>konteks yang cukup.</em></h2>
+            <ol class="num-list"><li>Proses apa yang dikerjakan timmu saat ini?</li><li>Bagian mana yang menyulitkan atau berulang?</li><li>Hasil seperti apa yang kamu harapkan?</li></ol>
+            <p>Nama tim atau perusahaan dapat ditulis dalam deskripsi. Hindari mengirim data rahasia pada tahap awal.</p>
+          </div>
+          <div class="intake-card">
+            <div class="intake-card__media media-well"><FeatureIcon name="send" /></div>
+            <div class="intake-card__body">
+              <span class="kicker">Formulir MKL</span>
+              <h3>Kirim melalui formulir yang sudah tersedia.</h3>
+              <p>Formulir MKL meminta nama, email, kebutuhan, serta WhatsApp dan kisaran budget bila ingin dicantumkan.</p>
+              <a class="button" href={intake}>Buka formulir kebutuhan <span aria-hidden="true">↗</span></a>
+              <small>Setelah dikirim, tim MKL meninjau informasi melalui alur yang berlaku. <a href="https://marikitalembur.com/kebijakan-privasi">Lihat penggunaan data</a>.</small>
+            </div>
+          </div>
+        </section>
+      </>}
+      {page === 'tentang' && <>
+        <PageHero eyebrow="Tentang / Mari Kita Lembur" image="/images/mkl-path-produk.webp">
+          <Fragment slot="title">Mengenal <em>MKL.</em></Fragment>
+          <Fragment slot="lead">MKL — Mari Kita Lembur — membantu orang dan tim menemukan cara kerja yang lebih beres melalui produk, pembelajaran, dan pembahasan kebutuhan bisnis.</Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="section-heading"><p class="eyebrow">01 / Peran kami</p><h2>Produk kami dan <em>kebutuhan tim.</em></h2></div>
+          <div class="card-grid card-grid--2">
+            <FeatureCard icon="box" kicker="01" title="Produk MKL"><p>Kami membangun produk sendiri untuk pekerjaan yang nyata.</p></FeatureCard>
+            <FeatureCard icon="team" kicker="02" title="Untuk Bisnis"><p>Pembahasan dimulai dari proses kerja tim, bukan dari kewajiban memakai satu aplikasi.</p></FeatureCard>
+          </div>
+          <div class="actions actions--center"><a class="text-link" href="/produk-kami">Lihat produk MKL <span aria-hidden="true">↗</span></a><a class="text-link" href="/untuk-bisnis">Bahas kebutuhan tim <span aria-hidden="true">↗</span></a></div>
+        </section>
+        <section class="section container">
+          <div class="panel split-note">
+            <div><p class="eyebrow">02 / Prinsip</p><h2>Manfaatnya jelas. <em>Batasnya juga.</em></h2></div>
+            <div>
+              <p>Kami ingin informasi produk menjelaskan kegunaan, keterbatasan, dan langkah berikutnya dengan jelas.</p>
+              <a class="text-link" href="/kontak">Hubungi MKL <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+      </>}
+      {page === 'kontak' && <>
+        <PageHero eyebrow="Kontak / Pilih kanal" image="/images/mkl-path-kelas.webp">
+          <Fragment slot="title">Hubungi <em>tim MKL.</em></Fragment>
+          <Fragment slot="lead">Untuk pertanyaan produk atau pesanan, hubungi kami melalui email. Untuk kebutuhan kerja tim, ceritakan konteksnya melalui formulir.</Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="card-grid card-grid--2">
+            <FeatureCard icon="mail" kicker="01 / Produk & pesanan" title="Kirim pertanyaan lewat email." level={2}>
+              <p>Sertakan nama produk atau referensi pesanan bila relevan.</p>
+              <a class="text-link" href="mailto:marikitalembur@gmail.com">marikitalembur@gmail.com <span aria-hidden="true">↗</span></a>
+            </FeatureCard>
+            <FeatureCard icon="chat" kicker="02 / Kebutuhan tim" title="Ceritakan pekerjaan timmu." level={2}>
+              <p>Jelaskan proses, hambatan, dan hasil yang kamu harapkan.</p>
+              <a class="text-link" href="/ajukan-kebutuhan">Ceritakan kebutuhan <span aria-hidden="true">↗</span></a>
+            </FeatureCard>
+          </div>
+        </section>
+      </>}
+      {page === 'kerja-sama' && <>
+        <PageHero eyebrow="Kerja sama / Pilih jalur" image="/images/mkl-path-bisnis.webp">
+          <Fragment slot="title">Pilih jalur kerja sama <em>yang sesuai.</em></Fragment>
+          <Fragment slot="lead">Bahas kebutuhan kerja tim, atau hubungi kami untuk usulan topik kelas.</Fragment>
+        </PageHero>
+        <section class="section container">
+          <div class="card-grid card-grid--2">
+            <FeatureCard icon="team" kicker="01 / Bisnis" title="Punya proses yang ingin diperbaiki?" href="/untuk-bisnis"><p>Bahas kebutuhan kerja tim dan bentuk bantuan yang sesuai.</p><span class="text-link">Untuk bisnis <span aria-hidden="true">↗</span></span></FeatureCard>
+            <FeatureCard icon="learn" kicker="02 / Kelas" title="Punya usulan topik?" href="/kontak"><p>Hubungi MKL untuk membahas ide kelas atau workshop.</p><span class="text-link">Hubungi MKL <span aria-hidden="true">↗</span></span></FeatureCard>
+          </div>
+        </section>
+      </>}
     </main>
     <footer class="site-footer">
       <div class="footer-grid">
@@ -180,13 +463,11 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
             <li><a href="/produk-kami" aria-current={active === '/produk-kami' ? 'page' : undefined}>Produk MKL</a></li>
             <li><a href="/kelas" aria-current={page === 'kelas' ? 'page' : undefined}>Kelas</a></li>
             <li><a href="/untuk-bisnis" aria-current={page === 'untuk-bisnis' ? 'page' : undefined}>Untuk Bisnis</a></li>
-            <li><a href={market} target="_blank" rel="noopener noreferrer">Market ↗</a></li>
           </ul>
         </nav>
         <nav class="fcell" aria-labelledby="footer-kerjasama">
           <p id="footer-kerjasama" class="fcell__title">Kerja sama</p>
           <ul class="fcell__links">
-            <li><a href="/untuk-partner" aria-current={page === 'untuk-partner' ? 'page' : undefined}>Untuk Builder</a></li>
             <li><a href="/kerja-sama" aria-current={page === 'kerja-sama' ? 'page' : undefined}>Kerja Sama</a></li>
             <li><a href="/ajukan-kebutuhan" aria-current={page === 'ajukan-kebutuhan' ? 'page' : undefined}>Ajukan Kebutuhan</a></li>
           </ul>
@@ -210,13 +491,12 @@ const pad = (i: number) => String(i + 1).padStart(2, '0');
         </div>
         <div class="fcell fcell--split">
           <div><p class="fcell__title">Kebutuhan tim</p><a class="fcell__big" href="/untuk-bisnis">Bahas kebutuhan tim</a></div>
-          <div><p class="fcell__title">Untuk builder</p><a class="fcell__big" href="https://marikitalembur.com/partner">Mulai pengajuan partner</a></div>
+          <div><p class="fcell__title">Kelas</p><a class="fcell__big" href="/kelas">Lihat informasi kelas</a></div>
         </div>
         <div class="fcell">
           <p class="fcell__title">Tautan</p>
           <ul class="fcell__links">
             <li><a href="https://rekap.marikitalembur.com" target="_blank" rel="noopener noreferrer">Mari Rekap ↗</a></li>
-            <li><a href={market} target="_blank" rel="noopener noreferrer">Market ↗</a></li>
             <li><a href="https://marikitalembur.com" target="_blank" rel="noopener noreferrer">Situs MKL ↗</a></li>
           </ul>
         </div>

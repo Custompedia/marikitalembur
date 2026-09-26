@@ -2,12 +2,12 @@
 import MklMascot from '../components/MklMascot.astro';
 
 const variants = [
-  { state: 'default', color: '#A3E635', label: 'Santai · Lime', seed: 0.11 },
-  { state: 'default', color: '#7C3AED', label: 'Santai · Purple', seed: 0.37 },
-  { state: 'working', color: '#A3E635', label: 'Bekerja · Lime', seed: 0.52 },
-  { state: 'working', color: '#7C3AED', label: 'Bekerja · Purple', seed: 0.68 },
-  { state: 'sleeping', color: '#A3E635', label: 'Tidur · Lime', seed: 0.83 },
-  { state: 'sleeping', color: '#7C3AED', label: 'Tidur · Purple', seed: 0.94 },
+  { state: 'default', color: '#8B5CF6', label: 'Santai · Ungu', seed: 0.11 },
+  { state: 'default', color: '#6D28D9', label: 'Santai · Ungu tua', seed: 0.37 },
+  { state: 'working', color: '#8B5CF6', label: 'Bekerja · Ungu', seed: 0.52 },
+  { state: 'working', color: '#6D28D9', label: 'Bekerja · Ungu tua', seed: 0.68 },
+  { state: 'sleeping', color: '#8B5CF6', label: 'Tidur · Ungu', seed: 0.83 },
+  { state: 'sleeping', color: '#6D28D9', label: 'Tidur · Ungu tua', seed: 0.94 },
 ] as const;
 ---
 <!doctype html>
@@ -46,9 +46,9 @@ const variants = [
           <fieldset class="field">
             <legend>Warna</legend>
             <div class="swatches">
-              <label class="sw"><input type="radio" name="color" value="#A3E635" checked /><span style="--c:#A3E635">Lime</span></label>
-              <label class="sw"><input type="radio" name="color" value="#7C3AED" /><span style="--c:#7C3AED">Purple</span></label>
-              <label class="sw custom"><input type="color" id="color-custom" value="#F97316" aria-label="Warna kustom" /><span>Kustom</span></label>
+              <label class="sw"><input type="radio" name="color" value="#8B5CF6" checked /><span style="--c:#8B5CF6">Ungu</span></label>
+              <label class="sw"><input type="radio" name="color" value="#6D28D9" /><span style="--c:#6D28D9">Ungu tua</span></label>
+              <label class="sw custom"><input type="color" id="color-custom" value="#C4B5FD" aria-label="Warna kustom" /><span>Kustom</span></label>
             </div>
           </fieldset>
 
@@ -90,7 +90,7 @@ const variants = [
         <pre><code>{`---
 import MklMascot from '../components/MklMascot.astro';
 ---
-<MklMascot state="working" color="#7C3AED" size={96} />`}</code></pre>
+<MklMascot state="working" color="#6D28D9" size={96} />`}</code></pre>
         <pre><code>{`import { MklMascot } from '../scripts/mkl-mascot';
 
 const m = new MklMascot(canvas, { state: 'default', size: 160 });
@@ -154,7 +154,7 @@ m.poke(); // lompat + putar`}</code></pre>
         --line: #2a2a2a;
         --text: #f4f4f5;
         --muted: #a1a1aa;
-        --lime: #a3e635;
+        --accent: #8b5cf6;
         color-scheme: dark;
       }
       * { box-sizing: border-box; }
@@ -166,7 +166,7 @@ m.poke(); // lompat + putar`}</code></pre>
         -webkit-font-smoothing: antialiased;
       }
       .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 16px 80px; }
-      .eyebrow { margin: 0 0 10px; color: var(--lime); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+      .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
       h1 { margin: 0; font-size: clamp(28px, 5vw, 44px); letter-spacing: -.03em; font-weight: 600; }
       .sub { max-width: 640px; color: var(--muted); line-height: 1.6; margin: 14px 0 32px; }
 
@@ -204,13 +204,13 @@ m.poke(); // lompat + putar`}</code></pre>
       .sw.custom span { border: 0; padding: 0; }
       .sw.custom input { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
 
-      input[type="range"] { width: 100%; accent-color: var(--lime); }
+      input[type="range"] { width: 100%; accent-color: var(--accent); }
       .toggles { display: flex; gap: 16px; }
       .tg { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
-      .tg input { accent-color: var(--lime); width: 16px; height: 16px; }
+      .tg input { accent-color: var(--accent); width: 16px; height: 16px; }
 
-      :where(input, button, canvas):focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 8px; }
-      .seg input:focus-visible + span, .sw input:focus-visible + span { outline: 2px solid var(--lime); outline-offset: 2px; }
+      :where(input, button, canvas):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+      .seg input:focus-visible + span, .sw input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
 
       .grid { margin-top: 16px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
       .card { margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); display: grid; justify-items: center; padding: 8px 0 12px; }

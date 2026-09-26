@@ -1,0 +1,16 @@
+---
+// Inner-page opening after hazel.ai/security: centred copy over a heavily blurred page image that dissolves into scanlines.
+interface Props { eyebrow: string; image: string; crumb?: { href: string; label: string } }
+const { eyebrow, image, crumb } = Astro.props;
+const hasActions = Astro.slots.has('actions');
+---
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"><img src={image} alt="" decoding="async" fetchpriority="high" /></div>
+  <div class="page-hero__inner container">
+    {crumb && <a class="breadcrumb" href={crumb.href}>{crumb.label}</a>}
+    <p class="page-hero__eyebrow">{eyebrow}</p>
+    <h1><slot name="title" /></h1>
+    <p class="page-hero__lead"><slot name="lead" /></p>
+    {hasActions && <div class="actions"><slot name="actions" /></div>}
+  </div>
+</section>

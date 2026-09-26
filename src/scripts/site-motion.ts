@@ -1,7 +1,7 @@
-// Page motion for the StackCraft-style layout: hero ribbons, statement entrances, word reveals, the pinned paths, and the nav pill.
+// Page motion for the StackCraft-style layout: pinned hero, statement entrances, word reveals, the pinned paths, and the nav pill.
 import { mountAll, getMascot, type MascotState } from './mkl-mascot';
-import { applyLiquidGlass, createLiquidGlass } from './liquid-glass';
-import { mountRibbonGlow } from './ribbon-glow';
+import { initHero } from './hero-intro';
+import { initTextLight } from './text-light';
 import { initPixelDust } from './pixel-dust';
 
 const clamp = (v: number, lo: number, hi: number): number => Math.min(hi, Math.max(lo, v));
@@ -126,7 +126,7 @@ function initAbout(section: HTMLElement): void {
   update();
 }
 
-// A rounded glass pill slides to the nav item of the section in view; without tagged sections it marks the current page.
+// A soft pill slides to the nav item of the section in view; without tagged sections it marks the current page.
 function initNavIndicator(): void {
   const nav = document.querySelector<HTMLElement>('[data-nav-root]');
   const pill = nav?.querySelector<HTMLElement>('.nav-indicator');
@@ -134,15 +134,9 @@ function initNavIndicator(): void {
   const links = Array.from(nav.querySelectorAll<HTMLAnchorElement>('a[data-nav-key]'));
   const pageKey = links.find((a) => a.getAttribute('aria-current') === 'page')?.dataset.navKey ?? '';
   const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-nav]'));
-  const glass = createLiquidGlass(pill, { bezel: 11, blur: 1.2, refraction: 0.9, saturation: 1.8, specular: 0.75 });
   let current: string | null = null;
-  let settleTimer = 0;
   let queued = false;
 
-  const settle = (): void => {
-    pill.classList.remove('is-moving');
-    glass?.refresh();
-  };
   const moveTo = (key: string, force = false): void => {
     if (key === current && !force) return;
     current = key;
@@ -156,7 +150,6 @@ function initNavIndicator(): void {
       pill.style.setProperty('--x', `${link.offsetLeft}px`);
       pill.style.width = `${link.offsetWidth}px`;
     };
-    pill.classList.add('is-moving');
     if (!pill.classList.contains('is-on') || reducedMotion()) {
       // Appear in place rather than sliding in from the left edge.
       pill.style.transition = 'none';
@@ -167,8 +160,6 @@ function initNavIndicator(): void {
       place();
     }
     pill.classList.add('is-on');
-    window.clearTimeout(settleTimer);
-    settleTimer = window.setTimeout(settle, 600);
   };
   const compute = (force = false): void => {
     queued = false;
@@ -200,17 +191,9 @@ export function initSite(): void {
   // Hidden-until-animated styles apply only once this script runs, so content stays visible if it fails to load.
   document.documentElement.classList.add('js');
   mountAll();
-  applyLiquidGlass('.site-header', { bezel: 14, blur: 3, saturation: 1.2, cssVar: '--glass-filter' });
-  applyLiquidGlass('.mobile-menu nav', { bezel: 18, blur: 7, refraction: 0.6 });
-  const ribbon = document.querySelector<HTMLCanvasElement>('canvas[data-ribbon]');
-  if (ribbon) {
-    try {
-      if (mountRibbonGlow(ribbon)) ribbon.closest('.hero')?.classList.add('has-ribbon');
-    } catch (err) {
-      // The CSS glow behind the hero stays in place; report why the shader did not start.
-      console.error(err);
-    }
-  }
+  const hero = document.querySelector<HTMLElement>('[data-hero]');
+  if (hero) initHero(hero);
+  initTextLight();
   initStatement();
   initLighting();
   const about = document.querySelector<HTMLElement>('[data-about]');

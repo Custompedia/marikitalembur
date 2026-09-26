@@ -18,7 +18,7 @@ export interface MascotOptions {
 const DEFAULTS: MascotOptions = {
   state: 'default',
   size: 160,
-  color: '#A3E635',
+  color: '#8B5CF6',
   ink: '#FFFFFF',
   speed: 1,
   turn: 1,
@@ -145,7 +145,7 @@ const easeOutQuad = (u: number): number => 1 - (1 - u) * (1 - u);
 
 function parseHex(hex: string): Vec3 {
   const m = /^#?([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(hex.trim());
-  if (!m) return [163, 230, 53];
+  if (!m) return [139, 92, 246];
   const h = m[1].length === 3 ? m[1].split('').map((c) => c + c).join('') : m[1];
   return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
 }
