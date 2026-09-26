@@ -5,6 +5,7 @@ import PageHero from './PageHero.astro';
 import FeatureCard from './FeatureCard.astro';
 import Banner from './Banner.astro';
 import ProductCard from './ProductCard.astro';
+import ChevronDown from '@lucide/astro/icons/chevron-down';
 import { icons, type IconName } from './icons';
 interface Props { page: string }
 const { page } = Astro.props;
@@ -27,12 +28,27 @@ const descriptions: Record<string, string> = {
   'untuk-bisnis': 'Bahas proses kerja tim, hambatan, dan bentuk bantuan yang sesuai bersama MKL.',
 };
 // `key` ties a nav item to the home sections that talk about it, so the nav pill can follow the scroll.
-const nav = [
-  { href: '/produk-kami', label: 'Produk', key: 'produk' },
-  { href: '/kelas', label: 'Kelas', key: 'kelas' },
-  { href: '/untuk-bisnis', label: 'Untuk Bisnis', key: 'bisnis' },
+// Each top-level item opens a panel of its pages, so pages without a nav slot of their own stay one step away.
+type NavItem = { href: string; title: string; desc: string; icon: IconName; external?: boolean };
+const navGroups: { key: string; label: string; items: NavItem[] }[] = [
+  { key: 'produk', label: 'Produk', items: [
+    { href: '/produk-kami', title: 'Semua produk MKL', desc: 'Aplikasi yang kami bangun untuk pekerjaan nyata.', icon: 'box' },
+    { href: '/produk/mari-rekap', title: 'Mari Rekap', desc: 'Susun rekap dari foto, PDF, atau teks.', icon: 'export' },
+    { href: 'https://rekap.marikitalembur.com', title: 'Buka aplikasi Mari Rekap', desc: 'Untuk yang sudah punya akses.', icon: 'open', external: true },
+  ] },
+  { key: 'kelas', label: 'Kelas', items: [
+    { href: '/kelas', title: 'Informasi kelas', desc: 'Status jadwal kelas dan workshop praktis.', icon: 'calendar' },
+    { href: '/ajukan-kebutuhan', title: 'Usulkan topik kelas', desc: 'Ceritakan topik yang ingin kamu pelajari.', icon: 'learn' },
+  ] },
+  { key: 'bisnis', label: 'Untuk Bisnis', items: [
+    { href: '/untuk-bisnis', title: 'Solusi untuk tim', desc: 'Bahas proses kerja dan bentuk bantuan yang sesuai.', icon: 'team' },
+    { href: '/ajukan-kebutuhan', title: 'Ajukan kebutuhan', desc: 'Kirim gambaran proses yang ingin diperbaiki.', icon: 'send' },
+    { href: '/kerja-sama', title: 'Pilih jalur kerja sama', desc: 'Untuk kebutuhan tim atau usulan topik kelas.', icon: 'agree' },
+  ] },
 ];
 const active = page === 'produk/mari-rekap' ? '/produk-kami' : `/${page}`;
+const here = `/${page}`;
+const groupIsCurrent = (items: NavItem[]) => items.some((it) => !it.external && it.href === here);
 const intake = 'https://marikitalembur.com/ajukan-kebutuhan';
 // The three starting points on the home page; `pose` is the mascot state while that point is in focus.
 const paths = [
@@ -79,12 +95,31 @@ const services: { icon: IconName; kicker: string; title: string; text: string }[
         <a class="brand" href="/" aria-label="MKL, ke beranda"><span class="brand-name">MKL</span></a>
         <nav class="desktop-nav" aria-label="Navigasi utama" data-nav-root>
           <span class="nav-indicator" aria-hidden="true"></span>
-          {nav.map((item) => <a href={item.href} data-nav-key={item.key} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>)}
+          {navGroups.map((g) => <button type="button" class="nav-trigger" data-nav-key={g.key} data-nav-trigger={g.key} data-current={groupIsCurrent(g.items) ? 'true' : undefined} aria-expanded="false" aria-controls={`nav-panel-${g.key}`}>{g.label}<ChevronDown size={14} stroke-width={2} aria-hidden="true" /></button>)}
         </nav>
         <a class="header-contact" href="/kontak">Hubungi kami <span aria-hidden="true">↗</span></a>
-        <details class="mobile-menu"><summary aria-label="Buka navigasi"><span></span><span></span></summary><nav aria-label="Navigasi seluler">{nav.map((item) => <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>)}<a href="/kontak" aria-current={page === 'kontak' ? 'page' : undefined}>Hubungi kami</a></nav></details>
+        <details class="mobile-menu"><summary aria-label="Buka navigasi"><span></span><span></span></summary><nav aria-label="Navigasi seluler">
+          {navGroups.map((g) => <div class="mobile-menu__group">
+            <p class="mobile-menu__label">{g.label}</p>
+            {g.items.map((it) => <a href={it.href} aria-current={!it.external && it.href === here ? 'page' : undefined} {...(it.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{it.title}{it.external && <span aria-hidden="true"> ↗</span>}</a>)}
+          </div>)}
+          <a class="mobile-menu__contact" href="/kontak" aria-current={page === 'kontak' ? 'page' : undefined}>Hubungi kami</a>
+        </nav></details>
+      </div>
+      <div class="nav-panels" data-nav-panels>
+        {navGroups.map((g) => <div class="nav-panel" id={`nav-panel-${g.key}`} data-nav-panel={g.key} inert>
+          <ul class="nav-panel__links">
+            {g.items.map((it, i) => {
+              return <li><a class="nav-item" href={it.href} aria-current={!it.external && it.href === here ? 'page' : undefined} {...(it.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                <Banner icon={it.icon} size="tile" variant={i} class="nav-item__icon" />
+                <span class="nav-item__text"><span class="nav-item__title">{it.title}{it.external && <span aria-hidden="true"> ↗</span>}</span><span class="nav-item__desc">{it.desc}</span></span>
+              </a></li>;
+            })}
+          </ul>
+        </div>)}
       </div>
     </header>
+    <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
     <main id="konten">
       {page === 'home' && <>
         <section class="hero" data-hero aria-label="MKL - Mari Kita Lembur">
@@ -115,11 +150,11 @@ const services: { icon: IconName; kicker: string; title: string; text: string }[
 
               <div class="hero__reel" data-hero-reel>
                 <canvas class="hero__ribbon" data-ribbon aria-hidden="true"></canvas>
-                <div class="hero__about">
+                <div class="hero__about" id="tentang-mkl">
                   <div class="hero__about-intro">
                     <p class="hero__about-eyebrow">Tentang MKL</p>
-                    <h2 class="hero__about-title">Produk, kelas, dan solusi AI <em>untuk pekerjaan yang nyata.</em></h2>
-                    <p class="hero__about-text">MKL — Mari Kita Lembur — membangun aplikasi sendiri, membuka kelas praktis, dan mendampingi bisnis menerapkan AI. Semuanya berangkat dari proses kerja yang ingin kamu bereskan.</p>
+                    <h2 class="hero__about-title" tabindex="-1">Produk, kelas, dan solusi AI <em>untuk pekerjaan yang nyata.</em></h2>
+                    <p class="hero__about-text">MKL - Mari Kita Lembur - membangun aplikasi sendiri, membuka kelas praktis, dan mendampingi bisnis menerapkan AI. Semuanya berangkat dari proses kerja yang ingin kamu bereskan.</p>
                     <ul class="hero__about-principles" aria-label="Prinsip kerja MKL"><li>Mulai dari proses</li><li>AI bila sesuai</li><li>Hasil tetap diperiksa</li></ul>
                   </div>
                   <ol class="hero__pillars">
@@ -134,11 +169,11 @@ const services: { icon: IconName; kicker: string; title: string; text: string }[
                 </div>
               </div>
               {['tl', 'tr', 'bl', 'br'].map((c) => <span class="hero__corner" data-hero-corner={c} aria-hidden="true"></span>)}
-              <span class="hero__reel-label hero__reel-label--l" data-hero-label="l" aria-hidden="true"><span data-scramble>Lihat jalur</span></span>
-              <a class="hero__play" href="#jelajahi" aria-label="Lihat tiga jalur MKL">
-                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <span class="hero__reel-label hero__reel-label--l" data-hero-label="l" aria-hidden="true"><span data-scramble>Kenali MKL</span></span>
+              <a class="hero__play" href="#tentang-mkl" data-hero-play aria-label="Buka penjelasan tentang MKL">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.2v9.6c0 .6.6.9 1.1.6l7.4-4.8a.7.7 0 0 0 0-1.2L6.6 2.6c-.5-.3-1.1 0-1.1.6Z" fill="currentColor" /></svg>
               </a>
-              <span class="hero__reel-label hero__reel-label--r" data-hero-label="r" aria-hidden="true"><span data-scramble>03 jalur</span></span>
+              <span class="hero__reel-label hero__reel-label--r" data-hero-label="r" aria-hidden="true"><span data-scramble>03 pilar</span></span>
 
               <p class="hero__title hero__fade"><span class="hero__title-sm">Mari kita</span><span class="hero__title-lg">lembur.</span></p>
               <a class="hero__next hero__fade" href="#pernyataan" aria-label="Gulir ke bagian berikutnya"><span></span><span></span><span></span></a>
@@ -180,19 +215,17 @@ const services: { icon: IconName; kicker: string; title: string; text: string }[
               </div>
             </div>
             <div class="about-pin__stage">
-              <canvas class="about-pin__dust" data-pixel-dust aria-hidden="true"></canvas>
+              <canvas class="about-pin__dust" data-pixel-dust data-images={paths.map((p) => p.img).join(',')} aria-hidden="true"></canvas>
               <MklMascot class="about-pin__mascot" size={440} seed={0.3} jumpEvery={10} />
             </div>
           </div>
         </section>
 
-        <section class="about-outro container" data-nav="bisnis" aria-labelledby="memulai-title">
-          <p class="label">Cara kami memulai</p>
-          <div class="about-outro__copy">
-            <h2 id="memulai-title" class="t-title" data-reveal>Mulai dari cara kerja timmu. Ada pekerjaan yang tidak selesai dengan satu aplikasi?</h2>
-            <p class="about-outro__body">Ceritakan proses yang ingin diperbaiki. Kebutuhan itu menjadi dasar pembahasan pelatihan atau solusi yang sesuai.</p>
-            <a class="cta" href="/untuk-bisnis">Jelajahi bantuan untuk bisnis</a>
-          </div>
+        <section class="about-outro container" data-nav="bisnis" data-light-group aria-labelledby="memulai-title">
+          <p class="about-outro__eyebrow" data-rise="0">Cara kami memulai</p>
+          <h2 id="memulai-title" class="about-outro__title" data-light>Mulai dari cara kerja timmu. <em>Ada pekerjaan yang tidak selesai dengan satu aplikasi?</em></h2>
+          <p class="about-outro__body" data-rise="0.6">Ceritakan proses yang ingin diperbaiki. Kebutuhan itu menjadi dasar pembahasan pelatihan atau solusi yang sesuai.</p>
+          <a class="button" href="/untuk-bisnis" data-rise="0.75">Jelajahi bantuan untuk bisnis <span aria-hidden="true">↗</span></a>
         </section>
 
         <section class="services container" aria-labelledby="jalur-title">

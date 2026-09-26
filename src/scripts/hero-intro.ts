@@ -116,6 +116,17 @@ export function initHero(hero: HTMLElement): void {
     }, 2800);
   }
 
+  // Play opens the card by scrolling to where the pin has it fully open, then hands focus to the about heading.
+  const play = hero.querySelector<HTMLAnchorElement>('[data-hero-play]');
+  const aboutTitle = hero.querySelector<HTMLElement>('.hero__about-title');
+  play?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const travel = Math.max(0, hero.offsetHeight - window.innerHeight);
+    const top = hero.getBoundingClientRect().top + window.scrollY + travel * 0.9;
+    window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
+    window.setTimeout(() => aboutTitle?.focus({ preventScroll: true }), reduced ? 0 : 900);
+  });
+
   new ResizeObserver(() => {
     measure();
     queue();

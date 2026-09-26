@@ -2,7 +2,8 @@
 import { mountAll, getMascot, type MascotState } from './mkl-mascot';
 import { initHero } from './hero-intro';
 import { initTextLight } from './text-light';
-import { initPixelDust } from './pixel-dust';
+import { initNavMenu } from './nav-menu';
+import { mountPixelMorph, type PixelMorph } from './pixel-morph';
 
 const clamp = (v: number, lo: number, hi: number): number => Math.min(hi, Math.max(lo, v));
 const reducedMotion = (): boolean => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -73,7 +74,7 @@ function initStatement(): void {
 const isState = (v: string | undefined): v is MascotState => v === 'default' || v === 'working' || v === 'sleeping';
 
 // Scroll through a tall section while its content stays pinned; each quarter focuses one path and cues the mascot.
-function initAbout(section: HTMLElement): void {
+function initAbout(section: HTMLElement, morph: PixelMorph | null): void {
   const items = Array.from(section.querySelectorAll<HTMLElement>('[data-about-item]'));
   const panes = Array.from(section.querySelectorAll<HTMLElement>('[data-about-pane]'));
   const paneBox = section.querySelector<HTMLElement>('.about-pin__panes');
@@ -101,6 +102,9 @@ function initAbout(section: HTMLElement): void {
     const idx = p < 0.1 ? 0 : Math.min(items.length, 1 + Math.floor(((p - 0.1) / 0.9) * items.length));
     section.dataset.nav = panes[idx]?.dataset.navKey ?? '';
     if (idx === current) return;
+    // Each focused path assembles its illustration in pixels; the overview lets them loose again.
+    section.dataset.step = String(idx);
+    morph?.show(idx - 1);
     const prev = current;
     current = idx;
     items.forEach((el, i) => el.classList.toggle('is-active', i + 1 === idx));
@@ -131,8 +135,8 @@ function initNavIndicator(): void {
   const nav = document.querySelector<HTMLElement>('[data-nav-root]');
   const pill = nav?.querySelector<HTMLElement>('.nav-indicator');
   if (!nav || !pill) return;
-  const links = Array.from(nav.querySelectorAll<HTMLAnchorElement>('a[data-nav-key]'));
-  const pageKey = links.find((a) => a.getAttribute('aria-current') === 'page')?.dataset.navKey ?? '';
+  const links = Array.from(nav.querySelectorAll<HTMLElement>('[data-nav-key]'));
+  const pageKey = links.find((a) => a.dataset.current === 'true')?.dataset.navKey ?? '';
   const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-nav]'));
   let current: string | null = null;
   let queued = false;
@@ -220,10 +224,12 @@ export function initSite(): void {
   initStatement();
   initLighting();
   const about = document.querySelector<HTMLElement>('[data-about]');
-  if (about) initAbout(about);
   const dust = document.querySelector<HTMLCanvasElement>('canvas[data-pixel-dust]');
-  if (dust) initPixelDust(dust);
+  const morph = dust ? mountPixelMorph(dust, (dust.dataset.images ?? '').split(',').filter(Boolean)) : null;
+  if (about) initAbout(about, morph);
   initNavIndicator();
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) initNavMenu(header);
   const footerMark = document.querySelector<HTMLElement>('[data-footer-mark]');
   if (footerMark) initFooterGlow(footerMark);
 }

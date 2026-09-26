@@ -73,6 +73,27 @@ export function initTextLight(): void {
     prepareLight(heroTitle);
     play(hero, heroTitle);
   }
+  // Sections outside the inner-page layout opt in with data-light-group: the [data-light] heading opens up,
+  // then each [data-rise] element rises in after the delay (seconds) it names.
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-light-group]'));
+  for (const group of groups) {
+    const heading = group.querySelector<HTMLElement>('[data-light]');
+    if (heading) prepareLight(heading);
+    group.querySelectorAll<HTMLElement>('[data-rise]').forEach((el) => {
+      el.style.setProperty('--rise', `${Number(el.dataset.rise) || 0}s`);
+      el.classList.add('rise-text');
+    });
+  }
+  if (groups.length) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.querySelectorAll('[data-light], [data-rise]').forEach((el) => el.classList.add('is-in'));
+        io.unobserve(e.target);
+      }
+    }, { rootMargin: '0px 0px -20% 0px' });
+    groups.forEach((g) => io.observe(g));
+  }
   const headings = Array.from(document.querySelectorAll<HTMLElement>('main .section h2:not(.fcard__title)'));
   headings.forEach(prepareLight);
   onceVisible(headings, '0px 0px -18% 0px');
