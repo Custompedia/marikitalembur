@@ -74,12 +74,14 @@ export function initHero(hero: HTMLElement): void {
   };
 
   // Scroll progress through the pin opens the card; it is fully open a little before the pin releases.
+  // With reduced motion the card starts open, so the about content inside it is shown without the scroll animation.
   const update = (): void => {
     queued = false;
     const travel = Math.max(1, hero.offsetHeight - window.innerHeight);
-    const p = reduced ? 0 : clamp(-hero.getBoundingClientRect().top / travel, 0, 1);
+    const p = reduced ? 1 : clamp(-hero.getBoundingClientRect().top / travel, 0, 1);
     const e = easeInOutCubic(clamp(p / 0.85, 0, 1));
     hero.style.setProperty('--e', e.toFixed(4));
+    hero.classList.toggle('is-open', e > 0.6);
     const w = lerp(w0, W, e), h = lerp(h0, H, e);
     reel.style.clipPath = `inset(${((H - h) / 2).toFixed(1)}px ${((W - w) / 2).toFixed(1)}px round 14px)`;
     const off = lerp(12, 44, e);

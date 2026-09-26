@@ -233,15 +233,32 @@ em { font-style: normal; color: var(--fg-50); }
 .hero__readout { position: absolute; top: 12px; font: 500 12px/1 var(--mono); letter-spacing: 0.04em; color: var(--fg-50); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* The card is laid out at its final size; a clip-path inset (set per frame) shows the smaller opening state. */
-.hero__reel { position: absolute; left: var(--pad); right: var(--pad); top: 50%; z-index: 1; height: min(58svh, calc((min(100vw, var(--max)) - 2 * var(--pad)) * 0.46)); translate: 0 -50%; overflow: hidden; border-radius: 14px; background: radial-gradient(60% 80% at 30% 40%, rgba(139, 92, 246, 0.55), transparent 70%), radial-gradient(50% 70% at 75% 60%, rgba(196, 181, 253, 0.35), transparent 70%), #0b0614; clip-path: inset(38% 32% round 14px); }
-.hero__reel::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(rgba(1, 1, 1, 0.55) 0.8px, transparent 1.2px) 0 0 / 4px 4px; }
+.hero__reel { position: absolute; left: var(--pad); right: var(--pad); top: 50%; z-index: 1; display: grid; align-items: center; min-height: min(58svh, calc((min(100vw, var(--max)) - 2 * var(--pad)) * 0.46)); translate: 0 -50%; overflow: hidden; border-radius: 14px; background: radial-gradient(60% 80% at 30% 40%, rgba(139, 92, 246, 0.55), transparent 70%), radial-gradient(50% 70% at 75% 60%, rgba(196, 181, 253, 0.35), transparent 70%), #0b0614; clip-path: inset(38% 32% round 14px); }
+.hero__reel::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(rgba(1, 1, 1, 0.55) 0.8px, transparent 1.2px) 0 0 / 4px 4px, linear-gradient(90deg, rgba(8, 6, 14, calc(var(--e, 0) * 0.6)) 0%, rgba(8, 6, 14, calc(var(--e, 0) * 0.35)) 50%, rgba(8, 6, 14, calc(var(--e, 0) * 0.12)) 100%); }
+/* About MKL, inside the reel: it fades in as the card finishes opening, and the reel grows to fit it. */
+.hero__about { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 32px 56px; align-items: center; padding: 48px 56px; opacity: clamp(0, calc((var(--e, 0) - 0.62) * 3), 1); transform: translateY(calc((1 - var(--e, 0)) * 28px)); }
+.hero__about-eyebrow { font: 400 12px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); }
+.hero__about-title { max-width: 18ch; margin-top: 16px; font: 400 clamp(30px, 3.2vw, 48px)/1.05 var(--display); letter-spacing: -0.035em; color: var(--fg); text-wrap: balance; }
+.hero__about-title em { color: rgba(255, 255, 255, 0.55); }
+.hero__about-text { max-width: 52ch; margin-top: 18px; font: 400 16px/1.55 var(--sans); color: rgba(255, 255, 255, 0.74); text-wrap: pretty; }
+.hero__about-principles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.hero__about-principles li { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.04); font: 400 11px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
+.hero__about-principles li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); }
+.hero__pillars { display: grid; gap: 12px; }
+.hero__pillar { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; align-items: start; padding: 18px 20px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.06); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); }
+.hero__pillar-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); }
+.hero__pillar-index { font: 400 11px/1 var(--mono); letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.5); }
+.hero__pillar h3 { margin-top: 6px; font: 500 17px/1.3 var(--sans); letter-spacing: -0.01em; color: var(--fg); }
+.hero__pillar p { margin-top: 4px; font: 400 14px/1.5 var(--sans); color: rgba(255, 255, 255, 0.66); }
 .hero__ribbon { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .hero__corner { position: absolute; left: 50%; top: 50%; z-index: 2; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; border-radius: 50%; background: rgba(255, 255, 255, 0.6); pointer-events: none; opacity: 0; }
 .hero.is-ready .hero__corner { opacity: 1; }
-.hero__reel-label { position: absolute; top: 50%; z-index: 2; font: 500 12px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); white-space: nowrap; transform: translateY(10px); }
+/* The reel's labels and play button step aside while the about content takes the card. */
+.hero__reel-label { position: absolute; top: 50%; z-index: 2; opacity: clamp(0, calc((0.6 - var(--e, 0)) * 4), 1); font: 500 12px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); white-space: nowrap; transform: translateY(10px); }
 .hero__reel-label--l { right: 50%; }
 .hero__reel-label--r { left: 50%; }
-.hero__play { position: absolute; left: 50%; top: 50%; z-index: 3; display: grid; place-items: center; width: 94px; height: 46px; translate: -50% -50%; border-radius: 999px; background: #fff; color: var(--ink); box-shadow: -3px 0 0 rgba(139, 92, 246, 0.9), 3px 0 0 rgba(196, 181, 253, 0.9); transition: scale 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.35s ease; }
+.hero.is-open .hero__play { visibility: hidden; }
+.hero__play { position: absolute; left: 50%; top: 50%; z-index: 3; opacity: clamp(0, calc((0.6 - var(--e, 0)) * 4), 1); display: grid; place-items: center; width: 94px; height: 46px; translate: -50% -50%; border-radius: 999px; background: #fff; color: var(--ink); box-shadow: -3px 0 0 rgba(139, 92, 246, 0.9), 3px 0 0 rgba(196, 181, 253, 0.9); transition: scale 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.35s ease; }
 .hero__play svg { width: 16px; height: 16px; }
 .hero__play:hover { scale: 1.06; box-shadow: -5px 0 0 rgba(139, 92, 246, 0.9), 5px 0 0 rgba(196, 181, 253, 0.9); }
 
@@ -561,6 +578,7 @@ em { font-style: normal; color: var(--fg-50); }
   .fcell { min-height: 240px; }
 }
 @media (max-width: 900px) {
+  .hero__about { grid-template-columns: 1fr; }
   .card-grid, .card-grid--2 { grid-template-columns: 1fr; gap: 16px; }
   .fcard { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: center; gap: 24px; }
   .fcard__media { aspect-ratio: 1; }
@@ -579,7 +597,14 @@ em { font-style: normal; color: var(--fg-50); }
   .hero__sub { font-size: 13px; }
   .hero__word { font-size: 44px; }
   .hero__btn { margin-top: 14px; height: 42px; }
-  .hero__reel { height: min(52svh, calc((100vw - 2 * var(--pad)) * 1.05)); }
+  .hero__reel { min-height: min(52svh, calc((100vw - 2 * var(--pad)) * 1.05)); }
+  .hero__about { padding: 26px 20px; gap: 18px; }
+  .hero__about-title { font-size: 28px; }
+  .hero__about-text { margin-top: 12px; font-size: 15px; }
+  .hero__about-principles { display: none; }
+  .hero__pillar { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
+  .hero__pillar-icon { width: 36px; height: 36px; }
+  .hero__pillar p { font-size: 13px; }
   .hero__orbit { width: 118vw; }
   .statement { padding-top: 56px; }
   .dot-rule { margin-bottom: 32px; }
@@ -616,6 +641,16 @@ em { font-style: normal; color: var(--fg-50); }
   .page-hero__lead { font-size: 15px; }
   .section { padding-top: 28px; padding-bottom: 28px; }
   .section-heading { margin: 28px auto 32px; }
+}
+
+/* Short phones: the pinned hero is one screen tall, so the pillars fold into a compact row of icon and title. */
+@media (max-width: 760px) and (max-height: 820px) {
+  .hero__pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hero__pillar { grid-template-columns: 1fr; justify-items: center; gap: 8px; padding: 12px 8px; text-align: center; }
+  .hero__pillar-index, .hero__pillar p { display: none; }
+  .hero__pillar h3 { margin-top: 0; font-size: 13px; }
+  .hero__about-title { font-size: 26px; }
+  .hero__about-text { font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

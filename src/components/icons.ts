@@ -14,6 +14,7 @@ import Users from '@lucide/astro/icons/users';
 import Mail from '@lucide/astro/icons/mail';
 import CalendarDays from '@lucide/astro/icons/calendar-days';
 import Send from '@lucide/astro/icons/send';
+import Sparkles from '@lucide/astro/icons/sparkles';
 
 export const icons = {
   input: FileUp,
@@ -31,6 +32,7 @@ export const icons = {
   mail: Mail,
   calendar: CalendarDays,
   send: Send,
+  ai: Sparkles,
 };
 
 export type IconName = keyof typeof icons;

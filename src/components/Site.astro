@@ -5,7 +5,7 @@ import PageHero from './PageHero.astro';
 import FeatureCard from './FeatureCard.astro';
 import Banner from './Banner.astro';
 import ProductCard from './ProductCard.astro';
-import type { IconName } from './icons';
+import { icons, type IconName } from './icons';
 interface Props { page: string }
 const { page } = Astro.props;
 const titles: Record<string, string> = {
@@ -31,7 +31,6 @@ const nav = [
   { href: '/produk-kami', label: 'Produk', key: 'produk' },
   { href: '/kelas', label: 'Kelas', key: 'kelas' },
   { href: '/untuk-bisnis', label: 'Untuk Bisnis', key: 'bisnis' },
-  { href: '/tentang', label: 'Tentang', key: 'tentang' },
 ];
 const active = page === 'produk/mari-rekap' ? '/produk-kami' : `/${page}`;
 const intake = 'https://marikitalembur.com/ajukan-kebutuhan';
@@ -42,6 +41,12 @@ const paths = [
   { name: 'Untuk Bisnis', navKey: 'bisnis', href: '/untuk-bisnis', title: 'Bahas kebutuhan timmu.', desc: 'Mulai dari proses kerja, lalu tentukan bentuk bantuan yang sesuai.', action: 'Untuk bisnis', img: '/images/mkl-path-bisnis.webp', tags: ['Pahami', 'Uji', 'Terapkan'], pose: 'working' },
 ];
 const pad = (i: number) => String(i + 1).padStart(2, '0');
+// What MKL does, shown inside the home hero once the reel card opens.
+const pillars: { icon: IconName; title: string; text: string }[] = [
+  { icon: 'box', title: 'Produk MKL', text: 'Aplikasi yang kami bangun sendiri, seperti Mari Rekap untuk menyusun rekap dari foto, PDF, atau teks.' },
+  { icon: 'learn', title: 'Kelas & workshop', text: 'Belajar AI, tools, dan cara kerja baru yang bisa dipraktikkan pada pekerjaanmu.' },
+  { icon: 'ai', title: 'Solusi AI untuk bisnis', text: 'Konsultasi, pemetaan proses, dan penerapan AI sesuai kebutuhan serta ruang lingkup tim.' },
+];
 const services: { icon: IconName; kicker: string; title: string; text: string }[] = [
   { icon: 'map', kicker: '01 / Pahami', title: 'Petakan pekerjaan yang perlu diperbaiki.', text: 'Tinjau alur, hambatan, dan peluang sebelum memilih penggunaan AI atau otomatisasi.' },
   { icon: 'learn', kicker: '02 / Pelajari', title: 'Belajar dari pekerjaan tim sendiri.', text: 'Materi dan latihan dapat disusun berdasarkan peran, tools, dan kebutuhan yang disepakati.' },
@@ -108,8 +113,25 @@ const services: { icon: IconName; kicker: string; title: string; text: string }[
                 <span class="hero__readout hero__readout--r" data-hero-readout="yaw">124.0000°</span>
               </div>
 
-              <div class="hero__reel" data-hero-reel aria-hidden="true">
-                <canvas class="hero__ribbon" data-ribbon></canvas>
+              <div class="hero__reel" data-hero-reel>
+                <canvas class="hero__ribbon" data-ribbon aria-hidden="true"></canvas>
+                <div class="hero__about">
+                  <div class="hero__about-intro">
+                    <p class="hero__about-eyebrow">Tentang MKL</p>
+                    <h2 class="hero__about-title">Produk, kelas, dan solusi AI <em>untuk pekerjaan yang nyata.</em></h2>
+                    <p class="hero__about-text">MKL — Mari Kita Lembur — membangun aplikasi sendiri, membuka kelas praktis, dan mendampingi bisnis menerapkan AI. Semuanya berangkat dari proses kerja yang ingin kamu bereskan.</p>
+                    <ul class="hero__about-principles" aria-label="Prinsip kerja MKL"><li>Mulai dari proses</li><li>AI bila sesuai</li><li>Hasil tetap diperiksa</li></ul>
+                  </div>
+                  <ol class="hero__pillars">
+                    {pillars.map((p, i) => {
+                      const Icon = icons[p.icon];
+                      return <li class="hero__pillar">
+                        <span class="hero__pillar-icon" aria-hidden="true"><Icon size={22} stroke-width={1.5} /></span>
+                        <div><span class="hero__pillar-index">{pad(i)}</span><h3>{p.title}</h3><p>{p.text}</p></div>
+                      </li>;
+                    })}
+                  </ol>
+                </div>
               </div>
               {['tl', 'tr', 'bl', 'br'].map((c) => <span class="hero__corner" data-hero-corner={c} aria-hidden="true"></span>)}
               <span class="hero__reel-label hero__reel-label--l" data-hero-label="l" aria-hidden="true"><span data-scramble>Lihat jalur</span></span>
